@@ -12,7 +12,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--brand) 0 70%, var(--amber) 70% 100%);
+  background: var(--brand);
 }
 
 .grid {
@@ -29,11 +29,8 @@
   max-width: 38ch;
 }
 .logo {
-  height: 56px;
+  height: 80px;
   width: auto;
-  background: #fff;
-  border-radius: 12px;
-  padding: 8px 12px;
 }
 
 .socials {
@@ -86,7 +83,7 @@
   height: 18px;
   flex: none;
   margin-top: 3px;
-  color: var(--amber);
+  color: var(--brand);
 }
 .line {
   display: block;
@@ -100,13 +97,28 @@
 .bottomInner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 12px;
   flex-wrap: wrap;
 }
-.segments {
-  letter-spacing: 0.18em;
-  color: var(--amber);
-  font-weight: 700;
+.powered {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+.powered img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.powered strong {
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+.powered:hover strong {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media (max-width: 960px) {

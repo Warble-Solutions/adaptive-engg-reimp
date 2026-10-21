@@ -40,7 +40,6 @@ export default function SolutionsPage() {
           <div className="container">
             <div className={`${s.sol} ${i % 2 ? s.solFlip : ""}`}>
               <div className={`${s.solMedia} reveal`}>
-                { }
                 <img src={sol.image} alt={sol.name} loading={i === 0 ? "eager" : "lazy"} />
                 <span className={s.solNum}>{String(i + 1).padStart(2, "0")}</span>
               </div>

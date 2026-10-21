@@ -9,8 +9,7 @@ export default function Footer() {
     <footer className={s.footer} id="site-footer">
       <div className={`container ${s.grid}`}>
         <div className={s.brand}>
-          { }
-          <img src="/brand/logo.png" alt={COMPANY.name} width={220} height={65} className={s.logo} />
+          <img src="/brand/logo.png" alt={COMPANY.name} width={264} height={80} className={s.logo} />
           <p>
             India&apos;s Market Leader in Renewable Energy Technology – SCADA, PPC, EMS-BESS, PM-KUSUM solutions and
             LT/MV panels, engineered and manufactured in-house.
@@ -89,7 +88,11 @@ export default function Footer() {
           <span>
             © {year} {COMPANY.name} All rights reserved.
           </span>
-          <span className={s.segments}>{COMPANY.segments.join("  •  ")}</span>
+          <a href="https://honestsol.com/" target="_blank" rel="noopener" className={s.powered} id="footer-powered-by">
+            <span>Powered by</span>
+            <img src="/brand/hone-st.webp" alt="" width={28} height={28} />
+            <strong>Hone ST Solutions</strong>
+          </a>
         </div>
       </div>
     </footer>

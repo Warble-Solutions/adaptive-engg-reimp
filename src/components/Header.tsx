@@ -12,8 +12,6 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  // Pages whose hero is dark → transparent header with white text until scrolled
-  const overHero = true;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -34,14 +32,11 @@ export default function Header() {
   }, [open]);
 
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname?.startsWith(href.replace(/\/$/, "")));
-  const solid = scrolled || open || !overHero;
-
   return (
-    <header className={`${s.header} ${solid ? s.solid : ""}`} id="site-header">
+    <header className={`${s.header} ${scrolled || open ? s.scrolled : ""}`} id="site-header">
       <div className={`container ${s.inner}`}>
         <Link href="/" className={s.logo} aria-label={`${COMPANY.name} – Home`} id="header-logo">
-          { }
-          <img src="/brand/logo.png" alt={COMPANY.name} width={196} height={58} />
+          <img src="/brand/logo.png" alt={COMPANY.name} width={232} height={70} />
         </Link>
 
         <nav className={s.nav} aria-label="Main">

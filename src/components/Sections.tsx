@@ -83,7 +83,6 @@ export function Advantages() {
               lead="One trusted team from switchboard to dashboard – engineered, manufactured and commissioned in-house for zero integration gaps."
             />
             <div className={`${s.advImg} reveal`}>
-              { }
               <img src="/solutions/fat.webp" alt="AEPL engineers performing factory acceptance testing on control panels" loading="lazy" />
               <div className={s.advBadge}>
                 <strong>First-Time-Right</strong>
@@ -125,7 +124,6 @@ export function Clients({ id = "clients" }: { id?: string }) {
             <div className={s.track}>
               {[...row, ...row].map((src, i) => (
                 <div className={s.logo} key={`${src}-${i}`} aria-hidden={i >= row.length}>
-                  { }
                   <img src={src} alt={i < row.length ? "Client logo" : ""} loading="lazy" />
                 </div>
               ))}
@@ -183,7 +181,7 @@ export function CtaBand() {
           <p>Talk to India&apos;s most trusted renewable technology partner.</p>
         </div>
         <div className={s.ctaBtns}>
-          <Link href="/contact/" className="btn btn-amber" id="cta-contact">
+          <Link href="/contact/" className="btn btn-light" id="cta-contact">
             Get in Touch <Icon name="arrow" />
           </Link>
           <Link href="/resources/" className="btn btn-ghost-light" id="cta-resources">

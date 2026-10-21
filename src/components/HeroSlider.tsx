@@ -46,7 +46,6 @@ export default function HeroSlider() {
           aria-roledescription="slide"
           aria-label={`${k + 1} of ${n}`}
         >
-          { }
           <img
             src={sl.image}
             alt=""

@@ -37,7 +37,7 @@
 .q {
   width: 38px;
   height: 38px;
-  color: var(--amber);
+  color: var(--brand);
 }
 .card blockquote {
   margin: 0;

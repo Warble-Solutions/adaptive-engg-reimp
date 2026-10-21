@@ -29,7 +29,6 @@ export default function ResourcesPage() {
             {docs.map((d, i) => (
               <article key={d.id} className={`card ${s.doc} reveal`} style={{ "--d": `${(i % 3) * 0.08}s` } as React.CSSProperties}>
                 <div className={s.docThumb}>
-                  { }
                   <img src={d.thumb} alt={`${d.title} – cover`} loading="lazy" />
                 </div>
                 <div className={s.docBody}>
@@ -38,7 +37,9 @@ export default function ResourcesPage() {
                   </span>
                   <h2>{d.title}</h2>
                   <p>{d.desc}</p>
-                  <BrochureButton id={d.id} buttonId={`resource-${d.id}`} />
+                  <BrochureButton id={d.id} buttonId={`resource-${d.id}`}>
+                    Download <Icon name="download" />
+                  </BrochureButton>
                 </div>
               </article>
             ))}

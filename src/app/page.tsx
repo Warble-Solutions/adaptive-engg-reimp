@@ -80,7 +80,6 @@ export default async function HomePage() {
             {SOLUTIONS.map((sol, i) => (
               <article key={sol.id} className={`card ${s.solCard} reveal`} style={{ "--d": `${(i % 3) * 0.08}s` } as React.CSSProperties}>
                 <Link href={`/solutions/#${sol.id}`} className={s.solImg} tabIndex={-1} aria-hidden="true">
-                  { }
                   <img src={sol.image} alt="" loading="lazy" />
                   <span className={s.solTag}>{sol.short}</span>
                 </Link>

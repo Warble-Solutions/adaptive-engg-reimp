@@ -188,6 +188,9 @@
 .urs :global(.lead) {
   color: rgba(255, 255, 255, 0.82);
 }
+.urs :global(.eyebrow) {
+  color: #fff;
+}
 .ursGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -216,7 +219,7 @@
   width: 10px;
   height: 10px;
   border-radius: 3px;
-  background: var(--amber);
+  background: #fff;
 }
 .ursCard li {
   color: rgba(255, 255, 255, 0.8);
@@ -302,54 +305,19 @@
   color: var(--ink);
 }
 
-/* Journey timeline */
-.timeline {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 14px;
-}
-.timeline::before {
-  content: "";
-  position: absolute;
-  top: 27px;
-  left: 4%;
-  right: 4%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--brand-200), var(--brand));
-  border-radius: 3px;
-}
-.milestone {
-  position: relative;
-}
-.year {
-  position: relative;
-  display: inline-grid;
-  place-items: center;
-  min-width: 56px;
-  height: 56px;
-  padding: 0 12px;
-  border-radius: 999px;
+/* Journey (timeline image) */
+.journey {
   background: #fff;
-  border: 3px solid var(--brand);
-  color: var(--brand-700);
-  font-weight: 700;
-  font-size: 15px;
-  margin-bottom: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: clamp(8px, 2vw, 24px);
+  overflow-x: auto;
 }
-.milestoneNow .year {
-  background: var(--amber);
-  border-color: var(--amber);
-  color: var(--navy);
-}
-.milestone li {
-  font-size: 13.5px;
-  color: var(--ink-2);
-  padding: 5px 0;
-  border-top: 1px dashed var(--line);
-}
-.milestone li:first-child {
-  border-top: 0;
+.journey img {
+  width: 100%;
+  height: auto;
+  min-width: 760px;
 }
 
 /* Manufacturing */
@@ -427,28 +395,211 @@
 }
 
 /* Certifications */
-.certs {
+.certSection {
+  background:
+    radial-gradient(700px 360px at 100% 0%, var(--brand-50), transparent 70%),
+    linear-gradient(180deg, #fff, var(--bg-soft));
+  overflow: hidden;
+}
+.certTop {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-  gap: 16px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(24px, 4vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(32px, 4vw, 48px);
 }
-.cert {
-  padding: 14px;
-  text-align: center;
+.certTop :global(.section-head) {
+  margin-bottom: 0;
 }
-.cert img {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: contain;
-  background: var(--bg-soft);
-  border-radius: var(--radius-sm);
+.certBadges {
+  display: grid;
+  gap: 12px;
 }
-.cert p {
+.certBadges li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  box-shadow: var(--shadow-sm);
+}
+.certBadges li > span {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: var(--brand);
+  color: #fff;
+}
+.certBadges svg {
+  width: 22px;
+  height: 22px;
+}
+.certBadges strong {
+  display: block;
+  font-size: 17px;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.certBadges small {
+  color: var(--muted);
   font-size: 13px;
   font-weight: 700;
-  margin-top: 10px;
-  color: var(--ink-2);
-  line-height: 1.4;
+}
+
+.certFeatured {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.certCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s;
+}
+.certCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--brand-200);
+}
+.certFrame {
+  position: relative;
+  padding: 28px 28px 0;
+  background:
+    repeating-linear-gradient(-45deg, rgba(17, 134, 116, 0.06) 0 2px, transparent 2px 14px),
+    linear-gradient(160deg, var(--brand-50), #fff);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  aspect-ratio: 4 / 3.4;
+  overflow: hidden;
+}
+.certFrame img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: bottom;
+  background: #fff;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 -2px 0 rgba(255, 255, 255, 0.8), 0 18px 40px -14px rgba(13, 31, 45, 0.45);
+  transform: translateY(6px);
+  transition: transform 0.5s var(--ease);
+}
+.certCard:hover .certFrame img {
+  transform: translateY(-4px) scale(1.02);
+}
+.certMeta {
+  padding: 18px 64px 20px 22px;
+  border-top: 3px solid var(--brand);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+.certKind {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+.certMeta h3 {
+  font-size: 17px;
+  line-height: 1.35;
+}
+.certView {
+  position: absolute;
+  right: 18px;
+  bottom: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--brand-50);
+  color: var(--brand);
+  transition: background 0.3s, color 0.3s, transform 0.3s var(--ease);
+}
+.certView svg {
+  width: 16px;
+  height: 16px;
+  transform: rotate(-45deg);
+}
+.certCard:hover .certView {
+  background: var(--brand);
+  color: #fff;
+}
+
+.certTests {
+  margin-top: clamp(28px, 4vw, 44px);
+  display: grid;
+  grid-template-columns: 0.75fr 2.25fr;
+  gap: 24px;
+  align-items: stretch;
+  background: linear-gradient(135deg, var(--brand-700), var(--brand));
+  border-radius: var(--radius-lg);
+  padding: clamp(20px, 3vw, 32px);
+}
+.certTestsHead {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.certTestsHead :global(.chip) {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+.certTestsHead h3 {
+  color: #fff;
+  font-size: clamp(20px, 2vw, 26px);
+}
+.certTestsHead p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14.5px;
+}
+.certTestGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.certSmall {
+  border: 0;
+  border-radius: var(--radius);
+}
+.certSmall .certFrame {
+  padding: 14px 14px 0;
+  aspect-ratio: 3 / 3.4;
+}
+.certSmall .certMeta {
+  padding: 12px 44px 14px 14px;
+  border-top-width: 2px;
+}
+.certSmall .certMeta h3 {
+  font-size: 13.5px;
+}
+.certSmall .certView {
+  width: 28px;
+  height: 28px;
+  right: 10px;
+  bottom: 12px;
+}
+.certSmall .certView svg {
+  width: 13px;
+  height: 13px;
 }
 
 /* ---------- Resources ---------- */
@@ -577,12 +728,8 @@
   .team {
     grid-template-columns: repeat(4, 1fr);
   }
-  .timeline {
-    grid-template-columns: repeat(4, 1fr);
-    row-gap: 32px;
-  }
-  .timeline::before {
-    display: none;
+  .certTests {
+    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 900px) {
@@ -610,6 +757,13 @@
   .quick {
     grid-template-columns: 1fr;
   }
+  .certTop {
+    grid-template-columns: 1fr;
+  }
+  .certFeatured,
+  .certTestGrid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media (max-width: 600px) {
   .ursGrid,
@@ -619,9 +773,11 @@
     grid-template-columns: 1fr;
   }
   .values,
-  .team,
-  .timeline {
+  .team {
     grid-template-columns: 1fr 1fr;
+  }
+  .certFeatured {
+    grid-template-columns: 1fr;
   }
   .highlights {
     grid-template-columns: 1fr 1fr 1fr;

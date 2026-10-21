@@ -18,7 +18,7 @@
   border-left: 4px solid var(--brand);
 }
 .vm > div:last-child {
-  border-left-color: var(--amber);
+  border-left-color: var(--brand);
 }
 .vm small {
   display: block;
@@ -48,8 +48,8 @@
   position: absolute;
   left: -20px;
   bottom: -24px;
-  background: var(--amber);
-  color: var(--navy);
+  background: var(--brand);
+  color: #fff;
   padding: 16px 20px;
   border-radius: 16px;
   box-shadow: var(--shadow);
@@ -180,7 +180,7 @@
     url("/solutions/urs.webp") center / cover;
 }
 .solUrs :global(.eyebrow) {
-  color: var(--amber);
+  color: #fff;
   margin: 0;
 }
 .solUrs h3 {

@@ -26,9 +26,6 @@
   --brand-50: #e9f5f3;
   --brand-100: #cfeae5;
   --brand-200: #a3d6cd;
-  --amber: #f5a81c;
-  --amber-600: #e09612;
-  --amber-50: #fff6e3;
   --navy: #0d1f2d;
   --navy-2: #12293a;
 
@@ -51,7 +48,7 @@
   --shadow-lg: 0 30px 60px -24px rgba(13, 31, 45, 0.28);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --container: 1240px;
-  --header-h: 84px;
+  --header-h: 96px;
 }
 
 *,
@@ -172,7 +169,7 @@ ul {
   width: 28px;
   height: 3px;
   border-radius: 3px;
-  background: var(--amber);
+  background: var(--brand);
 }
 
 .h2 {
@@ -225,9 +222,15 @@ ul {
 .btn:hover svg {
   transform: translateX(3px);
 }
+/* .btn-amber kept as a class name for compatibility – it is the solid accent button */
 .btn-amber {
-  --bg: var(--amber);
-  --fg: var(--navy);
+  --bg: var(--brand);
+  --fg: #fff;
+}
+/* White button for use on teal / dark backgrounds */
+.btn-light {
+  --bg: #fff;
+  --fg: var(--brand-700);
 }
 .btn-outline {
   background: transparent;
@@ -301,8 +304,8 @@ ul {
 
 /* Portfolio strip (as on the brochures) */
 .strip {
-  background: var(--amber);
-  color: var(--navy);
+  background: var(--brand);
+  color: #fff;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -326,7 +329,7 @@ ul {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--navy);
+  background: #fff;
   opacity: 0.6;
 }
 
@@ -408,7 +411,7 @@ ul {
   color: var(--ink-2);
 }
 .field .req {
-  color: var(--amber-600);
+  color: var(--brand-600);
 }
 .input,
 .select,
@@ -546,7 +549,7 @@ ul {
 
 @media (max-width: 900px) {
   :root {
-    --header-h: 70px;
+    --header-h: 76px;
   }
   .grid-2 {
     grid-template-columns: 1fr;

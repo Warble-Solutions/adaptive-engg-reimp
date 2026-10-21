@@ -18,7 +18,6 @@ export default function YouTubeLite({ id, title, className }: { id: string; titl
         />
       ) : (
         <button className={s.poster} onClick={() => setPlay(true)} aria-label={`Play video: ${title}`} id={`yt-${id}`}>
-          { }
           <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" loading="lazy" />
           <span className={s.play}>
             <Icon name="play" />

@@ -41,8 +41,8 @@ export const STATS: Stat[] = [
   { value: 8, suffix: "GWh+", label: "EMS-BESS" },
   { value: 450, suffix: "+", label: "Manpower" },
   { value: 40, suffix: "GW", label: "Annual Execution Capacity" },
-  { value: 2, suffix: " Lacs sq.ft+", label: "Dust-Free Manufacturing Facility" },
-  { value: 10, suffix: " Lacs+", label: "Tags in a Single Project" },
+  { value: 200000, suffix: " sq.ft+", label: "Dust-Free Manufacturing Facility" },
+  { value: 1000000, suffix: "+", label: "Tags in a Single Project" },
 ];
 
 export const HEADLINE_STATS: Stat[] = [STATS[0], STATS[1], STATS[3], STATS[2]];
@@ -155,7 +155,7 @@ export const SOLUTIONS: Solution[] = [
     brochure: "scada",
     highlights: [
       { value: "90GW+", label: "Monitored" },
-      { value: "10 Lacs+", label: "Tags in a single project" },
+      { value: "10,00,000+", label: "Tags in a single project" },
       { value: "60%+", label: "Market share" },
     ],
     groups: [
@@ -341,7 +341,7 @@ export const URS = {
   tagline: "One platform, plant to portfolio",
   desc: "URS unifies acquisition, control and reporting across solar, wind, BESS and hybrid assets – from a single inverter to a national fleet.",
   modules: [
-    { name: "SCADA", items: ["Flexible & scalable architecture", "Rich set of renewable libraries", "Seamless handling of 10 Lacs+ tags", "Refined interface from decades of experience"] },
+    { name: "SCADA", items: ["Flexible & scalable architecture", "Rich set of renewable libraries", "Seamless handling of 10,00,000+ tags", "Refined interface from decades of experience"] },
     { name: "PPC", items: ["Grid code compliant", "HIL type tested", "AGC ready", "Forecast & schedule synchronization"] },
     { name: "CMS", items: ["Insightful view of the entire portfolio", "Measure KPIs against targeted data", "ML based anomaly detection", "Conversational AI"] },
     { name: "Advanced Analytics", items: ["Advanced data visualization", "Accurate loss buckets", "Custom report builder", "Analyse historical data"] },
@@ -379,25 +379,16 @@ export const CLIENT_LOGOS = [
 ];
 
 export const CERTIFICATIONS = [
-  { title: "ISO 9001:2015 – TÜV NORD", img: "/certs/iso-9001.webp" },
-  { title: "Solar Monitoring Company of the Year 2019", img: "/certs/solar-monitoring-award-2019.webp" },
-  { title: "Schneider Electric Authorised System Integrator", img: "/certs/schneider-si.webp" },
-  { title: "ERDA Short Circuit Test – 65kA", img: "/certs/erda-65ka.webp" },
-  { title: "ERDA Short Circuit Test – 50kA", img: "/certs/erda-50ka.webp" },
-  { title: "ERDA IP55 Test Report", img: "/certs/erda-ip55.webp" },
-  { title: "ERDA Temperature Rise Test", img: "/certs/erda-temp-rise.webp" },
+  { title: "ISO 9001:2015 – TÜV NORD", kind: "Quality", img: "/certs/iso-9001.webp" },
+  { title: "Solar Monitoring Company of the Year 2019", kind: "Award", img: "/certs/solar-monitoring-award-2019.webp" },
+  { title: "Schneider Electric Authorised System Integrator", kind: "Partnership", img: "/certs/schneider-si.webp" },
+  { title: "Short Circuit Test – 65kA", kind: "ERDA Type Test", img: "/certs/erda-65ka.webp" },
+  { title: "Short Circuit Test – 50kA", kind: "ERDA Type Test", img: "/certs/erda-50ka.webp" },
+  { title: "IP55 Ingress Protection", kind: "ERDA Type Test", img: "/certs/erda-ip55.webp" },
+  { title: "Temperature Rise Test", kind: "ERDA Type Test", img: "/certs/erda-temp-rise.webp" },
 ];
 
-/** Journey – from the timeline graphic; "Today" uses the latest brochure numbers. */
-export const JOURNEY = [
-  { year: "2014", points: ["15 Engineers", "100MW renewable installed capacity", "Authorized System Integrator – Schneider Electric"] },
-  { year: "2016", points: ["First panel manufacturing factory", "ISO 9001:2015 – TÜV NORD", "250MW renewable installed capacity"] },
-  { year: "2018", points: ["4.8GW+ renewable installed capacity", "HT/LT panels", "Highest revenue growth in SCADA – Schneider Electric"] },
-  { year: "2020", points: ["14GW+ renewable installed capacity", "Introduced renewable PPC", "Best Solar Monitoring Company of the Year – ET Now"] },
-  { year: "2022", points: ["Single location 1GW", "Single largest order – 3.6GW", "Second factory", "Preferred project partner of industry leaders"] },
-  { year: "2024", points: ["40GW+ renewable installed capacity", "Monitoring solutions – PM KUSUM", "10 Lacs+ SCADA tags in a single project", "HIL testing – PPC", "Introduced EMS-BESS"] },
-  { year: "Today", points: ["90GW+ monitored", "60%+ market share", "2500+ sites", "450+ manpower", "2 Lacs sq.ft+ manufacturing facility"] },
-];
+// Journey: the About page shows the timeline image at /public/about/journey.webp
 
 /**
  * Leadership & team – photos from the company archive.
@@ -425,7 +416,7 @@ export const HERO_SLIDES = [
   { image: "/hero/solar-bess.webp", eyebrow: "India's Market Leader", title: "Renewable Energy Technology", text: "SCADA, PPC, EMS-BESS and LT/MV panels for utility-scale solar, wind, BESS and hybrid plants.", cta: { label: "Explore Solutions", href: "/solutions/" } },
   { image: "/hero/scada.webp", eyebrow: "Plant SCADA", title: "90GW+ Monitored", text: "Complete visibility. Reliable data. Smarter plant decisions – from portfolio to plant to device.", cta: { label: "Plant SCADA", href: "/solutions/#plant-scada" } },
   { image: "/hero/solar-wind.webp", eyebrow: "Power Plant Controller", title: "India's First HIL Tested PPC", text: "Proven in every trial – till COD and beyond. Grid code compliant and AGC ready.", cta: { label: "Power Plant Controller", href: "/solutions/#ppc" } },
-  { image: "/hero/panels.webp", eyebrow: "LT/MV Panels", title: "Switchboard to Dashboard", text: "15000+ type-tested panels delivered from our 2 Lacs sq.ft+ dust-free manufacturing facility.", cta: { label: "LT/MV Panels", href: "/solutions/#lt-mv-panels" } },
+  { image: "/hero/panels.webp", eyebrow: "LT/MV Panels", title: "Switchboard to Dashboard", text: "15000+ type-tested panels delivered from our 2,00,000 sq.ft+ dust-free manufacturing facility.", cta: { label: "LT/MV Panels", href: "/solutions/#lt-mv-panels" } },
   { image: "/hero/pm-kusum.webp", eyebrow: "PM-KUSUM", title: "One Stop Solution", text: "RMS, CMS, AMS, ReportWiz and WMS across 2000+ sites – with local SCADA that works without internet.", cta: { label: "PM-KUSUM Solutions", href: "/solutions/#pm-kusum" } },
 ];
 

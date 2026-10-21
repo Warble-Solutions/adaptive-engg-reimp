@@ -3,24 +3,12 @@
   inset: 0 0 auto 0;
   z-index: 50;
   height: var(--header-h);
-  transition: background 0.35s var(--ease), box-shadow 0.35s var(--ease), height 0.35s var(--ease);
+  background: #fff;
+  box-shadow: 0 1px 0 var(--line);
+  transition: box-shadow 0.35s var(--ease);
 }
-.header::before {
-  /* soft dark fade so white nav text is readable over any hero image */
-  content: "";
-  position: absolute;
-  inset: 0 0 -30px 0;
-  background: linear-gradient(180deg, rgba(8, 22, 32, 0.55), transparent);
-  pointer-events: none;
-  transition: opacity 0.35s;
-}
-.solid {
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: saturate(160%) blur(10px);
+.scrolled {
   box-shadow: 0 1px 0 var(--line), 0 10px 30px -20px rgba(13, 31, 45, 0.35);
-}
-.solid::before {
-  opacity: 0;
 }
 
 .inner {
@@ -35,18 +23,10 @@
   flex: none;
   display: flex;
   align-items: center;
-  padding: 8px 12px;
-  margin-left: -12px;
-  border-radius: 12px;
-  background: #fff;
-  transition: background 0.35s, padding 0.35s;
 }
 .logo img {
-  height: 46px;
+  height: 64px;
   width: auto;
-}
-.solid .logo {
-  background: transparent;
 }
 
 .nav {
@@ -59,7 +39,7 @@
   padding: 10px 14px;
   font-weight: 700;
   font-size: 15px;
-  color: #fff;
+  color: var(--ink);
   border-radius: 8px;
   transition: color 0.25s;
 }
@@ -71,7 +51,7 @@
   bottom: 4px;
   height: 2px;
   border-radius: 2px;
-  background: var(--amber);
+  background: var(--brand);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s var(--ease);
@@ -80,11 +60,8 @@
 .link.active::after {
   transform: scaleX(1);
 }
-.solid .link {
-  color: var(--ink);
-}
-.solid .link:hover,
-.solid .link.active {
+.link:hover,
+.link.active {
   color: var(--brand);
 }
 
@@ -99,17 +76,11 @@
   gap: 8px;
   font-weight: 700;
   font-size: 14px;
-  color: #fff;
+  color: var(--ink);
 }
 .phone svg {
   width: 16px;
   height: 16px;
-  color: var(--amber);
-}
-.solid .phone {
-  color: var(--ink);
-}
-.solid .phone svg {
   color: var(--brand);
 }
 
@@ -119,18 +90,14 @@
   height: 44px;
   border-radius: 12px;
   border: 0;
-  background: rgba(255, 255, 255, 0.14);
-  color: #fff;
+  background: var(--brand-50);
+  color: var(--brand-700);
   cursor: pointer;
   place-items: center;
 }
 .burger svg {
   width: 24px;
   height: 24px;
-}
-.solid .burger {
-  background: var(--brand-50);
-  color: var(--brand-700);
 }
 
 .mobile {
@@ -204,7 +171,7 @@
     display: grid;
   }
   .logo img {
-    height: 38px;
+    height: 50px;
   }
 }
 @media (max-width: 480px) {

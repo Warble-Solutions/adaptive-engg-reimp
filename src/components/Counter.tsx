@@ -42,7 +42,7 @@ export default function Counter({ stat, className }: { stat: Stat; className?: s
     <span ref={ref} className={className}>
       {stat.prefix}
       {fmt(val)}
-      {stat.suffix}
+      <span className="stat-suffix">{stat.suffix}</span>
     </span>
   );
 }

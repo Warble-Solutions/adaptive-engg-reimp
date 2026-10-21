@@ -1,7 +1,7 @@
 /* ---------- Achievements ---------- */
 .achDark {
   background:
-    radial-gradient(900px 400px at 85% 0%, rgba(245, 168, 28, 0.12), transparent 60%),
+    radial-gradient(900px 400px at 85% 0%, rgba(17, 134, 116, 0.12), transparent 60%),
     radial-gradient(800px 500px at 0% 100%, rgba(17, 134, 116, 0.35), transparent 60%),
     linear-gradient(160deg, var(--brand-800), var(--navy) 70%);
   color: #fff;
@@ -11,7 +11,7 @@
   color: #fff;
 }
 .headLight :global(.eyebrow) {
-  color: var(--amber);
+  color: #fff;
 }
 .statsGrid {
   display: grid;
@@ -47,12 +47,16 @@
 .statVal {
   font-size: clamp(30px, 3.6vw, 46px);
   font-weight: 700;
-  color: var(--amber);
+  color: #fff;
   line-height: 1.1;
   font-variant-numeric: tabular-nums;
 }
 :global(.section-soft) .statVal {
   color: var(--brand);
+}
+.statVal :global(.stat-suffix) {
+  font-size: 0.62em;
+  margin-left: 2px;
 }
 .statLabel {
   font-size: 13px;
@@ -96,7 +100,7 @@
   border-radius: 14px;
   padding: 14px 18px;
   box-shadow: var(--shadow);
-  border-left: 4px solid var(--amber);
+  border-left: 4px solid var(--brand);
   display: flex;
   flex-direction: column;
   line-height: 1.2;
@@ -196,13 +200,6 @@
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.75;
-  transition: filter 0.3s, opacity 0.3s;
-}
-.logo:hover img {
-  filter: none;
-  opacity: 1;
 }
 
 /* ---------- Contact ---------- */
@@ -265,7 +262,7 @@
 /* ---------- CTA band ---------- */
 .cta {
   background:
-    radial-gradient(600px 300px at 90% 10%, rgba(245, 168, 28, 0.25), transparent 60%),
+    radial-gradient(600px 300px at 90% 10%, rgba(17, 134, 116, 0.25), transparent 60%),
     linear-gradient(110deg, var(--brand-700), var(--brand) 60%, var(--brand-600));
   color: #fff;
   padding: clamp(44px, 6vw, 72px) 0;

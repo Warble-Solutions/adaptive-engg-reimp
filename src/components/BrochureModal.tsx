@@ -129,7 +129,6 @@ export function BrochureProvider({ children }: { children: React.ReactNode }) {
             </button>
 
             <aside className={s.side}>
-              { }
               <img src={item.thumb} alt={`${item.title} – cover`} />
               <div>
                 <span className="chip">
