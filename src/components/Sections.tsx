@@ -83,10 +83,10 @@ export function Advantages() {
               lead="One trusted team from switchboard to dashboard – engineered, manufactured and commissioned in-house for zero integration gaps."
             />
             <div className={`${s.advImg} reveal`}>
-              <img src="/solutions/fat.webp" alt="AEPL engineers performing factory acceptance testing on control panels" loading="lazy" />
+              <img src="/about/team-group.webp" alt="The Adaptive Engineering team" loading="lazy" />
               <div className={s.advBadge}>
-                <strong>First-Time-Right</strong>
-                <span>Commissioning</span>
+                <strong>450+ Experts</strong>
+                <span>One trusted team</span>
               </div>
             </div>
           </div>

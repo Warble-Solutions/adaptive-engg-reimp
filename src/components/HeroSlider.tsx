@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { COMPANY, HEADLINE_STATS, HERO_SLIDES } from "@/lib/content";
+import { HEADLINE_STATS, HERO_SLIDES } from "@/lib/content";
 import Icon from "./Icon";
 import s from "./HeroSlider.module.css";
 
@@ -107,7 +107,6 @@ export default function HeroSlider() {
               <span>{st.label}</span>
             </div>
           ))}
-          <div className={s.portfolio}>{COMPANY.portfolio.join(" • ")}</div>
         </div>
       </div>
     </section>

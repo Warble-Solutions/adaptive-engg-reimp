@@ -119,7 +119,7 @@ export default function AboutPage() {
         <div className="container">
           <SectionHead eyebrow="Our journey" id="journey-title" title="From 15 engineers to India's market leader" />
           <div className={`${s.journey} reveal`}>
-            <img src="/about/journey.webp" alt="AEPL journey timeline from 2014 to today" width={1920} height={1080} loading="lazy" />
+            <img src="/about/journey.webp" alt="AEPL journey timeline from 2014 to today" width={1920} height={864} loading="lazy" />
           </div>
         </div>
       </section>
