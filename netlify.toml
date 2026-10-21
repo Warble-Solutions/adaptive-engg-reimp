@@ -1,0 +1,136 @@
+# Netlify build settings (used when the GitHub repo is connected).
+# If the repo root is the `adaptive-form` folder, set "Base directory" to `web` in Netlify,
+# or keep this file inside `web/` and push `web/` as the repo root.
+
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# ---------------------------------------------------------------------------
+# Old WordPress URLs → new pages (keeps Google links & bookmarks working)
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/aboutus/*"
+  to = "/about/"
+  status = 301
+[[redirects]]
+  from = "/our-team/*"
+  to = "/about/#team"
+  status = 301
+[[redirects]]
+  from = "/our-clients/*"
+  to = "/about/#clients"
+  status = 301
+[[redirects]]
+  from = "/our-journey/*"
+  to = "/about/#journey"
+  status = 301
+[[redirects]]
+  from = "/certification/*"
+  to = "/about/#certifications"
+  status = 301
+[[redirects]]
+  from = "/contact-us/*"
+  to = "/contact/"
+  status = 301
+[[redirects]]
+  from = "/brochure/*"
+  to = "/resources/"
+  status = 301
+[[redirects]]
+  from = "/case-studies/*"
+  to = "/resources/"
+  status = 301
+[[redirects]]
+  from = "/blogs/*"
+  to = "/resources/"
+  status = 301
+[[redirects]]
+  from = "/plant-scada/*"
+  to = "/solutions/#plant-scada"
+  status = 301
+[[redirects]]
+  from = "/wind-scada/*"
+  to = "/solutions/#plant-scada"
+  status = 301
+[[redirects]]
+  from = "/central-monitoring-system/*"
+  to = "/solutions/#urs"
+  status = 301
+[[redirects]]
+  from = "/unified-renewable-solution/*"
+  to = "/solutions/#urs"
+  status = 301
+[[redirects]]
+  from = "/pm-kusum/*"
+  to = "/solutions/#pm-kusum"
+  status = 301
+[[redirects]]
+  from = "/solarwiz-solar-solutions/*"
+  to = "/solutions/#pm-kusum"
+  status = 301
+[[redirects]]
+  from = "/electrical-panels/*"
+  to = "/solutions/#lt-mv-panels"
+  status = 301
+[[redirects]]
+  from = "/electrical-panels-2/*"
+  to = "/solutions/#lt-mv-panels"
+  status = 301
+[[redirects]]
+  from = "/renewable-energy/*"
+  to = "/solutions/"
+  status = 301
+[[redirects]]
+  from = "/solar-solutions/*"
+  to = "/solutions/"
+  status = 301
+[[redirects]]
+  from = "/hybrid-solutions/*"
+  to = "/solutions/"
+  status = 301
+[[redirects]]
+  from = "/asset-management/*"
+  to = "/solutions/#urs"
+  status = 301
+[[redirects]]
+  from = "/asset-management-2/*"
+  to = "/solutions/#urs"
+  status = 301
+# Remaining old sections not covered by the REI site → Solutions overview
+[[redirects]]
+  from = "/water-solutions/*"
+  to = "/solutions/"
+  status = 302
+[[redirects]]
+  from = "/infrastructure/*"
+  to = "/solutions/"
+  status = 302
+[[redirects]]
+  from = "/tunnel/*"
+  to = "/solutions/"
+  status = 302
+[[redirects]]
+  from = "/industrial-automation-solution/*"
+  to = "/solutions/"
+  status = 302
+[[redirects]]
+  from = "/industrial-iot/*"
+  to = "/solutions/"
+  status = 302
+[[redirects]]
+  from = "/turnkey/*"
+  to = "/solutions/"
+  status = 302
+[[redirects]]
+  from = "/career/*"
+  to = "/contact/"
+  status = 302
+
+[[headers]]
+  for = "/brochures/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"

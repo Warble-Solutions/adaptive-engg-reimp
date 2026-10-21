@@ -1,0 +1,116 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(8, 22, 32, 0.6);
+  backdrop-filter: blur(6px);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  animation: fade 0.25s var(--ease);
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+.dialog {
+  position: relative;
+  width: min(940px, 100%);
+  max-height: calc(100svh - 40px);
+  overflow: auto;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  animation: rise 0.4s var(--ease);
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+}
+.close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--bg-soft);
+  color: var(--ink-2);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s, color 0.2s;
+}
+.close:hover {
+  background: var(--brand);
+  color: #fff;
+}
+.close svg {
+  width: 20px;
+  height: 20px;
+}
+.side {
+  background: linear-gradient(160deg, var(--brand-50), #fff 70%);
+  border-right: 1px solid var(--line);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.side img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  aspect-ratio: 595 / 842;
+  object-fit: cover;
+  object-position: top;
+}
+.side h3 {
+  font-size: 19px;
+  margin: 12px 0 6px;
+}
+.side p {
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.body {
+  padding: 36px 32px 32px;
+}
+.sub {
+  color: var(--muted);
+  font-size: 14.5px;
+  margin: 6px 0 22px;
+}
+.known {
+  padding-top: 24px;
+}
+@media (max-width: 780px) {
+  .dialog {
+    grid-template-columns: 1fr;
+  }
+  .side {
+    flex-direction: row;
+    align-items: center;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 20px;
+  }
+  .side img {
+    width: 84px;
+    flex: none;
+  }
+  .side p {
+    display: none;
+  }
+  .body {
+    padding: 24px 20px;
+  }
+}
