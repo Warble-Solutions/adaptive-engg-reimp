@@ -416,7 +416,7 @@ export const HERO_SLIDES = [
   { image: "/hero/solar-bess.webp", eyebrow: "India's Market Leader", title: "Renewable Energy Technology", text: "SCADA, PPC, EMS-BESS and LT/MV panels for utility-scale solar, wind, BESS and hybrid plants.", cta: { label: "Explore Solutions", href: "/solutions/" } },
   { image: "/hero/scada.webp", eyebrow: "Plant SCADA", title: "90GW+ Monitored", text: "Complete visibility. Reliable data. Smarter plant decisions – from portfolio to plant to device.", cta: { label: "Plant SCADA", href: "/solutions/#plant-scada" } },
   { image: "/hero/solar-wind.webp", eyebrow: "Power Plant Controller", title: "India's First HIL Tested PPC", text: "Proven in every trial – till COD and beyond. Grid code compliant and AGC ready.", cta: { label: "Power Plant Controller", href: "/solutions/#ppc" } },
-  { image: "/hero/panels.webp", eyebrow: "LT/MV Panels", title: "Switchboard to Dashboard", text: "15000+ type-tested panels delivered from our 2,00,000 sq.ft+ dust-free manufacturing facility.", cta: { label: "LT/MV Panels", href: "/solutions/#lt-mv-panels" } },
+  { image: "/hero/lt-mv-panels.webp", eyebrow: "LT/MV Panels", title: "Switchboard to Dashboard", text: "15000+ type-tested panels delivered from our 2,00,000 sq.ft+ dust-free manufacturing facility.", cta: { label: "LT/MV Panels", href: "/solutions/#lt-mv-panels" } },
   { image: "/hero/pm-kusum.webp", eyebrow: "PM-KUSUM", title: "One Stop Solution", text: "RMS, CMS, AMS, ReportWiz and WMS across 2000+ sites – with local SCADA that works without internet.", cta: { label: "PM-KUSUM Solutions", href: "/solutions/#pm-kusum" } },
 ];
 
