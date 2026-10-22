@@ -40,8 +40,11 @@ export default function Testimonials() {
       <div className={s.track} ref={track}>
         {TESTIMONIALS.map((t) => (
           <figure key={t.company} className={s.card}>
-            <Icon name="quote" className={s.q} />
-            <blockquote>{t.quote}</blockquote>
+            <blockquote>
+              <span className={s.q} aria-hidden="true">&ldquo;</span>
+              {t.quote}
+              <span className={s.q} aria-hidden="true">&rdquo;</span>
+            </blockquote>
             <figcaption>
               <span className={s.avatar}>{t.company.charAt(0)}</span>
               <span>

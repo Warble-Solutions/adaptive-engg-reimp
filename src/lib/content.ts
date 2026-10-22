@@ -445,7 +445,7 @@ export const TEAM: { name: string; photo: string; role?: string }[] = [
 
 /** Homepage banners. A slide with `title` shows only that line (no subtitle). */
 export const HERO_SLIDES: { image: string; title?: string; subtitle?: string }[] = [
-  { image: "/hero/solar-bess.webp", title: "India's Market Leader in Renewable Energy Technology" },
+  { image: "/hero/solar-bess.webp", title: "India's Market Leader Renewable Energy Technology" },
   { image: "/hero/solar-wind.webp", subtitle: "Unified Renewable Solution (URS)" },
   { image: "/hero/pm-kusum.webp", subtitle: "PM KUSUM" },
   { image: "/hero/lt-mv-panels.webp", subtitle: "LT/MV Panels" },

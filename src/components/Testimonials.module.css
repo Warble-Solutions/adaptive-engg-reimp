@@ -35,9 +35,16 @@
   border-color: var(--brand-100);
 }
 .q {
-  width: 38px;
-  height: 38px;
   color: var(--brand);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 1.9em;
+  line-height: 0;
+  vertical-align: -0.32em;
+  margin: 0 3px;
+}
+.q:first-child {
+  margin-left: 0;
 }
 .card blockquote {
   margin: 0;
