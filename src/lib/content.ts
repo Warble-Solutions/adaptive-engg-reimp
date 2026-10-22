@@ -12,7 +12,7 @@ export const COMPANY = {
   phoneHref: "tel:+917969269000",
   email: "info@adaptive-engg.com",
   address: ["21st Floor, \"Yash Anant\",", "Opp. Old RBI, Ashram Road,", "Ahmedabad - 380009,", "Gujarat, India"],
-  mapQuery: "Yash Anant, Ashram Road, Ahmedabad 380009",
+  mapQuery: "Adaptive Engineering Pvt. Ltd., 21st Floor, Yash Anant, Opp. Old RBI, Ashram Road, Navrangpura, Ahmedabad, Gujarat 380009",
   url: "https://adaptive-engg.com",
   portfolio: ["SCADA", "PPC", "EMS", "SAS", "RMS", "CMS", "AMS", "LT/MV Panels"],
   segments: ["Solar", "Wind", "BESS", "Hybrid"],
@@ -338,7 +338,7 @@ export type UrsModule = {
   name: string;
   icon: string;
   items: string[];
-  /** Link to a detailed section on the Solutions page, if one exists */
+  /** Link to the module's own page under /solutions/urs/ */
   href?: string;
   brochure?: keyof typeof BROCHURES;
 };
@@ -349,12 +349,12 @@ export const URS: { title: string; tagline: string; desc: string; modules: UrsMo
   desc: "URS unifies acquisition, control and reporting across solar, wind, BESS and hybrid assets – from a single inverter to a national fleet.",
   // Order agreed with the AEPL team: SCADA, PPC, AMS, CMS, Advanced Analytics, EMS-BESS
   modules: [
-    { name: "SCADA", icon: "monitor", href: "/solutions/#plant-scada", brochure: "scada", items: ["Flexible & scalable architecture", "Rich set of renewable libraries", "Seamless handling of 10,00,000+ tags", "Refined interface from decades of experience"] },
-    { name: "PPC", icon: "gauge", href: "/solutions/#ppc", brochure: "ppc", items: ["Grid code compliant", "HIL type tested", "AGC ready", "Forecast & schedule synchronization"] },
-    { name: "AMS", icon: "wrench", items: ["Automated work order management", "Standardized SOPs across enterprise", "Reduced mean time to repair", "Cost control & inventory management"] },
-    { name: "CMS", icon: "grid", items: ["Insightful view of the entire portfolio", "Measure KPIs against targeted data", "ML based anomaly detection", "Conversational AI"] },
-    { name: "Advanced Analytics", icon: "chart", items: ["Advanced data visualization", "Accurate loss buckets", "Custom report builder", "Analyse historical data"] },
-    { name: "EMS - BESS", icon: "battery", href: "/solutions/#ems-bess", brochure: "ems", items: ["Indigenous solution", "ML based energy arbitrage", "State of Charge (SoC) management", "Peak shaving, grid support"] },
+    { name: "SCADA", icon: "monitor", href: "/solutions/urs/scada/", brochure: "scada", items: ["Flexible & scalable architecture", "Rich set of renewable libraries", "Seamless handling of 10,00,000+ tags", "Refined interface from decades of experience"] },
+    { name: "PPC", icon: "gauge", href: "/solutions/urs/ppc/", brochure: "ppc", items: ["Grid code compliant", "HIL type tested", "AGC ready", "Forecast & schedule synchronization"] },
+    { name: "AMS", icon: "wrench", href: "/solutions/urs/ams/", brochure: "corporate", items: ["Automated work order management", "Standardized SOPs across enterprise", "Reduced mean time to repair", "Cost control & inventory management"] },
+    { name: "CMS", icon: "grid", href: "/solutions/urs/cms/", brochure: "corporate", items: ["Insightful view of the entire portfolio", "Measure KPIs against targeted data", "ML based anomaly detection", "Conversational AI"] },
+    { name: "Advanced Analytics", icon: "chart", href: "/solutions/urs/advanced-analytics/", brochure: "corporate", items: ["Advanced data visualization", "Accurate loss buckets", "Custom report builder", "Analyse historical data"] },
+    { name: "EMS - BESS", icon: "battery", href: "/solutions/urs/ems-bess/", brochure: "ems", items: ["Indigenous solution", "ML based energy arbitrage", "State of Charge (SoC) management", "Peak shaving, grid support"] },
   ],
 };
 
@@ -366,7 +366,7 @@ export const MAIN_SOLUTIONS: { id: string; name: string; short: string; summary:
     short: "URS",
     summary: "SCADA, PPC, AMS, CMS, Advanced Analytics and EMS-BESS on one platform – acquisition, control and reporting from a single inverter to a national fleet.",
     image: "/solutions/urs.webp",
-    href: "/solutions/#urs",
+    href: "/solutions/urs/",
     brochure: "corporate",
   },
   {
@@ -375,7 +375,7 @@ export const MAIN_SOLUTIONS: { id: string; name: string; short: string; summary:
     short: "PM-KUSUM",
     summary: SOLUTIONS.find((x) => x.id === "pm-kusum")!.summary,
     image: "/solutions/pm-kusum.webp",
-    href: "/solutions/#pm-kusum",
+    href: "/solutions/pm-kusum/",
     brochure: "kusum",
   },
   {
@@ -384,21 +384,13 @@ export const MAIN_SOLUTIONS: { id: string; name: string; short: string; summary:
     short: "LT/MV Panels",
     summary: SOLUTIONS.find((x) => x.id === "lt-mv-panels")!.summary,
     image: "/solutions/panels.webp",
-    href: "/solutions/#lt-mv-panels",
+    href: "/solutions/lt-mv-panels/",
     brochure: "panels",
   },
 ];
 
-/** LT/MV type test results – LT/MV flyer p2 */
-export const PANEL_TESTS = {
-  columns: ["Voltage Rating", "Short Circuit Test", "Temperature Rise Test", "Ingress Protection Test", "Die-Electric Strength Test"],
-  rows: [
-    ["440V", "65kA, 440V, 4000A", "440V, 4000A", "IP55 - Outdoor", "N/A"],
-    ["800V", "50kA, 800V, 4000A", "800V, 4000A", "IP55 - Outdoor", "800V, 4000A"],
-    ["11kV", "31.5kA - 3 Sec.", "11kV, 1250A", "IP55 - Outdoor", "11kV, 1250A"],
-    ["33kV", "31.5kA - 3 Sec.", "33kV, 1250A", "IP55 - Outdoor", "33kV, 1250A"],
-  ],
-};
+// LT/MV type test results now live in PANELS_PAGE (src/lib/solutions.ts)
+
 
 // ---------------------------------------------------------------------------
 //  Social proof
@@ -451,12 +443,12 @@ export const TEAM: { name: string; photo: string; role?: string }[] = [
   { name: "Yogendra Singh Bhati", photo: "/team/yogendra-singh-bhati.webp" },
 ];
 
-export const HERO_SLIDES = [
-  { image: "/hero/solar-bess.webp", subtitle: "Renewable Energy Technology" },
-  { image: "/hero/scada.webp", subtitle: "Plant SCADA" },
-  { image: "/hero/solar-wind.webp", subtitle: "Power Plant Controller" },
+/** Homepage banners. A slide with `title` shows only that line (no subtitle). */
+export const HERO_SLIDES: { image: string; title?: string; subtitle?: string }[] = [
+  { image: "/hero/solar-bess.webp", title: "India's Market Leader in Renewable Energy Technology" },
+  { image: "/hero/solar-wind.webp", subtitle: "Unified Renewable Solution (URS)" },
+  { image: "/hero/pm-kusum.webp", subtitle: "PM KUSUM" },
   { image: "/hero/lt-mv-panels.webp", subtitle: "LT/MV Panels" },
-  { image: "/hero/pm-kusum.webp", subtitle: "PM-KUSUM" },
 ];
 
 export const NAV = [
@@ -468,8 +460,14 @@ export const NAV = [
 ];
 
 export const INTEREST_OPTIONS = [
-  ...SOLUTIONS.map((s) => s.name),
-  "Unified Renewable Solution (CMS / Analytics / AMS)",
-  "Substation Automation (SAS)",
+  "Unified Renewable Solution (URS)",
+  "Plant SCADA",
+  "Power Plant Controller (PPC)",
+  "Asset Management System (AMS)",
+  "Central Monitoring System (CMS)",
+  "Advanced Analytics",
+  "EMS for BESS",
+  "PM KUSUM Solutions",
+  "LT/MV Panels",
   "Partnership / Other",
 ];

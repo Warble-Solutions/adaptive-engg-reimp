@@ -50,35 +50,35 @@
   status = 301
 [[redirects]]
   from = "/plant-scada/*"
-  to = "/solutions/#plant-scada"
+  to = "/solutions/urs/scada/"
   status = 301
 [[redirects]]
   from = "/wind-scada/*"
-  to = "/solutions/#plant-scada"
+  to = "/solutions/urs/scada/"
   status = 301
 [[redirects]]
   from = "/central-monitoring-system/*"
-  to = "/solutions/#urs"
+  to = "/solutions/urs/cms/"
   status = 301
 [[redirects]]
   from = "/unified-renewable-solution/*"
-  to = "/solutions/#urs"
+  to = "/solutions/urs/"
   status = 301
 [[redirects]]
   from = "/pm-kusum/*"
-  to = "/solutions/#pm-kusum"
+  to = "/solutions/pm-kusum/"
   status = 301
 [[redirects]]
   from = "/solarwiz-solar-solutions/*"
-  to = "/solutions/#pm-kusum"
+  to = "/solutions/pm-kusum/"
   status = 301
 [[redirects]]
   from = "/electrical-panels/*"
-  to = "/solutions/#lt-mv-panels"
+  to = "/solutions/lt-mv-panels/"
   status = 301
 [[redirects]]
   from = "/electrical-panels-2/*"
-  to = "/solutions/#lt-mv-panels"
+  to = "/solutions/lt-mv-panels/"
   status = 301
 [[redirects]]
   from = "/renewable-energy/*"
@@ -94,11 +94,11 @@
   status = 301
 [[redirects]]
   from = "/asset-management/*"
-  to = "/solutions/#urs"
+  to = "/solutions/urs/ams/"
   status = 301
 [[redirects]]
   from = "/asset-management-2/*"
-  to = "/solutions/#urs"
+  to = "/solutions/urs/ams/"
   status = 301
 # Remaining old sections not covered by the REI site → Solutions overview
 [[redirects]]

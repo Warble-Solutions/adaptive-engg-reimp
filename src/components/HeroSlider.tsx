@@ -55,8 +55,8 @@ export default function HeroSlider() {
           />
           <div className={s.overlay} />
           <div className={`container ${s.content}`}>
-            {k === 0 ? <h1 className={s.title}>{HEADLINE}</h1> : <h2 className={s.title}>{HEADLINE}</h2>}
-            <p className={s.sub}>{sl.subtitle}</p>
+            {k === 0 ? <h1 className={s.title}>{sl.title ?? HEADLINE}</h1> : <h2 className={s.title}>{sl.title ?? HEADLINE}</h2>}
+            {!sl.title && sl.subtitle && <p className={s.sub}>{sl.subtitle}</p>}
           </div>
         </div>
       ))}
@@ -67,7 +67,7 @@ export default function HeroSlider() {
             key={sl.image}
             role="tab"
             aria-selected={k === i}
-            aria-label={`Slide ${k + 1}: ${sl.subtitle}`}
+            aria-label={`Slide ${k + 1}: ${sl.title ?? sl.subtitle}`}
             className={`${s.dot} ${k === i ? s.dotActive : ""}`}
             onClick={() => go(k)}
             id={`hero-dot-${k + 1}`}

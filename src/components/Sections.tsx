@@ -29,18 +29,6 @@ export function SectionHead({
   );
 }
 
-export function PortfolioStrip() {
-  return (
-    <div className="strip" aria-label="Portfolio">
-      <div className="container strip-inner">
-        {COMPANY.portfolio.map((p) => (
-          <span key={p}>{p}</span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 /** Achievements – brochure numbers with count-up. */
 export function Achievements({ limit = 8, dark = true }: { limit?: number; dark?: boolean }) {
   return (

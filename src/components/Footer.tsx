@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { COMPANY, NAV, SOLUTIONS } from "@/lib/content";
+import { COMPANY, NAV } from "@/lib/content";
+import { SOLUTIONS_MENU } from "@/lib/solutions";
 import Icon from "./Icon";
 import s from "./Footer.module.css";
 
@@ -47,14 +48,11 @@ export default function Footer() {
         <div>
           <h3 className={s.h}>Solutions</h3>
           <ul className={s.list}>
-            {SOLUTIONS.map((sol) => (
-              <li key={sol.id}>
-                <Link href={`/solutions/#${sol.id}`}>{sol.name}</Link>
+            {SOLUTIONS_MENU.map((sol) => (
+              <li key={sol.href}>
+                <Link href={sol.href}>{sol.label}</Link>
               </li>
             ))}
-            <li>
-              <Link href="/solutions/#urs">Unified Renewable Solution</Link>
-            </li>
           </ul>
         </div>
 

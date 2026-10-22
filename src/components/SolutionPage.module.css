@@ -1,0 +1,442 @@
+/* Shared layout for every page under /solutions/ */
+
+/* ---------- Intro ---------- */
+.intro {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+}
+.introText {
+  margin-top: 18px;
+  display: grid;
+  gap: 14px;
+}
+.introText p {
+  color: var(--ink-2);
+  font-size: clamp(15.5px, 1.2vw, 17px);
+}
+.introMedia img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: clamp(36px, 5vw, 56px);
+}
+.stats div {
+  background: var(--brand-50);
+  border-radius: var(--radius);
+  padding: 22px 16px;
+  text-align: center;
+  border-bottom: 3px solid var(--brand);
+}
+.stats strong {
+  display: block;
+  font-size: clamp(22px, 2.4vw, 32px);
+  color: var(--brand);
+  line-height: 1.1;
+}
+.stats span {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+/* ---------- Cards ---------- */
+.cards {
+  display: grid;
+  gap: 18px;
+}
+.cols2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.cols3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.cols4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.card {
+  padding: 26px 24px;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: var(--brand-200);
+}
+.card h3 {
+  font-size: 17.5px;
+  line-height: 1.3;
+}
+.card p {
+  margin-top: 8px;
+  color: var(--ink-2);
+  font-size: 14.5px;
+}
+.cardCompact {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.cardCompact .cardIcon,
+.cardCompact .cardNum {
+  margin-bottom: 0;
+}
+.cardIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: var(--brand-50);
+  color: var(--brand);
+  margin-bottom: 16px;
+  transition: background 0.3s, color 0.3s;
+}
+.card:hover .cardIcon {
+  background: var(--brand);
+  color: #fff;
+}
+.cardIcon svg {
+  width: 24px;
+  height: 24px;
+}
+.cardNum {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--brand);
+  margin-bottom: 12px;
+}
+
+/* ---------- Split (image + bullets) ---------- */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+}
+.splitFlip .splitMedia {
+  order: 2;
+}
+.splitMedia img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+.splitText {
+  margin-top: 14px;
+}
+.ticks {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+.ticks li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: var(--ink-2);
+  font-size: 15.5px;
+}
+.ticks svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  color: var(--brand);
+  margin-top: 2px;
+}
+
+/* ---------- Steps ---------- */
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  counter-reset: step;
+}
+.steps li {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 22px;
+}
+.steps li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 46px;
+  right: -18px;
+  width: 18px;
+  height: 2px;
+  background: var(--brand-200);
+}
+.stepNum {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.steps h3 {
+  font-size: 17.5px;
+}
+.steps p {
+  margin-top: 8px;
+  color: var(--ink-2);
+  font-size: 14.5px;
+}
+
+/* ---------- Table ---------- */
+.tableWrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+  min-width: 720px;
+}
+.table th,
+.table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-top: 1px solid var(--line-2);
+}
+.table th {
+  background: var(--brand);
+  color: #fff;
+  font-weight: 700;
+  border: 0;
+}
+.table td:first-child {
+  font-weight: 700;
+  color: var(--brand-700);
+}
+.table tr:nth-child(even) td {
+  background: var(--bg-soft);
+}
+
+/* ---------- Tiles (Solar / Wind / BESS) ---------- */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.tile {
+  margin: 0;
+  text-align: center;
+}
+.tile img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  transition: transform 0.5s var(--ease);
+}
+.tile:hover img {
+  transform: translateY(-6px);
+}
+.tile figcaption {
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+}
+
+/* ---------- URS module grid ---------- */
+.modGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.modCard {
+  display: flex;
+  flex-direction: column;
+  padding: 26px 24px;
+  color: inherit;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s;
+}
+.modCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--brand);
+}
+.modIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: var(--brand-50);
+  color: var(--brand);
+  margin-bottom: 16px;
+  transition: background 0.3s, color 0.3s;
+}
+.modCard:hover .modIcon {
+  background: var(--brand);
+  color: #fff;
+}
+.modIcon svg {
+  width: 24px;
+  height: 24px;
+}
+.modCard h3 {
+  font-size: 18px;
+}
+.modCard ul {
+  margin: 12px 0 18px;
+  flex: 1;
+}
+.modCard li {
+  position: relative;
+  padding: 5px 0 5px 16px;
+  color: var(--ink-2);
+  font-size: 14.5px;
+}
+.modCard li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--brand);
+}
+.modMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 14.5px;
+  color: var(--brand);
+}
+.modMore svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s var(--ease);
+}
+.modCard:hover .modMore svg {
+  transform: translateX(4px);
+}
+.center {
+  text-align: center;
+  margin-top: 36px;
+}
+
+/* ---------- Hub (main 3 solutions) ---------- */
+.hubGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.hubCard {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: inherit;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.hubCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+.hubImg {
+  overflow: hidden;
+}
+.hubImg img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+.hubCard:hover .hubImg img {
+  transform: scale(1.05);
+}
+.hubBody {
+  padding: 22px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+.hubBody h3 {
+  font-size: 20px;
+}
+.hubBody p {
+  color: var(--ink-2);
+  font-size: 14.5px;
+  flex: 1;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1080px) {
+  .cols4,
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .steps li::after {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .intro,
+  .split {
+    grid-template-columns: 1fr;
+  }
+  .splitFlip .splitMedia {
+    order: 0;
+  }
+  .cols3,
+  .modGrid,
+  .hubGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .cols2,
+  .cols3,
+  .cols4,
+  .steps,
+  .modGrid,
+  .hubGrid {
+    grid-template-columns: 1fr;
+  }
+  .tiles {
+    gap: 10px;
+  }
+  .tile figcaption {
+    font-size: 15px;
+  }
+}

@@ -142,6 +142,186 @@
   color: var(--brand);
 }
 
+/* ---------- Solutions dropdown (desktop) ---------- */
+.dd {
+  position: relative;
+}
+.ddToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.ddToggle svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s var(--ease);
+}
+.dd:hover .ddToggle svg,
+.dd:focus-within .ddToggle svg {
+  transform: rotate(180deg);
+}
+.ddPanel {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  padding-top: 14px;
+  transform: translate(-50%, 8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
+}
+.dd:hover .ddPanel,
+.dd:focus-within .ddPanel {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+.ddMenu,
+.subMenu {
+  list-style: none;
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 20px 45px -18px rgba(13, 31, 45, 0.35);
+  padding: 8px;
+  min-width: 270px;
+}
+.ddMenu {
+  border-top: 3px solid var(--brand);
+}
+.ddMenu > li {
+  position: relative;
+}
+.ddLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: 9px;
+  font-weight: 700;
+  font-size: 14.5px;
+  color: var(--ink);
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.ddLink svg {
+  width: 16px;
+  height: 16px;
+  color: var(--muted);
+  transition: transform 0.25s var(--ease), color 0.2s;
+}
+.ddLink:hover,
+.ddActive,
+.hasSub:hover > .ddLink,
+.hasSub:focus-within > .ddLink {
+  background: var(--brand-50);
+  color: var(--brand);
+}
+.hasSub:hover > .ddLink svg,
+.hasSub:focus-within > .ddLink svg {
+  color: var(--brand);
+  transform: translateX(3px);
+}
+/* URS flyout */
+.subMenu {
+  position: absolute;
+  top: -11px;
+  left: 100%;
+  min-width: 210px;
+  margin-left: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-6px);
+  transition: opacity 0.22s var(--ease), transform 0.22s var(--ease), visibility 0.22s;
+}
+/* invisible bridge so the pointer can cross the gap */
+.subMenu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -12px;
+  width: 12px;
+}
+.hasSub:hover > .subMenu,
+.hasSub:focus-within > .subMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+/* ---------- Solutions accordion (mobile) ---------- */
+.mRow {
+  padding: 0 0 0 4px;
+}
+.mRow > a {
+  flex: 1;
+  padding: 18px 0;
+}
+.mToggle {
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--brand-50);
+  color: var(--brand-700);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.mToggle svg {
+  color: inherit;
+  transition: transform 0.3s var(--ease);
+}
+.mToggleOpen svg {
+  transform: rotate(180deg);
+}
+.mSub {
+  list-style: none;
+  margin: 0;
+  padding: 0 4px;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.3s var(--ease);
+}
+.mSub > li {
+  min-height: 0;
+}
+.mSubOpen {
+  padding: 8px 4px 12px;
+  grid-template-rows: none;
+  border-bottom: 1px solid var(--line);
+}
+.mSub:not(.mSubOpen) > li {
+  display: none;
+}
+.mSubLink {
+  display: block;
+  padding: 10px 12px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  border-radius: 8px;
+}
+.mSubLink:hover {
+  color: var(--brand);
+  background: var(--brand-50);
+}
+.mSubChildren {
+  list-style: none;
+  margin: 0 0 6px 12px;
+  padding-left: 12px;
+  border-left: 2px solid var(--brand-200);
+}
+.mSubChildren .mSubLink {
+  font-size: 15.5px;
+  padding: 8px 12px;
+  color: var(--ink-2);
+}
+
 @media (max-width: 960px) {
   .nav {
     display: none;
