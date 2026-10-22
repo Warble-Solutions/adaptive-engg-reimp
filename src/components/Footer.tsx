@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className={s.footer} id="site-footer">
       <div className={`container ${s.grid}`}>
         <div className={s.brand}>
-          <img src="/brand/logo.png" alt={COMPANY.name} width={264} height={80} className={s.logo} />
+          <img src="/brand/logo.png" alt={COMPANY.name} width={253} height={80} className={s.logo} />
           <p>
             India&apos;s Market Leader in Renewable Energy Technology – SCADA, PPC, EMS-BESS, PM-KUSUM solutions and
             LT/MV panels, engineered and manufactured in-house.

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Icon, { type IconName } from "@/components/Icon";
 import Testimonials from "@/components/Testimonials";
 import { Achievements, Clients, CtaBand, PageHero, SectionHead } from "@/components/Sections";
-import { ABOUT, CERTIFICATIONS, TEAM, VALUES } from "@/lib/content";
+import { ABOUT, CERTIFICATIONS, TEAM } from "@/lib/content";
 import s from "../inner.module.css";
 
 export const metadata: Metadata = {
@@ -57,7 +57,7 @@ function CertCard({ c, i, small = false }: { c: (typeof CERTIFICATIONS)[number];
 export default function AboutPage() {
   return (
     <>
-      <PageHero crumb="About Us" title="Engineering the backbone of India's clean energy" text={ABOUT.intro} image="/about/control-room.webp" />
+      <PageHero title="About Us" image="/about/control-room.webp" />
 
       {/* Who we are */}
       <section className="section" aria-labelledby="who-title">
@@ -68,15 +68,16 @@ export default function AboutPage() {
               India&apos;s <span className="accent">Market Leader</span> in Renewable Energy Technology
             </h2>
             <div className="lead">
+              <p>{ABOUT.intro}</p>
               {ABOUT.more.map((p) => (
                 <p key={p}>{p}</p>
               ))}
             </div>
           </div>
           <div className={`${s.collage} reveal`} style={{ "--d": "0.1s" } as React.CSSProperties}>
-            <img src="/about/team-group.webp" alt="The AEPL team" loading="lazy" />
-            <img src="/about/booth-1.webp" alt="AEPL booth at an industry expo" loading="lazy" />
-            <img src="/about/booth-2.webp" alt="AEPL team meeting visitors" loading="lazy" />
+            <img src="/hero/solar-wind.webp" alt="Utility-scale solar and wind plant" loading="lazy" />
+            <img src="/solutions/scada.webp" alt="SCADA control room monitoring renewable assets" loading="lazy" />
+            <img src="/hero/lt-mv-panels.webp" alt="AEPL LT/MV switchgear panels" loading="lazy" />
           </div>
         </div>
       </section>
@@ -94,23 +95,20 @@ export default function AboutPage() {
               <strong>{ABOUT.mission}</strong>
             </div>
           </div>
-          <SectionHead
-            eyebrow="Our values"
-            id="values-title"
-            title={
-              <>
-                We <span className="accent">SCALE</span> together
-              </>
-            }
-          />
-          <div className={s.values}>
-            {VALUES.map((v, i) => (
-              <div key={v.letter} className={`card ${s.value} reveal`} style={{ "--d": `${i * 0.06}s` } as React.CSSProperties}>
-                <b>{v.letter}</b>
-                <span>{v.title}</span>
-              </div>
-            ))}
+          <div className="section-head reveal">
+            <h2 className="eyebrow" id="values-title">
+              Our values
+            </h2>
           </div>
+          <figure className={`${s.scaleImg} reveal`}>
+            <img
+              src="/about/scale.webp"
+              width={1566}
+              height={784}
+              loading="lazy"
+              alt="Our values – SCALE: Speed, Courage & Commitment, Adapt, Liveliness, Evolve to Excel"
+            />
+          </figure>
         </div>
       </section>
 

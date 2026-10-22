@@ -70,12 +70,10 @@ export const VALUES = [
 ];
 
 export const ADVANTAGES = [
-  { title: "Complete E&I Expertise", desc: "Expertise in complete Electrical and Automation Solutions – switchboard to dashboard.", icon: "cpu" },
-  { title: "Customised Solutions", desc: "Customized solutions based on each client's needs and challenges.", icon: "bulb" },
-  { title: "Proven Track Record", desc: "Strong track record of delivering quality projects – 750+ commissioned.", icon: "shield" },
-  { title: "OEM Partnerships", desc: "OEM partnerships for best-in-class hardware.", icon: "layers" },
-  { title: "Turnkey Project Experts", desc: "One trusted team from engineering to handover – zero integration gaps.", icon: "rocket" },
-  { title: "First-Time-Right Commissioning", desc: "Time-saving and cost-effective commissioning backed by standardised processes.", icon: "check" },
+  { title: "Expertise in complete Electrical and Automation Solutions", icon: "cpu" },
+  { title: "Customized solutions based on client's needs and challenges", icon: "bulb" },
+  { title: "Strong track record of delivering quality projects", icon: "shield" },
+  { title: "OEM partnerships for best-in-class hardware", icon: "layers" },
 ] as const;
 
 // ---------------------------------------------------------------------------
@@ -336,19 +334,60 @@ export const SOLUTIONS: Solution[] = [
 ];
 
 /** Unified Renewable Solution – from Corporate Brochure p3 */
-export const URS = {
+export type UrsModule = {
+  name: string;
+  icon: string;
+  items: string[];
+  /** Link to a detailed section on the Solutions page, if one exists */
+  href?: string;
+  brochure?: keyof typeof BROCHURES;
+};
+
+export const URS: { title: string; tagline: string; desc: string; modules: UrsModule[] } = {
   title: "Unified Renewable Solution",
   tagline: "One platform, plant to portfolio",
   desc: "URS unifies acquisition, control and reporting across solar, wind, BESS and hybrid assets – from a single inverter to a national fleet.",
+  // Order agreed with the AEPL team: SCADA, PPC, AMS, CMS, Advanced Analytics, EMS-BESS
   modules: [
-    { name: "SCADA", items: ["Flexible & scalable architecture", "Rich set of renewable libraries", "Seamless handling of 10,00,000+ tags", "Refined interface from decades of experience"] },
-    { name: "PPC", items: ["Grid code compliant", "HIL type tested", "AGC ready", "Forecast & schedule synchronization"] },
-    { name: "CMS", items: ["Insightful view of the entire portfolio", "Measure KPIs against targeted data", "ML based anomaly detection", "Conversational AI"] },
-    { name: "Advanced Analytics", items: ["Advanced data visualization", "Accurate loss buckets", "Custom report builder", "Analyse historical data"] },
-    { name: "AMS / CMMS", items: ["Automated work order management", "Standardized SOPs across enterprise", "Reduced mean time to repair", "Cost control & inventory management"] },
-    { name: "EMS-BESS", items: ["Indigenous solution", "ML based energy arbitrage", "State of Charge (SoC) management", "Peak shaving, grid support"] },
+    { name: "SCADA", icon: "monitor", href: "/solutions/#plant-scada", brochure: "scada", items: ["Flexible & scalable architecture", "Rich set of renewable libraries", "Seamless handling of 10,00,000+ tags", "Refined interface from decades of experience"] },
+    { name: "PPC", icon: "gauge", href: "/solutions/#ppc", brochure: "ppc", items: ["Grid code compliant", "HIL type tested", "AGC ready", "Forecast & schedule synchronization"] },
+    { name: "AMS", icon: "wrench", items: ["Automated work order management", "Standardized SOPs across enterprise", "Reduced mean time to repair", "Cost control & inventory management"] },
+    { name: "CMS", icon: "grid", items: ["Insightful view of the entire portfolio", "Measure KPIs against targeted data", "ML based anomaly detection", "Conversational AI"] },
+    { name: "Advanced Analytics", icon: "chart", items: ["Advanced data visualization", "Accurate loss buckets", "Custom report builder", "Analyse historical data"] },
+    { name: "EMS - BESS", icon: "battery", href: "/solutions/#ems-bess", brochure: "ems", items: ["Indigenous solution", "ML based energy arbitrage", "State of Charge (SoC) management", "Peak shaving, grid support"] },
   ],
 };
+
+/** Homepage "Our Solutions" – the 3 main solutions, in this order. */
+export const MAIN_SOLUTIONS: { id: string; name: string; short: string; summary: string; image: string; href: string; brochure: keyof typeof BROCHURES }[] = [
+  {
+    id: "urs",
+    name: "Unified Renewable Solution (URS)",
+    short: "URS",
+    summary: "SCADA, PPC, AMS, CMS, Advanced Analytics and EMS-BESS on one platform – acquisition, control and reporting from a single inverter to a national fleet.",
+    image: "/solutions/urs.webp",
+    href: "/solutions/#urs",
+    brochure: "corporate",
+  },
+  {
+    id: "pm-kusum",
+    name: "PM KUSUM",
+    short: "PM-KUSUM",
+    summary: SOLUTIONS.find((x) => x.id === "pm-kusum")!.summary,
+    image: "/solutions/pm-kusum.webp",
+    href: "/solutions/#pm-kusum",
+    brochure: "kusum",
+  },
+  {
+    id: "lt-mv-panels",
+    name: "LT/MV Panels",
+    short: "LT/MV Panels",
+    summary: SOLUTIONS.find((x) => x.id === "lt-mv-panels")!.summary,
+    image: "/solutions/panels.webp",
+    href: "/solutions/#lt-mv-panels",
+    brochure: "panels",
+  },
+];
 
 /** LT/MV type test results – LT/MV flyer p2 */
 export const PANEL_TESTS = {
@@ -413,11 +452,11 @@ export const TEAM: { name: string; photo: string; role?: string }[] = [
 ];
 
 export const HERO_SLIDES = [
-  { image: "/hero/solar-bess.webp", eyebrow: "India's Market Leader", title: "Renewable Energy Technology", text: "SCADA, PPC, EMS-BESS and LT/MV panels for utility-scale solar, wind, BESS and hybrid plants.", cta: { label: "Explore Solutions", href: "/solutions/" } },
-  { image: "/hero/scada.webp", eyebrow: "Plant SCADA", title: "90GW+ Monitored", text: "Complete visibility. Reliable data. Smarter plant decisions – from portfolio to plant to device.", cta: { label: "Plant SCADA", href: "/solutions/#plant-scada" } },
-  { image: "/hero/solar-wind.webp", eyebrow: "Power Plant Controller", title: "India's First HIL Tested PPC", text: "Proven in every trial – till COD and beyond. Grid code compliant and AGC ready.", cta: { label: "Power Plant Controller", href: "/solutions/#ppc" } },
-  { image: "/hero/lt-mv-panels.webp", eyebrow: "LT/MV Panels", title: "Switchboard to Dashboard", text: "15000+ type-tested panels delivered from our 2,00,000 sq.ft+ dust-free manufacturing facility.", cta: { label: "LT/MV Panels", href: "/solutions/#lt-mv-panels" } },
-  { image: "/hero/pm-kusum.webp", eyebrow: "PM-KUSUM", title: "One Stop Solution", text: "RMS, CMS, AMS, ReportWiz and WMS across 2000+ sites – with local SCADA that works without internet.", cta: { label: "PM-KUSUM Solutions", href: "/solutions/#pm-kusum" } },
+  { image: "/hero/solar-bess.webp", subtitle: "Renewable Energy Technology" },
+  { image: "/hero/scada.webp", subtitle: "Plant SCADA" },
+  { image: "/hero/solar-wind.webp", subtitle: "Power Plant Controller" },
+  { image: "/hero/lt-mv-panels.webp", subtitle: "LT/MV Panels" },
+  { image: "/hero/pm-kusum.webp", subtitle: "PM-KUSUM" },
 ];
 
 export const NAV = [

@@ -15,12 +15,7 @@ export default function ResourcesPage() {
   const docs = Object.values(BROCHURES);
   return (
     <>
-      <PageHero
-        crumb="Resources"
-        title="Brochures & Flyers"
-        text="Everything you need to evaluate AEPL solutions – download the latest brochures and flyers."
-        image="/hero/scada.webp"
-      />
+      <PageHero title="Resources" image="/hero/scada.webp" />
 
       <section className="section" aria-labelledby="docs-title">
         <div className="container">

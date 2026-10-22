@@ -16,12 +16,7 @@ export const metadata: Metadata = {
 export default function SolutionsPage() {
   return (
     <>
-      <PageHero
-        crumb="Solutions"
-        title="Solutions for Solar, Wind, BESS & Hybrid"
-        text="From switchboard to dashboard – SCADA, PPC, EMS and LT/MV panels engineered, manufactured and commissioned in-house by one trusted team."
-        image="/hero/solar-bess.webp"
-      />
+      <PageHero title="Solutions" image="/hero/solar-bess.webp" />
       <PortfolioStrip />
 
       <nav className={s.subnav} aria-label="Solutions">

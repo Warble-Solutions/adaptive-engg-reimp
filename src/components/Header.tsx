@@ -36,7 +36,7 @@ export default function Header() {
     <header className={`${s.header} ${scrolled || open ? s.scrolled : ""}`} id="site-header">
       <div className={`container ${s.inner}`}>
         <Link href="/" className={s.logo} aria-label={`${COMPANY.name} – Home`} id="header-logo">
-          <img src="/brand/logo.png" alt={COMPANY.name} width={232} height={70} />
+          <img src="/brand/logo.png" alt={COMPANY.name} width={222} height={70} />
         </Link>
 
         <nav className={s.nav} aria-label="Main">
@@ -53,10 +53,6 @@ export default function Header() {
         </nav>
 
         <div className={s.actions}>
-          <a href={COMPANY.phoneHref} className={s.phone} id="header-phone">
-            <Icon name="phone" />
-            <span>{COMPANY.phone}</span>
-          </a>
           <Link href="/contact/" className="btn btn-sm" id="header-cta">
             Let&apos;s Connect
           </Link>
@@ -87,9 +83,6 @@ export default function Header() {
             </Link>
           ))}
           <div className={s.mContact}>
-            <a href={COMPANY.phoneHref}>
-              <Icon name="phone" /> {COMPANY.phone}
-            </a>
             <a href={`mailto:${COMPANY.email}`}>
               <Icon name="mail" /> {COMPANY.email}
             </a>

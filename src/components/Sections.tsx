@@ -71,17 +71,11 @@ export function Advantages() {
       <div className="container">
         <div className={s.advGrid}>
           <div className={s.advIntro}>
-            <SectionHead
-              left
-              eyebrow="Why choose us"
-              id="advantage-title"
-              title={
-                <>
-                  The <span className="accent">AEPL</span> Advantage
-                </>
-              }
-              lead="One trusted team from switchboard to dashboard – engineered, manufactured and commissioned in-house for zero integration gaps."
-            />
+            <div className="section-head left reveal">
+              <h2 className="h2" id="advantage-title">
+                The <span className="accent">AEPL</span> Advantage
+              </h2>
+            </div>
             <div className={`${s.advImg} reveal`}>
               <img src="/about/team-group.webp" alt="The Adaptive Engineering team" loading="lazy" />
               <div className={s.advBadge}>
@@ -96,10 +90,7 @@ export function Advantages() {
                 <span className={s.advIcon}>
                   <Icon name={a.icon as IconName} />
                 </span>
-                <div>
-                  <h3>{a.title}</h3>
-                  <p>{a.desc}</p>
-                </div>
+                <h3>{a.title}</h3>
               </div>
             ))}
           </div>
@@ -193,17 +184,12 @@ export function CtaBand() {
   );
 }
 
-export function PageHero({ title, text, image, crumb }: { title: string; text: string; image: string; crumb: string }) {
+/** Simple inner-page banner: white page title over a photo. */
+export function PageHero({ title, image }: { title: string; image: string }) {
   return (
     <section className="page-hero" style={{ "--img": `url(${image})` } as React.CSSProperties}>
       <div className="container">
-        <nav className="crumbs" aria-label="Breadcrumb">
-          <Link href="/">Home</Link>
-          <span aria-hidden="true">/</span>
-          <span aria-current="page">{crumb}</span>
-        </nav>
         <h1>{title}</h1>
-        <p>{text}</p>
       </div>
     </section>
   );

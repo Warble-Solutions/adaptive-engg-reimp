@@ -70,19 +70,6 @@
   align-items: center;
   gap: 14px;
 }
-.phone {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 700;
-  font-size: 14px;
-  color: var(--ink);
-}
-.phone svg {
-  width: 16px;
-  height: 16px;
-  color: var(--brand);
-}
 
 .burger {
   display: none;
@@ -155,11 +142,6 @@
   color: var(--brand);
 }
 
-@media (max-width: 1180px) {
-  .phone {
-    display: none;
-  }
-}
 @media (max-width: 960px) {
   .nav {
     display: none;

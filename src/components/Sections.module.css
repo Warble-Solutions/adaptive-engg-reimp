@@ -127,11 +127,7 @@
 }
 .advCard h3 {
   font-size: 18px;
-  margin-bottom: 6px;
-}
-.advCard p {
-  color: var(--ink-2);
-  font-size: 14.5px;
+  line-height: 1.4;
 }
 .advIcon {
   width: 52px;
