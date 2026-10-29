@@ -20,16 +20,9 @@ export default function CareersPage() {
 
       <section className="section" aria-labelledby="open-roles-title">
         <div className="container">
-          <div className="section-head reveal">
-            <span className="eyebrow">Join AEPL</span>
-            <h2 className="h2" id="open-roles-title">
-              Help power India&apos;s clean energy future
-            </h2>
-            <p className="lead">
-              Work with the team behind 90GW+ of monitored renewable capacity. Explore our current openings in Ahmedabad and apply online – attach your resume (a cover letter is optional) and
-              our HR team will take it from there.
-            </p>
-          </div>
+          <h2 className="sr-only" id="open-roles-title">
+            Open positions
+          </h2>
 
           <div className={s.jobGrid}>
             {JOBS.map((j, i) => (

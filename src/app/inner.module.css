@@ -695,7 +695,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
-  margin-top: 40px;
 }
 .jobCard {
   padding: 28px;
