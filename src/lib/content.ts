@@ -31,21 +31,22 @@ export type Stat = { value: number; prefix?: string; suffix: string; label: stri
 
 /** Achievements – from the Corporate Brochure (cover + "Who we are"). */
 export const STATS: Stat[] = [
-  { value: 90, suffix: "GW+", label: "Monitored" },
-  { value: 60, suffix: "%+", label: "Market Share" },
   { value: 16, suffix: "+", label: "Years of Expertise" },
-  { value: 2500, suffix: "+", label: "Sites" },
-  { value: 750, suffix: "+", label: "Commissioned Projects" },
-  { value: 500, suffix: "+", label: "Customers" },
-  { value: 15000, suffix: "+", label: "Panels Delivered" },
+  { value: 60, suffix: "%+", label: "Market Share" },
+  { value: 90, suffix: "GW+", label: "Monitored" },
   { value: 8, suffix: "GWh+", label: "EMS-BESS" },
+  { value: 15000, suffix: "+", label: "Panels Delivered" },
+  { value: 500, suffix: "+", label: "Customers" },
+  { value: 2500, suffix: "+", label: "Sites" },
+  { value: 2, suffix: " Lacs sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
+  { value: 750, suffix: "+", label: "Commissioned Projects" },
   { value: 450, suffix: "+", label: "Manpower" },
   { value: 40, suffix: "GW", label: "Annual Execution Capacity" },
-  { value: 200000, suffix: " sq.ft+", label: "Dust-Free Manufacturing Facility" },
   { value: 1000000, suffix: "+", label: "Tags in a Single Project" },
 ];
 
-export const HEADLINE_STATS: Stat[] = [STATS[0], STATS[1], STATS[3], STATS[2]];
+const stat = (label: string) => STATS.find((x) => x.label === label)!;
+export const HEADLINE_STATS: Stat[] = [stat("Monitored"), stat("Market Share"), stat("Sites"), stat("Years of Expertise")];
 
 export const ABOUT = {
   intro:
