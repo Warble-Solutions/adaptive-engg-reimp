@@ -50,13 +50,13 @@
   color: #fff;
   line-height: 1.1;
   font-variant-numeric: tabular-nums;
+  text-wrap: balance;
 }
 :global(.section-soft) .statVal {
   color: var(--brand);
 }
 .statVal :global(.stat-suffix) {
-  font-size: 0.62em;
-  margin-left: 2px;
+  font-size: inherit; /* same size as the number */
 }
 .statLabel {
   font-size: 13px;
