@@ -148,17 +148,19 @@ export default function AboutPage() {
       <section className="section section-soft" id="team" aria-labelledby="team-title">
         <div className="container">
           <SectionHead eyebrow="Our team" id="team-title" title="The people behind AEPL" lead="450+ engineers, technicians and specialists – one trusted team from engineering to handover." />
-          <div className={s.team}>
-            {TEAM.map((m, i) => (
-              <div key={m.photo} className={`card ${s.member} reveal`} style={{ "--d": `${(i % 5) * 0.05}s` } as React.CSSProperties}>
-                <img src={m.photo} alt={m.name} loading="lazy" />
-                <div>
-                  <h3>{m.name}</h3>
-                  {m.role && <p>{m.role}</p>}
+          {[TEAM.filter((m) => m.featured), TEAM.filter((m) => !m.featured)].map((group, g) => (
+            <div key={g} className={g === 0 ? s.teamTop : s.team}>
+              {group.map((m, i) => (
+                <div key={m.photo} className={`card ${s.member} reveal`} style={{ "--d": `${(i % 4) * 0.05}s` } as React.CSSProperties}>
+                  <img src={m.photo} alt={m.name} loading="lazy" />
+                  <div>
+                    <h3>{m.name}</h3>
+                    {m.role && <p>{m.role}</p>}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ))}
         </div>
       </section>
 

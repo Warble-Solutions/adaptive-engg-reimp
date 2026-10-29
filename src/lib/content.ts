@@ -426,22 +426,22 @@ export const CERTIFICATIONS = [
  * Leadership & team – photos from the company archive.
  * TODO: add designations (`role`) – leave empty to show name only.
  */
-export const TEAM: { name: string; photo: string; role?: string }[] = [
-  { name: "Ajit Patel", photo: "/team/ajit-patel.webp", role: "CTO" },
-  { name: "Manish Malkan", photo: "/team/manish-malkan.webp", role: "Head AMC" },
+/** Leadership first (`featured` = larger cards in the top row), then by designation. */
+export const TEAM: { name: string; photo: string; role?: string; featured?: boolean }[] = [
+  { name: "Jay Patel", photo: "/team/jay-patel.webp", role: "Director", featured: true },
+  { name: "Chirag Soni", photo: "/team/chirag-soni.webp", role: "Managing Director", featured: true },
   { name: "Keyur Amin", photo: "/team/keyur-amin.webp", role: "CEO" },
-  { name: "Jay Patel", photo: "/team/jay-patel.webp", role: "Director" },
-  { name: "Ketan Patel", photo: "/team/ketan-patel.webp" },
-  { name: "Chintan Patel", photo: "/team/chintan-patel.webp", role: "Head - Sales" },
-  { name: "Chirag Soni", photo: "/team/chirag-soni.webp", role: "Managing Director" },
-  { name: "Darshan Goswami", photo: "/team/darshan-goswami.webp", role: "Head - Renewable Energy Business" },
-  { name: "Harshang Dhandhukiya", photo: "/team/harshang-dhandhukiya.webp", role: "Head - Finance" },
+  { name: "Ajit Patel", photo: "/team/ajit-patel.webp", role: "CTO" },
   { name: "Jay Patel", photo: "/team/jay-patel-ops.webp", role: "Director" },
-  { name: "Kundan Singh Rajput", photo: "/team/kundan-singh-rajput.webp" },
-  { name: "Nilesh Prajapati", photo: "/team/nilesh-prajapati.webp" },
-  { name: "Pragnesh Patel", photo: "/team/pragnesh-patel.webp", role: "AGM - IoTWiz" },
+  { name: "Darshan Goswami", photo: "/team/darshan-goswami.webp", role: "Head - Renewable Energy Business" },
+  { name: "Chintan Patel", photo: "/team/chintan-patel.webp", role: "Head - Sales" },
+  { name: "Harshang Dhandhukiya", photo: "/team/harshang-dhandhukiya.webp", role: "Head - Finance" },
   { name: "Rutvik Dave", photo: "/team/rutvik-dave.webp", role: "Head - Software Development" },
   { name: "Yogendra Singh Bhati", photo: "/team/yogendra-singh-bhati.webp", role: "Head - Service" },
+  { name: "Manish Malkan", photo: "/team/manish-malkan.webp", role: "Head AMC" },
+  { name: "Pragnesh Patel", photo: "/team/pragnesh-patel.webp", role: "AGM - IoTWiz" },
+  { name: "Kundan Singh Rajput", photo: "/team/kundan-singh-rajput.webp" },
+  { name: "Nilesh Prajapati", photo: "/team/nilesh-prajapati.webp" },
 ];
 
 /** Homepage banners. A slide with `title` shows only that line (no subtitle). */
