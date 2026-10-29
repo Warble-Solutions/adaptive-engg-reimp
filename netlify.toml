@@ -127,8 +127,8 @@
   status = 302
 [[redirects]]
   from = "/career/*"
-  to = "/contact/"
-  status = 302
+  to = "/careers/"
+  status = 301
 
 [[headers]]
   for = "/brochures/*"

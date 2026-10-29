@@ -457,6 +457,7 @@ export const NAV = [
   { label: "Solutions", href: "/solutions/" },
   { label: "About Us", href: "/about/" },
   { label: "Resources", href: "/resources/" },
+  { label: "Careers", href: "/careers/" },
   { label: "Contact Us", href: "/contact/" },
 ];
 

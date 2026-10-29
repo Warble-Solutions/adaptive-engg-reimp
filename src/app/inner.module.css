@@ -690,6 +690,161 @@
   color: var(--brand);
 }
 
+/* ---------- Careers ---------- */
+.jobGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+.jobCard {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: inherit;
+}
+.jobCard p {
+  color: var(--ink-2);
+  font-size: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.jobDept {
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand);
+  background: var(--brand-50);
+  padding: 5px 12px;
+  border-radius: 14px;
+}
+.jobMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+.jobMeta li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.jobMeta svg {
+  width: 16px;
+  height: 16px;
+  color: var(--brand);
+}
+.jobCta {
+  margin-top: auto;
+  padding-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--brand);
+}
+.jobCta svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s;
+}
+.jobCard:hover .jobCta svg {
+  transform: translateX(4px);
+}
+.jobNote {
+  margin-top: 36px;
+  text-align: center;
+  color: var(--ink-2);
+}
+.jobNote a {
+  font-weight: 700;
+  color: var(--brand);
+}
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 24px;
+  font-weight: 700;
+  color: var(--brand);
+}
+.back svg {
+  width: 18px;
+  height: 18px;
+}
+.jobLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 48px;
+  align-items: start;
+}
+.jobBlock {
+  margin-top: 36px;
+}
+.jobH {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+.jobAside {
+  position: sticky;
+  top: calc(var(--header-h) + 24px);
+}
+.jobFacts {
+  padding: 8px 24px;
+}
+.jobFacts div {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.jobFacts div:last-child {
+  border-bottom: 0;
+}
+.jobFacts dt {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.jobFacts dd {
+  margin: 4px 0 0;
+  font-weight: 700;
+  color: var(--ink);
+}
+.applyBox {
+  max-width: 820px;
+  margin: 0 auto;
+}
+@media (max-width: 960px) {
+  .jobGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .jobLayout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .jobAside {
+    position: static;
+    order: -1;
+  }
+}
+@media (max-width: 640px) {
+  .jobGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- 404 ---------- */
 .notFound {
   min-height: 70vh;
