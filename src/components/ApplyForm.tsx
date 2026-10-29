@@ -8,7 +8,10 @@ import Icon from "./Icon";
 
 // Google Apps Script web app (see /apps-script/careers.gs). It emails the application,
 // with resume + cover letter attached, to the HR recipients configured in that script.
-const ENDPOINT = process.env.NEXT_PUBLIC_CAREERS_ENDPOINT || "";
+// The URL is public by design (it is visible in the page code either way). NEXT_PUBLIC_CAREERS_ENDPOINT overrides it.
+const ENDPOINT =
+  process.env.NEXT_PUBLIC_CAREERS_ENDPOINT ||
+  "https://script.google.com/macros/s/AKfycbwsBEBsdGS4GNly7cSS1G_yJITUmCVQY9PvL669jDv62fkUeDHwvpe0lRwzELrOJCkQ3A/exec";
 
 const MAX_BYTES = 3 * 1024 * 1024; // per file
 const ALLOWED = [".pdf", ".doc", ".docx"];
