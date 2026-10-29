@@ -428,8 +428,8 @@ export const CERTIFICATIONS = [
  */
 /** Leadership first (`featured` = larger cards in the top row), then by designation. */
 export const TEAM: { name: string; photo: string; role?: string; featured?: boolean }[] = [
-  { name: "Jay Patel", photo: "/team/jay-patel.webp", role: "Director", featured: true },
   { name: "Chirag Soni", photo: "/team/chirag-soni.webp", role: "Managing Director", featured: true },
+  { name: "Jay Patel", photo: "/team/jay-patel.webp", role: "Director", featured: true },
   { name: "Keyur Amin", photo: "/team/keyur-amin.webp", role: "CEO" },
   { name: "Ajit Patel", photo: "/team/ajit-patel.webp", role: "CTO" },
   { name: "Jay Patel", photo: "/team/jay-patel-ops.webp", role: "Director" },
