@@ -740,22 +740,16 @@
   height: 16px;
   color: var(--brand);
 }
-.jobCta {
+.jobBtn {
   margin-top: auto;
-  padding-top: 6px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 700;
-  color: var(--brand);
+  align-self: flex-start;
 }
-.jobCta svg {
-  width: 18px;
-  height: 18px;
-  transition: transform 0.2s;
+.jobCard:hover .jobBtn {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -12px color-mix(in srgb, var(--brand) 70%, transparent);
 }
-.jobCard:hover .jobCta svg {
-  transform: translateX(4px);
+.jobCard:hover .jobBtn svg {
+  transform: translateX(3px);
 }
 .jobNote {
   margin-top: 36px;

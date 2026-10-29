@@ -40,8 +40,8 @@ export default function CareersPage() {
                   </li>
                 </ul>
                 <p>{j.summary}</p>
-                <span className={s.jobCta}>
-                  View details &amp; apply <Icon name="arrow" />
+                <span className={`btn ${s.jobBtn}`}>
+                  Apply Now <Icon name="arrow" />
                 </span>
               </Link>
             ))}
