@@ -352,6 +352,27 @@
   margin-top: 36px;
 }
 
+/* 5-per-row variant (panel range) */
+.modGrid5 {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+.modGrid5 .modCard {
+  padding: 22px 18px;
+}
+.modGrid5 .modCard h3 {
+  font-size: 16px;
+  line-height: 1.3;
+}
+.modGrid5 .modCard li {
+  font-size: 13.5px;
+}
+@media (max-width: 1080px) {
+  .modGrid5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* ---------- Hub (main 3 solutions) ---------- */
 .hubGrid {
   display: grid;

@@ -10,8 +10,9 @@
   NODE_VERSION = "22"
 
 # ---------------------------------------------------------------------------
-# Old WordPress URLs → new pages (keeps Google links & bookmarks working)
+# Old WordPress URLs â†’ new pages (keeps Google links & bookmarks working)
 # ---------------------------------------------------------------------------
+# Company
 [[redirects]]
   from = "/aboutus/*"
   to = "/about/"
@@ -37,17 +38,31 @@
   to = "/contact/"
   status = 301
 [[redirects]]
+  from = "/career/*"
+  to = "/careers/"
+  status = 301
+# Resources
+[[redirects]]
   from = "/brochure/*"
-  to = "/resources/"
+  to = "/resources/brochures/"
   status = 301
 [[redirects]]
   from = "/case-studies/*"
-  to = "/resources/"
+  to = "/resources/case-studies/"
   status = 301
 [[redirects]]
   from = "/blogs/*"
-  to = "/resources/"
+  to = "/resources/blogs/"
   status = 301
+[[redirects]]
+  from = "/blogs4/*"
+  to = "/resources/blogs/"
+  status = 301
+[[redirects]]
+  from = "/feed/*"
+  to = "/resources/blogs/"
+  status = 301
+# Unified Renewable Solution
 [[redirects]]
   from = "/plant-scada/*"
   to = "/solutions/urs/scada/"
@@ -64,12 +79,9 @@
   from = "/unified-renewable-solution/*"
   to = "/solutions/urs/"
   status = 301
+# PM KUSUM, panels
 [[redirects]]
   from = "/pm-kusum/*"
-  to = "/solutions/pm-kusum/"
-  status = 301
-[[redirects]]
-  from = "/solarwiz-solar-solutions/*"
   to = "/solutions/pm-kusum/"
   status = 301
 [[redirects]]
@@ -80,29 +92,79 @@
   from = "/electrical-panels-2/*"
   to = "/solutions/lt-mv-panels/"
   status = 301
+# Water
 [[redirects]]
-  from = "/renewable-energy/*"
-  to = "/solutions/"
+  from = "/water-solutions/*"
+  to = "/solutions/water/"
   status = 301
 [[redirects]]
-  from = "/solar-solutions/*"
-  to = "/solutions/"
+  from = "/water-treatment-plants-and-water-supply-schemes/*"
+  to = "/solutions/water/wtp/"
   status = 301
 [[redirects]]
-  from = "/hybrid-solutions/*"
-  to = "/solutions/"
+  from = "/sewage-treatment-plant-stp/*"
+  to = "/solutions/water/stp/"
+  status = 301
+[[redirects]]
+  from = "/effluent-treatment-plant-etp/*"
+  to = "/solutions/water/etp/"
+  status = 301
+[[redirects]]
+  from = "/lift-irrigation/*"
+  to = "/solutions/water/lift-irrigation/"
+  status = 301
+[[redirects]]
+  from = "/micro-irrigation/*"
+  to = "/solutions/water/micro-irrigation/"
+  status = 301
+[[redirects]]
+  from = "/centralized-scada-system/*"
+  to = "/solutions/water/centralized-scada/"
+  status = 301
+# Industrial IoT
+[[redirects]]
+  from = "/industrial-iot/*"
+  to = "/solutions/industrial-iot/"
+  status = 301
+[[redirects]]
+  from = "/solarwiz-solar-solutions/*"
+  to = "/solutions/industrial-iot/solarwiz/"
+  status = 301
+[[redirects]]
+  from = "/waterwiz/*"
+  to = "/solutions/industrial-iot/waterwiz/"
+  status = 301
+[[redirects]]
+  from = "/machinewiz/*"
+  to = "/solutions/industrial-iot/machinewiz/"
   status = 301
 [[redirects]]
   from = "/asset-management/*"
-  to = "/solutions/urs/ams/"
+  to = "/solutions/industrial-iot/asset-management/"
   status = 301
 [[redirects]]
   from = "/asset-management-2/*"
-  to = "/solutions/urs/ams/"
+  to = "/solutions/industrial-iot/asset-management/"
   status = 301
-# Remaining old sections not covered by the REI site → Solutions overview
+# Not on the new site yet â†’ Solutions overview (temporary)
 [[redirects]]
-  from = "/water-solutions/*"
+  from = "/renewable-energy/*"
+  to = "/solutions/"
+  status = 302
+[[redirects]]
+  from = "/solar-solutions/*"
+  to = "/solutions/"
+  status = 302
+[[redirects]]
+  from = "/hybrid-solutions/*"
+  to = "/solutions/"
+  status = 302
+[[redirects]]
+  from = "/international-projects/*"
+  to = "/solutions/"
+  status = 302
+[[redirects]]
+  from = "/industrial-automation-solution/*"
   to = "/solutions/"
   status = 302
 [[redirects]]
@@ -114,23 +176,221 @@
   to = "/solutions/"
   status = 302
 [[redirects]]
-  from = "/industrial-automation-solution/*"
-  to = "/solutions/"
-  status = 302
-[[redirects]]
-  from = "/industrial-iot/*"
+  from = "/datacenter/*"
   to = "/solutions/"
   status = 302
 [[redirects]]
   from = "/turnkey/*"
   to = "/solutions/"
   status = 302
+# Old blog posts â†’ /resources/blogs/<post>/
 [[redirects]]
-  from = "/career/*"
-  to = "/careers/"
+  from = "/unlocking-renewable-energy-insights-with-reportwiz/*"
+  to = "/resources/blogs/unlocking-renewable-energy-insights-with-reportwiz/"
+  status = 301
+[[redirects]]
+  from = "/embracing-the-future-of-power-the-rise-of-hybrid-ac-dc-systems/*"
+  to = "/resources/blogs/embracing-the-future-of-power-the-rise-of-hybrid-ac-dc-systems/"
+  status = 301
+[[redirects]]
+  from = "/edge-ai-and-scada-transforming-water-management-2/*"
+  to = "/resources/blogs/embracing-the-future-of-power-the-rise-of-hybrid-ac-dc-systems/"
+  status = 301
+[[redirects]]
+  from = "/edge-ai-and-scada-transforming-water-management/*"
+  to = "/resources/blogs/edge-ai-and-scada-transforming-water-management/"
+  status = 301
+[[redirects]]
+  from = "/how-iec-61499-speeds-up-digitalization/*"
+  to = "/resources/blogs/how-iec-61499-speeds-up-digitalization/"
+  status = 301
+[[redirects]]
+  from = "/how-to-maintain-solar-panels-for-maximum-efficiency/*"
+  to = "/resources/blogs/how-to-maintain-solar-panels-for-maximum-efficiency/"
+  status = 301
+[[redirects]]
+  from = "/preventing-plant-failures-with-change-management/*"
+  to = "/resources/blogs/preventing-plant-failures-with-change-management/"
+  status = 301
+[[redirects]]
+  from = "/software-defined-automation-sda-for-smarter-industry/*"
+  to = "/resources/blogs/software-defined-automation-sda-for-smarter-industry/"
+  status = 301
+[[redirects]]
+  from = "/key-power-sector-developments-in-the-mena-region/*"
+  to = "/resources/blogs/key-power-sector-developments-in-the-mena-region/"
+  status = 301
+[[redirects]]
+  from = "/whats-new-in-plant-scada-for-2026/*"
+  to = "/resources/blogs/whats-new-in-plant-scada-for-2026/"
+  status = 301
+[[redirects]]
+  from = "/digital-tools-driving-the-clean-energy-transformation-the-impact-of-scada-and-cms/*"
+  to = "/resources/blogs/digital-tools-driving-the-clean-energy-transformation-the-impact-of-scada-and-cms/"
+  status = 301
+[[redirects]]
+  from = "/remote-monitoring-enhances-industrial-operations/*"
+  to = "/resources/blogs/remote-monitoring-enhances-industrial-operations/"
+  status = 301
+[[redirects]]
+  from = "/biofuels-and-saf-advancing-energy-transition-through-digitalization-and-electrification/*"
+  to = "/resources/blogs/biofuels-and-saf-advancing-energy-transition-through-digitalization-and-electrification/"
+  status = 301
+[[redirects]]
+  from = "/how-power-quality-affects-effective-electrical-asset-use/*"
+  to = "/resources/blogs/how-power-quality-affects-effective-electrical-asset-use/"
+  status = 301
+[[redirects]]
+  from = "/shaping-tomorrow-innovations-and-uses-of-ai-in-energy-systems/*"
+  to = "/resources/blogs/shaping-tomorrow-innovations-and-uses-of-ai-in-energy-systems/"
+  status = 301
+[[redirects]]
+  from = "/11-reasons-why-more-businesses-are-switching-to-solar-in-2025/*"
+  to = "/resources/blogs/11-reasons-why-more-businesses-are-switching-to-solar-in-2025/"
+  status = 301
+[[redirects]]
+  from = "/unlocking-hydrogen-for-clean-energy/*"
+  to = "/resources/blogs/unlocking-hydrogen-for-clean-energy/"
+  status = 301
+[[redirects]]
+  from = "/revolutionizing-solar-energy-management-with-aepl/*"
+  to = "/resources/blogs/revolutionizing-solar-energy-management-with-aepl/"
+  status = 301
+[[redirects]]
+  from = "/bess-revolutionizing-renewable-energy-integration/*"
+  to = "/resources/blogs/bess-revolutionizing-renewable-energy-integration/"
+  status = 301
+[[redirects]]
+  from = "/boosting-efficiency-in-the-power-sector/*"
+  to = "/resources/blogs/boosting-efficiency-in-the-power-sector/"
+  status = 301
+[[redirects]]
+  from = "/digital-transformation-powering-energy-transition/*"
+  to = "/resources/blogs/digital-transformation-powering-energy-transition/"
+  status = 301
+[[redirects]]
+  from = "/top-renewable-energy-trends-2025/*"
+  to = "/resources/blogs/top-renewable-energy-trends-2025/"
+  status = 301
+[[redirects]]
+  from = "/roadmap-to-sustainability-minimizing-downtime-with-proactive-electrical-asset-management/*"
+  to = "/resources/blogs/roadmap-to-sustainability-minimizing-downtime-with-proactive-electrical-asset-management/"
+  status = 301
+[[redirects]]
+  from = "/renewable-energy-key-obstacles/*"
+  to = "/resources/blogs/renewable-energy-key-obstacles/"
+  status = 301
+[[redirects]]
+  from = "/how-energy-efficiency-enhances-industrial-performance/*"
+  to = "/resources/blogs/how-energy-efficiency-enhances-industrial-performance/"
+  status = 301
+[[redirects]]
+  from = "/enhancing-industrial-efficiency-and-sustainability/*"
+  to = "/resources/blogs/enhancing-industrial-efficiency-and-sustainability/"
+  status = 301
+[[redirects]]
+  from = "/enhancing-industrial-efficiency-and-sustainability-2/*"
+  to = "/resources/blogs/enhancing-industrial-efficiency-and-sustainability/"
+  status = 301
+[[redirects]]
+  from = "/optimizing-data-centers-for-ai-inference/*"
+  to = "/resources/blogs/optimizing-data-centers-for-ai-inference/"
+  status = 301
+[[redirects]]
+  from = "/maximizing-power-plant-profitability-with-advanced-process-controls/*"
+  to = "/resources/blogs/maximizing-power-plant-profitability-with-advanced-process-controls/"
+  status = 301
+[[redirects]]
+  from = "/powering-the-future-how-cloud-solutions-are-transforming-the-energy-sector/*"
+  to = "/resources/blogs/powering-the-future-how-cloud-solutions-are-transforming-the-energy-sector/"
+  status = 301
+[[redirects]]
+  from = "/industrial-ai-unleashed-transforming-operations-and-driving-innovation/*"
+  to = "/resources/blogs/industrial-ai-unleashed-transforming-operations-and-driving-innovation/"
+  status = 301
+[[redirects]]
+  from = "/drying-reserves-navigating-industrial-challenges-amid-water-scarcity/*"
+  to = "/resources/blogs/drying-reserves-navigating-industrial-challenges-amid-water-scarcity/"
+  status = 301
+[[redirects]]
+  from = "/taking-industrial-asset-management-to-the-next-level/*"
+  to = "/resources/blogs/taking-industrial-asset-management-to-the-next-level/"
+  status = 301
+[[redirects]]
+  from = "/the-role-of-collaboration-in-energy-innovation/*"
+  to = "/resources/blogs/the-role-of-collaboration-in-energy-innovation/"
+  status = 301
+[[redirects]]
+  from = "/the-future-of-hybrid-power-systems-in-renewable-energy/*"
+  to = "/resources/blogs/the-future-of-hybrid-power-systems-in-renewable-energy/"
+  status = 301
+[[redirects]]
+  from = "/why-predictive-maintenance-is-crucial-for-renewable-energy-assets/*"
+  to = "/resources/blogs/why-predictive-maintenance-is-crucial-for-renewable-energy-assets/"
+  status = 301
+[[redirects]]
+  from = "/innovations-in-renewable-energy/*"
+  to = "/resources/blogs/innovations-in-renewable-energy/"
+  status = 301
+[[redirects]]
+  from = "/transforming-infrastructure-with-advanced-tunnel-solutions/*"
+  to = "/resources/blogs/transforming-infrastructure-with-advanced-tunnel-solutions/"
+  status = 301
+[[redirects]]
+  from = "/floating-solar-power-plant/*"
+  to = "/resources/blogs/floating-solar-power-plant/"
+  status = 301
+[[redirects]]
+  from = "/scada-systems-transforming-renewable-energy-management/*"
+  to = "/resources/blogs/scada-systems-transforming-renewable-energy-management/"
+  status = 301
+[[redirects]]
+  from = "/the-future-of-water-treatment-in-india/*"
+  to = "/resources/blogs/the-future-of-water-treatment-in-india/"
+  status = 301
+[[redirects]]
+  from = "/renewable-energy-automation-powering-global-and-indias-future/*"
+  to = "/resources/blogs/renewable-energy-automation-powering-global-and-indias-future/"
+  status = 301
+[[redirects]]
+  from = "/renewable-energy-enhancing-efficiency-in-renewable-plant-monitoring-with-advanced-scada-systems/*"
+  to = "/resources/blogs/renewable-energy-enhancing-efficiency-in-renewable-plant-monitoring-with-advanced-scada-systems/"
+  status = 301
+[[redirects]]
+  from = "/solar-energy-innovative-applications-of-solar-energy-beyond-power-generation/*"
+  to = "/resources/blogs/solar-energy-innovative-applications-of-solar-energy-beyond-power-generation/"
+  status = 301
+[[redirects]]
+  from = "/transforming-farmers-lives-with-renewable-energy/*"
+  to = "/resources/blogs/transforming-farmers-lives-with-renewable-energy/"
+  status = 301
+[[redirects]]
+  from = "/the-crucial-role-of-project-department-in-driving-the-renewable-energy-revolution/*"
+  to = "/resources/blogs/the-crucial-role-of-project-department-in-driving-the-renewable-energy-revolution/"
+  status = 301
+[[redirects]]
+  from = "/the-crucial-role-of-sales-department-in-driving-the-renewable-energy-revolution/*"
+  to = "/resources/blogs/the-crucial-role-of-sales-department-in-driving-the-renewable-energy-revolution/"
+  status = 301
+[[redirects]]
+  from = "/the-crucial-role-of-the-marketing-department-in-driving-the-renewable-energy-revolution/*"
+  to = "/resources/blogs/the-crucial-role-of-the-marketing-department-in-driving-the-renewable-energy-revolution/"
+  status = 301
+[[redirects]]
+  from = "/the-emergence-of-renewable-energy-a-global-and-indian-perspective/*"
+  to = "/resources/blogs/the-emergence-of-renewable-energy-a-global-and-indian-perspective/"
+  status = 301
+[[redirects]]
+  from = "/the-crucial-role-of-procurement-department-in-driving-the-renewable-energy-revolution/*"
+  to = "/resources/blogs/the-crucial-role-of-procurement-department-in-driving-the-renewable-energy-revolution/"
   status = 301
 
 [[headers]]
   for = "/brochures/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/case-studies/*"
   [headers.values]
     X-Robots-Tag = "noindex"

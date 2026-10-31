@@ -163,7 +163,7 @@ export function CtaBand() {
           <Link href="/contact/" className="btn btn-light" id="cta-contact">
             Get in Touch <Icon name="arrow" />
           </Link>
-          <Link href="/resources/" className="btn btn-ghost-light" id="cta-resources">
+          <Link href="/resources/brochures/" className="btn btn-ghost-light" id="cta-resources">
             Download Brochures
           </Link>
         </div>

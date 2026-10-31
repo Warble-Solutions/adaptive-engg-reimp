@@ -80,11 +80,31 @@ export const ADVANTAGES = [
 // ---------------------------------------------------------------------------
 //  Brochures (files live in /public/brochures)
 // ---------------------------------------------------------------------------
-export type Brochure = { id: string; title: string; file: string; thumb: string; desc: string };
+export type BrochureCategory =
+  | "Company"
+  | "Unified Renewable Solution"
+  | "PM KUSUM"
+  | "LT/MV Panels"
+  | "Renewable Energy"
+  | "Water"
+  | "Industrial IoT"
+  | "Infrastructure";
+
+export type Brochure = {
+  id: string;
+  title: string;
+  file: string;
+  thumb: string;
+  desc: string;
+  /** "case-study" items are listed separately on the Resources page */
+  kind?: "brochure" | "case-study";
+  category?: BrochureCategory;
+};
 
 export const BROCHURES: Record<string, Brochure> = {
   corporate: {
     id: "corporate",
+    category: "Company",
     title: "AEPL Corporate Brochure",
     file: "/brochures/aepl-corporate-brochure.pdf",
     thumb: "/brochures/thumbs/aepl-corporate-brochure.webp",
@@ -92,6 +112,7 @@ export const BROCHURES: Record<string, Brochure> = {
   },
   scada: {
     id: "scada",
+    category: "Unified Renewable Solution",
     title: "Plant SCADA",
     file: "/brochures/aepl-plant-scada.pdf",
     thumb: "/brochures/thumbs/aepl-plant-scada.webp",
@@ -99,6 +120,7 @@ export const BROCHURES: Record<string, Brochure> = {
   },
   ppc: {
     id: "ppc",
+    category: "Unified Renewable Solution",
     title: "Power Plant Controller (PPC)",
     file: "/brochures/aepl-power-plant-controller.pdf",
     thumb: "/brochures/thumbs/aepl-power-plant-controller.webp",
@@ -106,6 +128,7 @@ export const BROCHURES: Record<string, Brochure> = {
   },
   ems: {
     id: "ems",
+    category: "Unified Renewable Solution",
     title: "EMS for BESS",
     file: "/brochures/aepl-ems-bess.pdf",
     thumb: "/brochures/thumbs/aepl-ems-bess.webp",
@@ -113,6 +136,7 @@ export const BROCHURES: Record<string, Brochure> = {
   },
   panels: {
     id: "panels",
+    category: "LT/MV Panels",
     title: "LT/MV Panels",
     file: "/brochures/aepl-lt-mv-panels.pdf",
     thumb: "/brochures/thumbs/aepl-lt-mv-panels.webp",
@@ -120,10 +144,264 @@ export const BROCHURES: Record<string, Brochure> = {
   },
   kusum: {
     id: "kusum",
+    category: "PM KUSUM",
     title: "PM-KUSUM Solutions",
     file: "/brochures/aepl-pm-kusum.pdf",
     thumb: "/brochures/thumbs/aepl-pm-kusum.webp",
     desc: "One stop solution – RMS, CMS, AMS, ReportWiz, WMS and LT/MV panels.",
+  },
+  // ---- Older brochures & case studies from the previous website ----
+  "three-fold": {
+    id: "three-fold",
+    category: "Company",
+    kind: "brochure",
+    title: "AEPL 3-Fold Brochure",
+    file: "/brochures/aepl-3-fold-brochure.pdf",
+    thumb: "/brochures/thumbs/aepl-3-fold-brochure.webp",
+    desc: "Central Monitoring System, Plant SCADA & PPC and Mobile Asset Management at a glance.",
+  },
+  amc: {
+    id: "amc",
+    category: "Company",
+    kind: "brochure",
+    title: "AMC Program",
+    file: "/brochures/aepl-amc-program.pdf",
+    thumb: "/brochures/thumbs/aepl-amc-program.webp",
+    desc: "Annual maintenance contracts to make the most of your renewable assets.",
+  },
+  renewable: {
+    id: "renewable",
+    category: "Renewable Energy",
+    kind: "brochure",
+    title: "Renewable Energy Solutions",
+    file: "/brochures/aepl-renewable-energy-solutions.pdf",
+    thumb: "/brochures/thumbs/aepl-renewable-energy-solutions.webp",
+    desc: "Plant SCADA, PPC, CMS, AssetWiz, SolarWiz, EMS, substation automation and LT panels.",
+  },
+  solar: {
+    id: "solar",
+    category: "Renewable Energy",
+    kind: "brochure",
+    title: "Solar Solutions",
+    file: "/brochures/aepl-solar-solutions.pdf",
+    thumb: "/brochures/thumbs/aepl-solar-solutions.webp",
+    desc: "Complete solar plant monitoring solutions with fast, reliable execution.",
+  },
+  substation: {
+    id: "substation",
+    category: "Renewable Energy",
+    kind: "brochure",
+    title: "Substation Automation",
+    file: "/brochures/aepl-substation-automation.pdf",
+    thumb: "/brochures/thumbs/aepl-substation-automation.webp",
+    desc: "Substation digitisation with low-latency, cyber-secure communication.",
+  },
+  "scada-brochure": {
+    id: "scada-brochure",
+    category: "Unified Renewable Solution",
+    kind: "brochure",
+    title: "SCADA Solutions",
+    file: "/brochures/aepl-scada-brochure.pdf",
+    thumb: "/brochures/thumbs/aepl-scada-brochure.webp",
+    desc: "Real-time monitoring, control and advanced alarm management for renewable plants.",
+  },
+  "scada-flyer": {
+    id: "scada-flyer",
+    category: "Unified Renewable Solution",
+    kind: "brochure",
+    title: "Plant SCADA Flyer",
+    file: "/brochures/aepl-plant-scada-flyer.pdf",
+    thumb: "/brochures/thumbs/aepl-plant-scada-flyer.webp",
+    desc: "Features, benefits and value creation of AEPL Plant SCADA.",
+  },
+  "cms-brochure": {
+    id: "cms-brochure",
+    category: "Unified Renewable Solution",
+    kind: "brochure",
+    title: "Central Monitoring System (CMS)",
+    file: "/brochures/aepl-cms-brochure.pdf",
+    thumb: "/brochures/thumbs/aepl-cms-brochure.webp",
+    desc: "Enterprise-level monitoring and portfolio intelligence for renewable assets.",
+  },
+  "cms-flyer": {
+    id: "cms-flyer",
+    category: "Unified Renewable Solution",
+    kind: "brochure",
+    title: "CMS Flyer",
+    file: "/brochures/aepl-cms-flyer.pdf",
+    thumb: "/brochures/thumbs/aepl-cms-flyer.webp",
+    desc: "Monitor your entire portfolio with AI/ML-driven analytics.",
+  },
+  "ams-flyer": {
+    id: "ams-flyer",
+    category: "Unified Renewable Solution",
+    kind: "brochure",
+    title: "Asset Management System (AMS)",
+    file: "/brochures/aepl-ams-flyer.pdf",
+    thumb: "/brochures/thumbs/aepl-ams-flyer.webp",
+    desc: "Asset data, maintenance, inventory and work order management.",
+  },
+  analytics: {
+    id: "analytics",
+    category: "Unified Renewable Solution",
+    kind: "brochure",
+    title: "Advanced Analytics",
+    file: "/brochures/aepl-advanced-analytics.pdf",
+    thumb: "/brochures/thumbs/aepl-advanced-analytics.webp",
+    desc: "Smart reporting and performance intelligence for renewable assets.",
+  },
+  "ems-flyer": {
+    id: "ems-flyer",
+    category: "Unified Renewable Solution",
+    kind: "brochure",
+    title: "EMS – BESS Flyer",
+    file: "/brochures/aepl-ems-flyer.pdf",
+    thumb: "/brochures/thumbs/aepl-ems-flyer.webp",
+    desc: "Energy Management System for battery storage, solar, wind, DG and grid.",
+  },
+  "solar-lt-panels": {
+    id: "solar-lt-panels",
+    category: "LT/MV Panels",
+    kind: "brochure",
+    title: "Solar LT Panels",
+    file: "/brochures/aepl-solar-lt-panels.pdf",
+    thumb: "/brochures/thumbs/aepl-solar-lt-panels.webp",
+    desc: "LT panels built for solar plants – trusted by industry leaders.",
+  },
+  "ht-lt-panels": {
+    id: "ht-lt-panels",
+    category: "LT/MV Panels",
+    kind: "brochure",
+    title: "HT/LT Panels",
+    file: "/brochures/aepl-ht-lt-panels.pdf",
+    thumb: "/brochures/thumbs/aepl-ht-lt-panels.webp",
+    desc: "HT and LT panels, ACDB (415V / 800V) and in-house fabrication.",
+  },
+  waterwiz: {
+    id: "waterwiz",
+    category: "Water",
+    kind: "brochure",
+    title: "WaterWiz",
+    file: "/brochures/aepl-waterwiz.pdf",
+    thumb: "/brochures/thumbs/aepl-waterwiz.webp",
+    desc: "Make the most of your water assets – telemetry and SCADA for water schemes.",
+  },
+  solarwiz: {
+    id: "solarwiz",
+    category: "Industrial IoT",
+    kind: "brochure",
+    title: "SolarWiz (IoT SCADA)",
+    file: "/brochures/aepl-solarwiz.pdf",
+    thumb: "/brochures/thumbs/aepl-solarwiz.webp",
+    desc: "Edge-to-cloud IoT SCADA to make the most of renewable assets.",
+  },
+  assetwiz: {
+    id: "assetwiz",
+    category: "Industrial IoT",
+    kind: "brochure",
+    title: "AssetWiz",
+    file: "/brochures/aepl-assetwiz.pdf",
+    thumb: "/brochures/thumbs/aepl-assetwiz.webp",
+    desc: "Asset performance management and O&M processes in one platform.",
+  },
+  tunnel: {
+    id: "tunnel",
+    category: "Infrastructure",
+    kind: "brochure",
+    title: "Tunnel Solutions",
+    file: "/brochures/aepl-tunnel-solutions.pdf",
+    thumb: "/brochures/thumbs/aepl-tunnel-solutions.webp",
+    desc: "Smart tunnels for a smarter future – E&I and SCADA for road tunnels.",
+  },
+  "cs-khavda": {
+    id: "cs-khavda",
+    category: "Renewable Energy",
+    kind: "case-study",
+    title: "Khavda Hybrid Plant – 1300MW",
+    file: "/case-studies/case-study-khavda-hybrid-plant.pdf",
+    thumb: "/case-studies/thumbs/case-study-khavda-hybrid-plant.webp",
+    desc: "Adani Green Energy – Plant SCADA with hybrid PPCs and tracker SCADA, Khavda, Gujarat.",
+  },
+  "cs-master-ppc": {
+    id: "cs-master-ppc",
+    category: "Renewable Energy",
+    kind: "case-study",
+    title: "Master PPC – TATA Neemuch",
+    file: "/case-studies/case-study-master-ppc.pdf",
+    thumb: "/case-studies/thumbs/case-study-master-ppc.webp",
+    desc: "TATA Power Renewable – Master Power Plant Controller for 160MW + 170MW plants.",
+  },
+  "cs-floating-solar": {
+    id: "cs-floating-solar",
+    category: "Renewable Energy",
+    kind: "case-study",
+    title: "Floating Solar – 70MW Kayamkulam",
+    file: "/case-studies/case-study-floating-solar.pdf",
+    thumb: "/case-studies/thumbs/case-study-floating-solar.webp",
+    desc: "TATA Power Renewable – SCADA & PPC for a 70MW floating solar plant.",
+  },
+  "cs-pm-kusum": {
+    id: "cs-pm-kusum",
+    category: "PM KUSUM",
+    kind: "case-study",
+    title: "IoT SCADA System for PM KUSUM",
+    file: "/case-studies/case-study-iot-scada-pm-kusum.pdf",
+    thumb: "/case-studies/thumbs/case-study-iot-scada-pm-kusum.webp",
+    desc: "IoT SCADA for PM KUSUM – more income for farmers and less fossil fuel.",
+  },
+  "cs-water-supply": {
+    id: "cs-water-supply",
+    category: "Water",
+    kind: "case-study",
+    title: "Water Supply Scheme – Sagar",
+    file: "/case-studies/case-study-water-supply-schemes.pdf",
+    thumb: "/case-studies/thumbs/case-study-water-supply-schemes.webp",
+    desc: "Efficient, reliable and safe water distribution in Sagar, Madhya Pradesh.",
+  },
+  "cs-wtp": {
+    id: "cs-wtp",
+    category: "Water",
+    kind: "case-study",
+    title: "Water Treatment Plant (WTP)",
+    file: "/case-studies/case-study-water-treatment-plant.pdf",
+    thumb: "/case-studies/thumbs/case-study-water-treatment-plant.webp",
+    desc: "Dilip Buildcon – E&I and automation for a water treatment plant.",
+  },
+  "cs-hydropneumatic": {
+    id: "cs-hydropneumatic",
+    category: "Water",
+    kind: "case-study",
+    title: "Hydropneumatic System",
+    file: "/case-studies/case-study-hydropneumatic.pdf",
+    thumb: "/case-studies/thumbs/case-study-hydropneumatic.webp",
+    desc: "Optimised hydropneumatic water system with best-in-class products and software.",
+  },
+  "cs-ems": {
+    id: "cs-ems",
+    category: "Company",
+    kind: "case-study",
+    title: "Energy Management System (EMS)",
+    file: "/case-studies/case-study-energy-management-system.pdf",
+    thumb: "/case-studies/thumbs/case-study-energy-management-system.webp",
+    desc: "Jindal Steel & Power – energy management for power and steel.",
+  },
+  "cs-milk": {
+    id: "cs-milk",
+    category: "Company",
+    kind: "case-study",
+    title: "Liquid Milk Processing (LMP)",
+    file: "/case-studies/case-study-liquid-milk-processing.pdf",
+    thumb: "/case-studies/thumbs/case-study-liquid-milk-processing.webp",
+    desc: "Baroda Dairy – automation to maximise output from machines and processes.",
+  },
+  "cs-tunnel": {
+    id: "cs-tunnel",
+    category: "Infrastructure",
+    kind: "case-study",
+    title: "Churhat Bypass Tunnel (Rewa–Sidhi)",
+    file: "/case-studies/case-study-churhat-tunnel.pdf",
+    thumb: "/case-studies/thumbs/case-study-churhat-tunnel.webp",
+    desc: "Dilip Buildcon – safe, efficient, remote control of tunnel operations on NH 75E.",
   },
 };
 
@@ -359,7 +637,7 @@ export const URS: { title: string; tagline: string; desc: string; modules: UrsMo
   ],
 };
 
-/** Homepage "Our Solutions" – the 3 main solutions, in this order. */
+/** Homepage "Our Solutions" – the 5 main solution categories, in this order. */
 export const MAIN_SOLUTIONS: { id: string; name: string; short: string; summary: string; image: string; href: string; brochure: keyof typeof BROCHURES }[] = [
   {
     id: "urs",
@@ -387,6 +665,24 @@ export const MAIN_SOLUTIONS: { id: string; name: string; short: string; summary:
     image: "/solutions/panels.webp",
     href: "/solutions/lt-mv-panels/",
     brochure: "panels",
+  },
+  {
+    id: "water",
+    name: "Water Solutions",
+    short: "Water",
+    summary: "End-to-end E&I and SCADA for water supply & WTP, STP, ETP, lift and micro irrigation, with centralised SCADA – 400+ MLD treated water across 50+ schemes.",
+    image: "/solutions/water/wtp.webp",
+    href: "/solutions/water/",
+    brochure: "corporate",
+  },
+  {
+    id: "industrial-iot",
+    name: "Industrial IoT",
+    short: "IoT",
+    summary: "SolarWiz, WaterWiz, MachineWiz and Mobile Asset Management – edge-to-cloud telemetry, central monitoring and machine learning for every industry.",
+    image: "/solutions/iot/solar-noc.webp",
+    href: "/solutions/industrial-iot/",
+    brochure: "corporate",
   },
 ];
 
@@ -459,6 +755,13 @@ export const NAV = [
   { label: "Resources", href: "/resources/" },
   { label: "Careers", href: "/careers/" },
   { label: "Contact Us", href: "/contact/" },
+];
+
+/** Resources dropdown in the header. The /resources/ overview page is linked from the footer only. */
+export const RESOURCES_MENU = [
+  { label: "Brochures", href: "/resources/brochures/" },
+  { label: "Case Studies", href: "/resources/case-studies/" },
+  { label: "Blogs", href: "/resources/blogs/" },
 ];
 
 export const INTEREST_OPTIONS = [

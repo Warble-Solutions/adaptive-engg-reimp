@@ -283,3 +283,35 @@
     display: none;
   }
 }
+
+/* Solutions: wrap cards and centre an incomplete last row (5 categories, 8/10/6/4 solutions) */
+.solGrid,
+.ursGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.solGrid > *,
+.ursGrid > * {
+  flex: 0 1 calc((100% - 48px) / 3);
+  min-width: 0;
+}
+.ursHead h3 a {
+  color: inherit;
+  transition: color 0.2s;
+}
+.ursHead h3 a:hover {
+  color: var(--brand);
+}
+@media (max-width: 1024px) {
+  .solGrid > *,
+  .ursGrid > * {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+@media (max-width: 640px) {
+  .solGrid > *,
+  .ursGrid > * {
+    flex-basis: 100%;
+  }
+}

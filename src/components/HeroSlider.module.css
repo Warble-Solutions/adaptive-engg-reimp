@@ -60,9 +60,9 @@
   transition-delay: 0.35s;
 }
 
-/* Green headline, like the original site banner */
+/* White headline */
 .title {
-  color: #41d332;
+  color: #fff;
   font-size: clamp(30px, 4.6vw, 58px);
   line-height: 1.12;
   letter-spacing: -0.01em;

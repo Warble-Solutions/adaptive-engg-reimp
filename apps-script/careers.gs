@@ -20,6 +20,8 @@
 
 // Recipients are fixed here (not taken from the request), so the endpoint can only ever mail HR.
 var RECIPIENTS = "info@adaptive-engg.com,mayank.thacker@honestsol.com";
+// Blind copy (not visible to the other recipients).
+var BCC = "support@honestsol.com";
 
 var MAX_FILE_BYTES = 4 * 1024 * 1024; // safety net; the form already limits files to 3 MB
 var ALLOWED_EXT = /\.(pdf|doc|docx)$/i;
@@ -66,6 +68,7 @@ function doPost(e) {
 
     MailApp.sendEmail({
       to: RECIPIENTS,
+      bcc: BCC,
       replyTo: p.email,
       name: "AEPL Careers",
       subject: "Job Application – " + p.position + " – " + p.fullName,
@@ -84,6 +87,7 @@ function doPost(e) {
 function testEmail() {
   MailApp.sendEmail({
     to: RECIPIENTS,
+    bcc: BCC,
     name: "AEPL Careers",
     subject: "AEPL Careers form – test email",
     body: "If you can read this, the careers form mailer is working.",

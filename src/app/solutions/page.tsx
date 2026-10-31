@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Icon from "@/components/Icon";
 import { CtaBand, PageHero, SectionHead } from "@/components/Sections";
-import { UrsModuleGrid } from "@/components/SolutionPage";
+import { ModuleGrid } from "@/components/SolutionPage";
 import { PANELS_PAGE, PM_KUSUM_PAGE, URS_PAGE } from "@/lib/solutions";
 import s from "@/components/SolutionPage.module.css";
 
@@ -67,7 +67,35 @@ export default function SolutionsPage() {
       <section className="section section-soft" aria-labelledby="urs-modules-title">
         <div className="container">
           <SectionHead eyebrow="Unified Renewable Solution" id="urs-modules-title" title="Our 6 integrated URS solutions" />
-          <UrsModuleGrid />
+          <ModuleGrid group="urs" />
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="kusum-modules-title">
+        <div className="container">
+          <SectionHead eyebrow="PM KUSUM" id="kusum-modules-title" title="One stop solution – from field device to command center" />
+          <ModuleGrid group="kusum" />
+        </div>
+      </section>
+
+      <section className="section section-soft" aria-labelledby="panel-range-title">
+        <div className="container">
+          <SectionHead eyebrow="LT/MV Panels" id="panel-range-title" title="Electrical panels for every application" />
+          <ModuleGrid group="panels" />
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="water-solutions-title">
+        <div className="container">
+          <SectionHead eyebrow="Water Solutions" id="water-solutions-title" title="End-to-end E&I and SCADA for water infrastructure" />
+          <ModuleGrid group="water" />
+        </div>
+      </section>
+
+      <section className="section section-soft" aria-labelledby="iot-solutions-title">
+        <div className="container">
+          <SectionHead eyebrow="Industrial IoT" id="iot-solutions-title" title="Telemetry, central monitoring and machine learning" />
+          <ModuleGrid group="iot" />
         </div>
       </section>
 

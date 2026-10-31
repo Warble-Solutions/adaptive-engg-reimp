@@ -132,7 +132,7 @@ export function BrochureProvider({ children }: { children: React.ReactNode }) {
               <img src={item.thumb} alt={`${item.title} – cover`} />
               <div>
                 <span className="chip">
-                  <Icon name="file" width={14} height={14} /> PDF Brochure
+                  <Icon name="file" width={14} height={14} /> {item.kind === "case-study" ? "PDF Case Study" : "PDF Brochure"}
                 </span>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
@@ -211,7 +211,7 @@ export function BrochureProvider({ children }: { children: React.ReactNode }) {
                     <div className="full">
                       <button type="submit" className="btn" disabled={busy} style={{ width: "100%" }} id="br-submit">
                         {busy ? <span className="spinner" /> : <Icon name="download" />}
-                        {busy ? "Preparing download…" : "Download Brochure"}
+                        {busy ? "Preparing download…" : item.kind === "case-study" ? "Download Case Study" : "Download Brochure"}
                       </button>
                     </div>
                   </div>

@@ -2,10 +2,10 @@ import Link from "next/link";
 import HeroSlider from "@/components/HeroSlider";
 import YouTubeLite from "@/components/YouTubeLite";
 import Testimonials from "@/components/Testimonials";
-import Icon, { type IconName } from "@/components/Icon";
+import Icon from "@/components/Icon";
 import { BrochureButton } from "@/components/BrochureModal";
 import { Achievements, Advantages, Clients, ContactSection, SectionHead } from "@/components/Sections";
-import { ABOUT, COMPANY, MAIN_SOLUTIONS, URS } from "@/lib/content";
+import { ABOUT, COMPANY, MAIN_SOLUTIONS } from "@/lib/content";
 import { getLatestVideos } from "@/lib/youtube";
 import s from "./page.module.css";
 
@@ -91,44 +91,6 @@ export default async function HomePage() {
                     </BrochureButton>
                   </div>
                 </div>
-              </article>
-            ))}
-          </div>
-
-          {/* URS modules */}
-          <div className={`${s.ursHead} reveal`}>
-            <h3 id="urs-title">Unified Renewable Solution (URS)</h3>
-          </div>
-          <div className={s.ursGrid}>
-            {URS.modules.map((m, i) => (
-              <article key={m.name} className={`card ${s.ursCard} reveal`} style={{ "--d": `${(i % 3) * 0.08}s` } as React.CSSProperties}>
-                <div className={s.ursTop}>
-                  <span className={s.ursIcon}>
-                    <Icon name={m.icon as IconName} />
-                  </span>
-                  <h4>{m.name}</h4>
-                </div>
-                <ul className={s.ursList}>
-                  {m.items.map((it) => (
-                    <li key={it}>{it}</li>
-                  ))}
-                </ul>
-                {(m.href || m.brochure) && (
-                  <div className={s.solFoot}>
-                    {m.href ? (
-                      <Link href={m.href} className="link-arrow">
-                        Explore <Icon name="arrow" />
-                      </Link>
-                    ) : (
-                      <span />
-                    )}
-                    {m.brochure && (
-                      <BrochureButton id={m.brochure} className={s.dl} buttonId={`home-urs-dl-${i + 1}`}>
-                        <Icon name="download" /> Brochure
-                      </BrochureButton>
-                    )}
-                  </div>
-                )}
               </article>
             ))}
           </div>

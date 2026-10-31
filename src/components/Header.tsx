@@ -3,17 +3,27 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { COMPANY, NAV } from "@/lib/content";
+import { COMPANY, NAV, RESOURCES_MENU } from "@/lib/content";
 import { SOLUTIONS_MENU } from "@/lib/solutions";
 import Icon from "./Icon";
 import s from "./Header.module.css";
+
+type MenuItem = { label: string; href: string; children?: { label: string; href: string }[] };
+
+/**
+ * Dropdown menus by top-level nav href.
+ * `linked: false` → the top label only opens the menu (it is not a page link).
+ */
+const MENUS: Record<string, { items: MenuItem[]; linked: boolean }> = {
+  "/solutions/": { items: SOLUTIONS_MENU, linked: true },
+  "/resources/": { items: RESOURCES_MENU, linked: false },
+};
 
 export default function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [mSol, setMSol] = useState(false);
-
+  const [mOpen, setMOpen] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -40,7 +50,9 @@ export default function Header() {
   }, [pathname]);
 
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname?.startsWith(href.replace(/\/$/, "")));
+  const isExact = (href: string) => pathname === href || pathname === href.replace(/\/$/, "");
   const navId = (label: string) => `nav-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-$/, "")}`;
+
   return (
     <header className={`${s.header} ${scrolled || open ? s.scrolled : ""}`} id="site-header">
       <div className={`container ${s.inner}`}>
@@ -49,18 +61,38 @@ export default function Header() {
         </Link>
 
         <nav className={s.nav} aria-label="Main">
-          {NAV.map((n) =>
-            n.href === "/solutions/" ? (
-              <div key={n.href} className={s.dd}>
-                <Link href={n.href} className={`${s.link} ${s.ddToggle} ${isActive(n.href) ? s.active : ""}`} id={navId(n.label)} aria-haspopup="true">
+          {NAV.map((n) => {
+            const menu = MENUS[n.href];
+            if (!menu) {
+              return (
+                <Link key={n.href} href={n.href} className={`${s.link} ${isActive(n.href) ? s.active : ""}`} id={navId(n.label)}>
                   {n.label}
-                  <Icon name="chevronDown" />
                 </Link>
+              );
+            }
+            const toggleCls = `${s.link} ${s.ddToggle} ${isActive(n.href) ? s.active : ""}`;
+            return (
+              <div key={n.href} className={s.dd}>
+                {menu.linked ? (
+                  <Link href={n.href} className={toggleCls} id={navId(n.label)} aria-haspopup="true">
+                    {n.label}
+                    <Icon name="chevronDown" />
+                  </Link>
+                ) : (
+                  <button type="button" className={`${toggleCls} ${s.ddButton}`} id={navId(n.label)} aria-haspopup="true">
+                    {n.label}
+                    <Icon name="chevronDown" />
+                  </button>
+                )}
                 <div className={s.ddPanel}>
-                  <ul className={s.ddMenu}>
-                    {SOLUTIONS_MENU.map((item) => (
+                  <ul className={`${s.ddMenu} ${menu.items.some((i) => i.children) ? "" : s.ddMenuSimple}`}>
+                    {menu.items.map((item) => (
                       <li key={item.href} className={item.children ? s.hasSub : undefined}>
-                        <Link href={item.href} className={`${s.ddLink} ${pathname?.startsWith(item.href.replace(/\/$/, "")) ? s.ddActive : ""}`} id={navId(`sol ${item.label}`)}>
+                        <Link
+                          href={item.href}
+                          className={`${s.ddLink} ${(item.children ? isActive(item.href) : isExact(item.href) || isActive(item.href)) ? s.ddActive : ""}`}
+                          id={navId(`${n.label} ${item.label}`)}
+                        >
                           {item.label}
                           {item.children && <Icon name="chevronRight" />}
                         </Link>
@@ -68,7 +100,7 @@ export default function Header() {
                           <ul className={s.subMenu}>
                             {item.children.map((c) => (
                               <li key={c.href}>
-                                <Link href={c.href} className={`${s.ddLink} ${pathname === c.href || pathname === c.href.replace(/\/$/, "") ? s.ddActive : ""}`} id={navId(`sol ${c.label}`)}>
+                                <Link href={c.href} className={`${s.ddLink} ${isExact(c.href) ? s.ddActive : ""}`} id={navId(`${n.label} ${c.label}`)}>
                                   {c.label}
                                 </Link>
                               </li>
@@ -80,12 +112,8 @@ export default function Header() {
                   </ul>
                 </div>
               </div>
-            ) : (
-              <Link key={n.href} href={n.href} className={`${s.link} ${isActive(n.href) ? s.active : ""}`} id={navId(n.label)}>
-                {n.label}
-              </Link>
-            ),
-          )}
+            );
+          })}
         </nav>
 
         <div className={s.actions}>
@@ -107,25 +135,44 @@ export default function Header() {
 
       <div id="mobile-menu" className={`${s.mobile} ${open ? s.mobileOpen : ""}`}>
         <nav className="container" aria-label="Mobile">
-          {NAV.map((n, i) =>
-            n.href === "/solutions/" ? (
+          {NAV.map((n, i) => {
+            const menu = MENUS[n.href];
+            const delay = { transitionDelay: open ? `${0.04 * i + 0.05}s` : "0s" };
+            if (!menu) {
+              return (
+                <Link key={n.href} href={n.href} className={`${s.mLink} ${isActive(n.href) ? s.active : ""}`} style={delay}>
+                  {n.label}
+                  <Icon name="chevronRight" />
+                </Link>
+              );
+            }
+            const expanded = mOpen === n.href;
+            const listId = `mobile-${navId(n.label)}`;
+            const toggle = () => setMOpen((v) => (v === n.href ? null : n.href));
+            return (
               <div key={n.href} className={s.mGroup}>
-                <div className={`${s.mLink} ${s.mRow} ${isActive(n.href) ? s.active : ""}`} style={{ transitionDelay: open ? `${0.04 * i + 0.05}s` : "0s" }}>
-                  <Link href={n.href}>{n.label}</Link>
+                <div className={`${s.mLink} ${s.mRow} ${isActive(n.href) ? s.active : ""}`} style={delay}>
+                  {menu.linked ? (
+                    <Link href={n.href}>{n.label}</Link>
+                  ) : (
+                    <button type="button" className={s.mRowLabel} onClick={toggle} aria-expanded={expanded} aria-controls={listId}>
+                      {n.label}
+                    </button>
+                  )}
                   <button
                     type="button"
-                    className={`${s.mToggle} ${mSol ? s.mToggleOpen : ""}`}
-                    onClick={() => setMSol((v) => !v)}
-                    aria-expanded={mSol}
-                    aria-controls="mobile-solutions"
-                    aria-label={mSol ? "Hide solutions" : "Show solutions"}
-                    id="mobile-solutions-toggle"
+                    className={`${s.mToggle} ${expanded ? s.mToggleOpen : ""}`}
+                    onClick={toggle}
+                    aria-expanded={expanded}
+                    aria-controls={listId}
+                    aria-label={`${expanded ? "Hide" : "Show"} ${n.label.toLowerCase()}`}
+                    id={`${listId}-toggle`}
                   >
                     <Icon name="chevronDown" />
                   </button>
                 </div>
-                <ul id="mobile-solutions" className={`${s.mSub} ${mSol ? s.mSubOpen : ""}`}>
-                  {SOLUTIONS_MENU.map((item) => (
+                <ul id={listId} className={`${s.mSub} ${expanded ? s.mSubOpen : ""}`}>
+                  {menu.items.map((item) => (
                     <li key={item.href}>
                       <Link href={item.href} className={s.mSubLink}>
                         {item.label}
@@ -145,18 +192,8 @@ export default function Header() {
                   ))}
                 </ul>
               </div>
-            ) : (
-              <Link
-                key={n.href}
-                href={n.href}
-                className={`${s.mLink} ${isActive(n.href) ? s.active : ""}`}
-                style={{ transitionDelay: open ? `${0.04 * i + 0.05}s` : "0s" }}
-              >
-                {n.label}
-                <Icon name="chevronRight" />
-              </Link>
-            ),
-          )}
+            );
+          })}
           <div className={s.mContact}>
             <a href={`mailto:${COMPANY.email}`}>
               <Icon name="mail" /> {COMPANY.email}

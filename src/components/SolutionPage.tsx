@@ -3,26 +3,30 @@ import { BrochureButton } from "@/components/BrochureModal";
 import Icon, { type IconName } from "@/components/Icon";
 import { CtaBand, PageHero, SectionHead } from "@/components/Sections";
 import { URS } from "@/lib/content";
-import { URS_MODULE_PAGES, type SolutionPageData, type SolutionSection } from "@/lib/solutions";
+import { SOLUTION_GROUPS, URS_MODULE_PAGES, type SolutionGroup, type SolutionPageData, type SolutionSection } from "@/lib/solutions";
 import s from "./SolutionPage.module.css";
 
 const delay = (i: number, n = 3) => ({ "--d": `${(i % n) * 0.08}s` }) as React.CSSProperties;
 
-/** Grid of the 6 URS modules, each linking to its own page. */
-export function UrsModuleGrid({ exclude }: { exclude?: string }) {
-  const mods = URS.modules
-    .map((m, i) => ({ ...m, page: URS_MODULE_PAGES[i] }))
-    .filter((m) => m.page && m.page.slug !== exclude);
+/** Card grid of a group's sub-pages (URS modules or PM KUSUM solutions), each linking to its own page. */
+export function ModuleGrid({ group = "urs", exclude }: { group?: SolutionGroup; exclude?: string }) {
+  const mods =
+    group === "urs"
+      ? URS.modules.map((m, i) => ({ page: URS_MODULE_PAGES[i], icon: m.icon as IconName, points: m.items }))
+      : SOLUTION_GROUPS[group].pages.map((p) => ({ page: p, icon: p.icon ?? "check", points: p.points ?? [] }));
+  const list = mods.filter((m) => m.page && m.page.slug !== exclude);
+  // The panel range has 10 items – show 5 per row
+  const five = group === "panels";
   return (
-    <div className={s.modGrid}>
-      {mods.map((m, i) => (
-        <Link key={m.name} href={m.page.path} className={`card ${s.modCard} reveal`} style={delay(i)} id={`urs-module-${m.page.slug}`}>
+    <div className={`${s.modGrid} ${five ? s.modGrid5 : ""}`}>
+      {list.map((m, i) => (
+        <Link key={m.page.slug} href={m.page.path} className={`card ${s.modCard} reveal`} style={delay(i, five ? 5 : 3)} id={`${group}-module-${m.page.slug}`}>
           <span className={s.modIcon}>
-            <Icon name={m.icon as IconName} />
+            <Icon name={m.icon} />
           </span>
           <h3>{m.page.name}</h3>
           <ul>
-            {m.items.map((it) => (
+            {m.points.map((it) => (
               <li key={it}>{it}</li>
             ))}
           </ul>
@@ -147,14 +151,14 @@ function Section({ sec, idx }: { sec: SolutionSection; idx: number }) {
       return (
         <>
           <SectionHead eyebrow={sec.eyebrow} title={sec.title} lead={sec.lead} id={id} />
-          <UrsModuleGrid />
+          <ModuleGrid group={sec.group} />
         </>
       );
   }
 }
 
 /** Full solution page: banner, intro, content sections and CTA. */
-export default function SolutionPage({ data, moduleSlug }: { data: SolutionPageData; moduleSlug?: string }) {
+export default function SolutionPage({ data, group, moduleSlug }: { data: SolutionPageData; group?: SolutionGroup; moduleSlug?: string }) {
   // Alternate white / soft backgrounds. Sections with photos stay on white
   // (some images have white corners baked in).
   const bgs: string[] = [];
@@ -215,14 +219,14 @@ export default function SolutionPage({ data, moduleSlug }: { data: SolutionPageD
         </section>
       ))}
 
-      {moduleSlug && (
-        <section className="section section-soft" aria-labelledby="other-urs-title">
+      {group && moduleSlug && (
+        <section className="section section-soft" aria-labelledby="other-solutions-title">
           <div className="container">
-            <SectionHead eyebrow="Unified Renewable Solution" title="Explore other URS solutions" id="other-urs-title" />
-            <UrsModuleGrid exclude={moduleSlug} />
+            <SectionHead eyebrow={SOLUTION_GROUPS[group].label} title={`Explore other ${SOLUTION_GROUPS[group].short} ${SOLUTION_GROUPS[group].noun}`} id="other-solutions-title" />
+            <ModuleGrid group={group} exclude={moduleSlug} />
             <div className={s.center}>
-              <Link href="/solutions/urs/" className="btn btn-outline" id="back-to-urs">
-                View URS overview <Icon name="arrow" />
+              <Link href={SOLUTION_GROUPS[group].parent.path} className="btn btn-outline" id={`back-to-${group}`}>
+                View {SOLUTION_GROUPS[group].label} overview <Icon name="arrow" />
               </Link>
             </div>
           </div>

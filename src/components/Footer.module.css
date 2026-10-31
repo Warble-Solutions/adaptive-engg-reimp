@@ -131,3 +131,17 @@
     grid-template-columns: 1fr;
   }
 }
+
+.legalLinks {
+  display: inline-flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.legalLinks a {
+  color: inherit;
+  opacity: 0.85;
+}
+.legalLinks a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}

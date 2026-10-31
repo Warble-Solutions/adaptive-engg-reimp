@@ -341,3 +341,27 @@
     display: none;
   }
 }
+
+/* Dropdown toggle that is not a link (e.g. Resources) */
+.ddButton {
+  background: none;
+  border: 0;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+/* Short menus without flyouts */
+.ddMenuSimple {
+  min-width: 200px;
+}
+/* Mobile: group label that only expands the list */
+.mRowLabel {
+  flex: 1;
+  padding: 18px 0;
+  background: none;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}

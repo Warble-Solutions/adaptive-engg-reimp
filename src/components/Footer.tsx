@@ -86,6 +86,14 @@ export default function Footer() {
           <span>
             © {year} {COMPANY.name} All rights reserved.
           </span>
+          <span className={s.legalLinks}>
+            <Link href="/privacy-policy/" id="footer-privacy">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-and-conditions/" id="footer-terms">
+              Terms &amp; Conditions
+            </Link>
+          </span>
           <a href="https://honestsol.com/" target="_blank" rel="noopener" className={s.powered} id="footer-powered-by">
             <span>Powered by</span>
             <img src="/brand/hone-st.webp" alt="" width={28} height={28} />

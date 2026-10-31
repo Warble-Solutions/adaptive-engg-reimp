@@ -27,5 +27,5 @@ export default async function UrsModulePage({ params }: Props) {
   const { module: slug } = await params;
   const page = URS_MODULE_PAGES.find((p) => p.slug === slug);
   if (!page) notFound();
-  return <SolutionPage data={page} moduleSlug={page.slug} />;
+  return <SolutionPage data={page} group="urs" moduleSlug={page.slug} />;
 }
