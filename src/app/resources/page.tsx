@@ -9,7 +9,7 @@ import s from "../inner.module.css";
 export const metadata: Metadata = {
   title: "Resources – Brochures, Case Studies & Blogs",
   description:
-    "AEPL resources: download brochures and case studies – SCADA, PPC, CMS, AMS, EMS-BESS, PM KUSUM, LT/MV panels, water and IoT – and read the latest AEPL blogs.",
+    "AEPL resources: download brochures and case studies – SCADA, PPC, CMS, Advance Analytics, AMS/CMMS, EMS-BESS, PM KUSUM, LT/MV panels, water and IoT – and read the latest AEPL blogs.",
   alternates: { canonical: "/resources/" },
 };
 

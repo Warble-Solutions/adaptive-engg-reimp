@@ -7,9 +7,9 @@ import { PANELS_PAGE, PM_KUSUM_PAGE, URS_PAGE } from "@/lib/solutions";
 import s from "@/components/SolutionPage.module.css";
 
 export const metadata: Metadata = {
-  title: "Solutions – URS (SCADA, PPC, AMS, CMS, Analytics, EMS-BESS), PM KUSUM & LT/MV Panels",
+  title: "Solutions – URS (SCADA, PPC, CMS, Advance Analytics, AMS/CMMS, EMS-BESS), PM KUSUM & LT/MV Panels",
   description:
-    "AEPL's renewable energy solutions: the Unified Renewable Solution (SCADA, PPC, AMS, CMS, Advanced Analytics, EMS-BESS), PM KUSUM solutions and type-tested LT/MV panels.",
+    "AEPL's renewable energy solutions: the Unified Renewable Solution (SCADA, PPC, CMS, Advance Analytics, AMS/CMMS, EMS-BESS), PM KUSUM solutions and type-tested LT/MV panels.",
   alternates: { canonical: "/solutions/" },
 };
 
@@ -17,7 +17,7 @@ const MAIN = [
   {
     page: URS_PAGE,
     image: "/solutions/urs.webp",
-    summary: "SCADA, PPC, AMS, CMS, Advanced Analytics and EMS-BESS on one platform – acquisition, control and reporting from a single inverter to a national fleet.",
+    summary: "SCADA, PPC, CMS, Advance Analytics, AMS/CMMS and EMS-BESS on one platform – acquisition, control and reporting from a single inverter to a national fleet.",
   },
   {
     page: PM_KUSUM_PAGE,

@@ -12,8 +12,8 @@ const delay = (i: number, n = 3) => ({ "--d": `${(i % n) * 0.08}s` }) as React.C
 export function ModuleGrid({ group = "urs", exclude }: { group?: SolutionGroup; exclude?: string }) {
   const mods =
     group === "urs"
-      ? URS.modules.map((m, i) => ({ page: URS_MODULE_PAGES[i], icon: m.icon as IconName, points: m.items }))
-      : SOLUTION_GROUPS[group].pages.map((p) => ({ page: p, icon: p.icon ?? "check", points: p.points ?? [] }));
+      ? URS.modules.map((m, i) => ({ page: URS_MODULE_PAGES[i], title: m.name, icon: m.icon as IconName, points: m.items }))
+      : SOLUTION_GROUPS[group].pages.map((p) => ({ page: p, title: p.name, icon: p.icon ?? "check", points: p.points ?? [] }));
   const list = mods.filter((m) => m.page && m.page.slug !== exclude);
   // The panel range has 10 items – show 5 per row
   const five = group === "panels";
@@ -24,7 +24,7 @@ export function ModuleGrid({ group = "urs", exclude }: { group?: SolutionGroup; 
           <span className={s.modIcon}>
             <Icon name={m.icon} />
           </span>
-          <h3>{m.page.name}</h3>
+          <h3>{m.title}</h3>
           <ul>
             {m.points.map((it) => (
               <li key={it}>{it}</li>

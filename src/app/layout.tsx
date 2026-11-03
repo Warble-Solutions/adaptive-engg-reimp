@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: COMPANY.name,
     title: "Adaptive Engineering Pvt. Ltd. – India's Market Leader in Renewable Energy Technology",
-    description: "SCADA • PPC • EMS • SAS • RMS • CMS • AMS • LT/MV Panels for Solar, Wind, BESS and Hybrid plants.",
+    description: "SCADA • PPC • CMS • Advance Analytics • AMS/CMMS • EMS-BESS • RMS • LT/MV Panels for Solar, Wind, BESS and Hybrid plants.",
     images: ["/hero/solar-bess.webp"],
     locale: "en_IN",
   },

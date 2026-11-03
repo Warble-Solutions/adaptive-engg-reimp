@@ -3,9 +3,9 @@ import { CtaBand, PageHero, SectionHead } from "@/components/Sections";
 import { BrochureGroups } from "@/components/Docs";
 
 export const metadata: Metadata = {
-  title: "Brochures – SCADA, PPC, CMS, EMS-BESS, PM KUSUM, Panels, Water & IoT",
+  title: "Brochures – SCADA, PPC, CMS, Advance Analytics, AMS/CMMS, EMS-BESS, PM KUSUM, Panels, Water & IoT",
   description:
-    "Download AEPL brochures and flyers: corporate brochure, Plant SCADA, Power Plant Controller, CMS, AMS, EMS-BESS, PM KUSUM, LT/MV panels, water and Industrial IoT solutions.",
+    "Download AEPL brochures and flyers: corporate brochure, Plant SCADA, Power Plant Controller, CMS, Advance Analytics, AMS/CMMS, EMS-BESS, PM KUSUM, LT/MV panels, water and Industrial IoT solutions.",
   alternates: { canonical: "/resources/brochures/" },
 };
 

@@ -153,10 +153,10 @@ export function ContactSection({ title = "Let's Connect!", idPrefix = "home-enqu
 
 export function CtaBand() {
   return (
-    <section className={s.cta}>
+    <section className={s.cta} aria-labelledby="cta-band-heading">
       <div className={`container ${s.ctaInner}`}>
         <div>
-          <h2>Planning a Solar, Wind, BESS or Hybrid project?</h2>
+          <h2 id="cta-band-heading">Planning a Solar, Wind, BESS or Hybrid project?</h2>
           <p>Talk to India&apos;s most trusted renewable technology partner.</p>
         </div>
         <div className={s.ctaBtns}>
