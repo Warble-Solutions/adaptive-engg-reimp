@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { COMPANY } from "@/lib/content";
 import { JOBS } from "@/lib/careers";
 import { validators } from "@/lib/leads";
@@ -11,7 +12,7 @@ import Icon from "./Icon";
 // The URL is public by design (it is visible in the page code either way). NEXT_PUBLIC_CAREERS_ENDPOINT overrides it.
 const ENDPOINT =
   process.env.NEXT_PUBLIC_CAREERS_ENDPOINT ||
-  "https://script.google.com/macros/s/AKfycbwsBEBsdGS4GNly7cSS1G_yJITUmCVQY9PvL669jDv62fkUeDHwvpe0lRwzELrOJCkQ3A/exec";
+  "https://script.google.com/macros/s/AKfycbwResOie7Udp8xPXEYPG_Y6Mq-_mxSaIQKnXCdxhxxn6matRmAO0cnqDr6PnS3gtIfaNA/exec";
 
 const MAX_BYTES = 3 * 1024 * 1024; // per file
 const ALLOWED = [".pdf", ".doc", ".docx"];
@@ -103,6 +104,7 @@ export default function ApplyForm({ defaultPosition = "", idPrefix = "apply" }: 
       const res = await fetch(ENDPOINT, { method: "POST", body });
       const json = await res.json().catch(() => ({}));
       if (!res.ok || json.result !== "success") throw new Error(json.error || `HTTP ${res.status}`);
+      trackEvent("job_application_submit", { position: v.position, city: v.city.trim() });
       setDone(true);
     } catch (err) {
       console.warn("Application submit failed", err);

@@ -16,7 +16,7 @@ export default function TermsPage() {
   const email = <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>;
   return (
     <>
-      <PageHero title="Terms & Conditions" image="/hero/scada.webp" />
+      <PageHero title="Terms & Conditions" image="/about/mfg-3.webp" />
 
       <section className="section">
         <div className="container">

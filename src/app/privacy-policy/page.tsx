@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
   const email = <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>;
   return (
     <>
-      <PageHero title="Privacy Policy" image="/hero/scada.webp" />
+      <PageHero title="Privacy Policy" image="/about/mfg-3.webp" />
 
       <section className="section">
         <div className="container">

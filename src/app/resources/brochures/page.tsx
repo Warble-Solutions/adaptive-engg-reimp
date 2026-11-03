@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function BrochuresPage() {
   return (
     <>
-      <PageHero title="Brochures" image="/hero/scada.webp" />
+      <PageHero title="Brochures" image="/hero/resources-hero.webp" />
       <section className="section" aria-labelledby="brochures-title">
         <div className="container">
           <SectionHead eyebrow="Downloads" id="brochures-title" title="Brochures & flyers" lead="Share a few details once and download any brochure instantly." />

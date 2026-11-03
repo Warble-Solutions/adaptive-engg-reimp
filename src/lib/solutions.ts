@@ -17,7 +17,7 @@ export type SolutionSection =
   | { type: "modules"; eyebrow: string; title: string; lead?: string; group?: SolutionGroup };
 
 /** Families of sub-pages that get a card grid + "explore other" strip. */
-export type SolutionGroup = "urs" | "kusum" | "panels" | "water" | "iot";
+export type SolutionGroup = "urs" | "kusum" | "panels" | "water" | "iot" | "infrastructure";
 
 export type SolutionPageData = {
   slug: string;
@@ -57,14 +57,14 @@ export const URS_PAGE: SolutionPageData = {
   path: "/solutions/urs/",
   name: "Unified Renewable Solution (URS)",
   short: "URS",
-  banner: "/hero/solar-wind.webp",
+  banner: "/hero/urs-hero.webp",
   label: "Unified Renewable Solution",
   tagline: "One platform, plant to portfolio",
   intro: [
     "A single-vendor, end-to-end approach covering SCADA, PPC, AMS, CMS, Advanced Analytics and EMS-BESS for solar, wind, BESS and hybrid plants – acquisition, control and reporting from a single inverter to a national fleet.",
     "Most projects involve several vendors for panels, wiring, SCADA, switchgear and testing – and that fragmentation leads to delays and compatibility issues. URS gives you a single point of responsibility for the entire E&I scope, from detailed engineering to final grid synchronisation, all handled in-house.",
   ],
-  image: "/solutions/ppc-1.webp",
+  image: "/solutions/urs-overview.webp",
   imageAlt: "Hybrid solar, wind and battery storage plant",
   stats: [
     { value: "90GW+", label: "Monitored" },
@@ -96,7 +96,7 @@ export const URS_PAGE: SolutionPageData = {
         "Faster grid compliance approvals",
         "One trusted team – switchboard to dashboard",
       ],
-      image: "/solutions/scada-1.webp",
+      image: "/solutions/bess-monitoring.webp",
       imageAlt: "Renewable energy control room",
     },
     {
@@ -215,7 +215,7 @@ export const URS_MODULE_PAGES: SolutionPageData[] = [
     path: "/solutions/urs/ppc/",
     name: "Power Plant Controller (PPC)",
     short: "PPC",
-    banner: "/solutions/ppc.webp",
+    banner: "/solutions/ppc-hero.webp",
     label: "URS · PPC",
     tagline: "India's first 'HIL' tested PPC. Proven in every trial – till COD and beyond.",
     intro: [
@@ -225,10 +225,10 @@ export const URS_MODULE_PAGES: SolutionPageData[] = [
     image: "/solutions/ppc-1.webp",
     imageAlt: "Hybrid plant with battery storage and wind turbines",
     stats: [
-      { value: "HIL", label: "Type tested" },
-      { value: "40GW", label: "Yearly capacity" },
       { value: "90GW+", label: "Monitored" },
+      { value: "60%+", label: "Market share" },
       { value: "450+", label: "Manpower" },
+      { value: "40GW", label: "Yearly capacity" },
     ],
     brochure: "ppc",
     sections: [
@@ -285,14 +285,14 @@ export const URS_MODULE_PAGES: SolutionPageData[] = [
     path: "/solutions/urs/ams/",
     name: "Asset Management System (AMS)",
     short: "AMS",
-    banner: "/solutions/urs.webp",
+    banner: "/solutions/ams-hero.webp",
     label: "URS · AMS",
     tagline: "Automated work orders. Standardised SOPs. Lower cost of O&M.",
     intro: [
       "Automated workorder management, standardised SOPs across the enterprise, reduced mean time to repair and effective cost control with inventory management.",
       "Linked natively with AEPL SCADA – an alarm can raise a work order, assign the right technician and track the job to closure, giving O&M teams complete control of every site.",
     ],
-    image: "/solutions/urs.webp",
+    image: "/solutions/ams-cmms.webp",
     imageAlt: "Solar and wind assets with battery storage",
     stats: COMMON_STATS,
     brochure: "corporate",
@@ -348,7 +348,7 @@ export const URS_MODULE_PAGES: SolutionPageData[] = [
     path: "/solutions/urs/cms/",
     name: "Central Monitoring System (CMS)",
     short: "CMS",
-    banner: "/hero/solar-bess.webp",
+    banner: "/solutions/cms-hero.webp",
     label: "URS · CMS",
     tagline: "Enterprise-level monitoring and portfolio intelligence",
     intro: [
@@ -407,14 +407,14 @@ export const URS_MODULE_PAGES: SolutionPageData[] = [
     path: "/solutions/urs/advanced-analytics/",
     name: "Advanced Analytics",
     short: "Advanced Analytics",
-    banner: "/solutions/scada.webp",
+    banner: "/solutions/analytics-hero.webp",
     label: "URS · Advanced Analytics",
     tagline: "Turn raw renewable data into actionable intelligence",
     intro: [
       "Advanced data visualisation, accurate loss buckets, a custom report builder and years of historical data – transforming raw plant telemetry into decisions.",
       "Standardise, automate and secure plant reporting across a multi-OEM portfolio – for O&M teams, management and investors alike.",
     ],
-    image: "/solutions/scada-2.webp",
+    image: "/solutions/analytics-split.webp",
     imageAlt: "Engineer analysing plant performance dashboards",
     stats: COMMON_STATS,
     brochure: "corporate",
@@ -457,7 +457,7 @@ export const URS_MODULE_PAGES: SolutionPageData[] = [
           "Equipment comparison and benchmarking",
           "Export to third-party tools such as Power BI",
         ],
-        image: "/solutions/cms.webp",
+        image: "/solutions/pm-kusum/reportwiz-analytics.webp",
         imageAlt: "Analytics dashboards",
         flip: true,
       },
@@ -471,7 +471,7 @@ export const URS_MODULE_PAGES: SolutionPageData[] = [
     path: "/solutions/urs/ems-bess/",
     name: "EMS for BESS",
     short: "EMS - BESS",
-    banner: "/solutions/ems-bess.webp",
+    banner: "/solutions/ems-hero.webp",
     label: "URS · EMS-BESS",
     tagline: "Advanced control, monitoring and intelligence for smarter battery energy management",
     intro: [
@@ -556,7 +556,7 @@ export const PM_KUSUM_PAGE: SolutionPageData = {
   image: "/solutions/pm-kusum-field.webp",
   imageAlt: "Engineer and farmer reviewing solar plant data in the field",
   stats: [
-    { value: "2000+", label: "Sites" },
+    { value: "2,000+", label: "Sites" },
     { value: "5GW+", label: "Monitored" },
     { value: "60%+", label: "Market share" },
     { value: "2,00,000 sq.ft+", label: "Manufacturing facility" },
@@ -595,7 +595,7 @@ export const PM_KUSUM_PAGE: SolutionPageData = {
         "MFM · ABT energy meters",
         "SCB / SMB string monitoring",
       ],
-      image: "/solutions/pm-kusum.webp",
+      image: "/solutions/pm-kusum/kusum-overview.webp",
       imageAlt: "Solar plant under PM KUSUM",
       flip: true,
     },
@@ -627,10 +627,10 @@ export const PANELS_PAGE: SolutionPageData = {
     "AEPL designs, manufactures and commissions LT (800V · 415V) and MV (33kV · 11kV) panels for renewable energy projects, backed by 16+ years of renewable-specific engineering expertise.",
     "From conceptualising and design to manufacturing, installation and support, we control the complete panel production cycle in-house – for quality, performance and durability.",
   ],
-  image: "/solutions/panels.webp",
+  image: "/solutions/panels-overview.webp",
   imageAlt: "AEPL LT/MV panel wiring",
   stats: [
-    { value: "15000+", label: "Panels delivered" },
+    { value: "15,000+", label: "Panels delivered" },
     { value: "40GW+", label: "Annual capacity" },
     { value: "2,00,000 sq.ft+", label: "Dust-free facility" },
     { value: "25 Yrs", label: "Reliability" },
@@ -666,8 +666,8 @@ export const PANELS_PAGE: SolutionPageData = {
       rows: [
         ["440V", "65kA, 440V, 4000A", "440V, 4000A", "IP55 - Outdoor", "N/A"],
         ["800V", "50kA, 800V, 4000A", "800V, 4000A", "IP55 - Outdoor", "800V, 4000A"],
-        ["11kV", "31.5kA - 3 Sec.", "11kV, 1250A", "IP55 - Outdoor", "11kV, 1250A"],
-        ["33kV", "31.5kA - 3 Sec.", "33kV, 1250A", "IP55 - Outdoor", "33kV, 1250A"],
+        ["11kV", "31.5kA - 3 Sec., 11kV, 1250A", "11kV, 1250A", "IP55 - Outdoor", "11kV, 1250A"],
+        ["33kV", "31.5kA - 3 Sec., 33kV, 1250A", "33kV, 1250A", "IP55 - Outdoor", "33kV, 1250A"],
       ],
     },
     {
@@ -705,14 +705,14 @@ export const PANELS_PAGE: SolutionPageData = {
   ],
   metaTitle: "LT/MV Panels – Type-Tested LT (800V/415V) & MV (33kV/11kV) Panels",
   metaDescription:
-    "AEPL LT/MV panels for renewable energy: type-tested at ERDA, 15000+ panels delivered, built in a 2,00,000 sq.ft+ dust-free facility with native SCADA integration.",
+    "AEPL LT/MV panels for renewable energy: type-tested at ERDA, 15,000+ panels delivered, built in a 2,00,000 sq.ft+ dust-free facility with native SCADA integration.",
 };
 
 // ---------------------------------------------------------------------------
 //  PM KUSUM sub-pages (order follows the PM KUSUM flyer)
 // ---------------------------------------------------------------------------
 const KUSUM_STATS = [
-  { value: "2000+", label: "Sites" },
+  { value: "2,000+", label: "Sites" },
   { value: "5GW+", label: "Monitored" },
   { value: "60%+", label: "Market share" },
   { value: "16+", label: "Years of expertise" },
@@ -850,8 +850,8 @@ export const KUSUM_MODULE_PAGES: SolutionPageData[] = [
           "Easily compare performance of geographically scattered assets",
           "Diagnose root causes and simplify maintenance",
         ],
-        image: `${K}/ams-tablet.webp`,
-        imageAlt: "Engineer checking plant data on a tablet",
+        image: `${K}/cms-arch.webp`,
+        imageAlt: "Central monitoring system architecture",
         flip: true,
       },
     ],
@@ -966,7 +966,7 @@ export const KUSUM_MODULE_PAGES: SolutionPageData[] = [
           "Best and worst performer identification",
           "Faster problem identification and better decisions",
         ],
-        image: `${K}/reportwiz-dashboard.webp`,
+        image: "/solutions/bess-enclosure.webp",
         imageAlt: "ReportWiz generation and billing dashboard",
         flip: true,
       },
@@ -1017,7 +1017,7 @@ export const KUSUM_MODULE_PAGES: SolutionPageData[] = [
           "IP65/IP66 weatherproof sensors for Indian climates",
           "Clear separation of weather losses from equipment faults",
         ],
-        image: `${K}/wms.webp`,
+        image: `${K}/wms-field.webp`,
         imageAlt: "Weather station mast at sunset",
         flip: true,
       },
@@ -1119,8 +1119,8 @@ export const KUSUM_MODULE_PAGES: SolutionPageData[] = [
         title: "Tested at ERDA",
         columns: ["Voltage Rating", "Short Circuit Test", "Temperature Rise Test", "Ingress Protection Test", "Die-Electric Strength Test"],
         rows: [
-          ["11kV", "31.5kA - 3 Sec.", "11kV, 1250A", "IP55 - Outdoor", "11kV, 1250A"],
-          ["33kV", "31.5kA - 3 Sec.", "33kV, 1250A", "IP55 - Outdoor", "33kV, 1250A"],
+          ["11kV", "31.5kA - 3 Sec., 11kV, 1250A", "11kV, 1250A", "IP55 - Outdoor", "11kV, 1250A"],
+          ["33kV", "31.5kA - 3 Sec., 33kV, 1250A", "33kV, 1250A", "IP55 - Outdoor", "33kV, 1250A"],
         ],
       },
       {
@@ -1221,12 +1221,25 @@ export const KUSUM_MODULE_PAGES: SolutionPageData[] = [
 // ---------------------------------------------------------------------------
 const P = "/solutions/panels";
 const PANEL_STATS = [
-  { value: "15000+", label: "Panels delivered" },
+  { value: "15,000+", label: "Panels delivered" },
   { value: "40GW+", label: "Annual capacity" },
   { value: "2,00,000 sq.ft+", label: "Dust-free facility" },
   { value: "16+", label: "Years of expertise" },
 ];
-const PANEL_BANNERS = ["/hero/lt-mv-panels.webp", "/solutions/panel-factory.webp", "/solutions/pm-kusum/panel-line.webp"];
+const PANEL_BANNERS = [
+  `${P}/switchgear-panel.webp`,
+  `${P}/combiner-panel.webp`,
+  `${P}/inverter-cabinet.webp`,
+  `${P}/telemetry-cabinet.webp`,
+  `${P}/combiner-wiring.webp`,
+];
+const PANEL_SPLIT_IMAGES = [
+  `${P}/mfg-15.webp`,
+  `${P}/mfg-16.webp`,
+  `${P}/mfg-17.webp`,
+  `${P}/mfg-18.webp`,
+  `${P}/mfg-19.webp`,
+];
 
 function panelPage(p: {
   slug: string;
@@ -1284,7 +1297,7 @@ function panelPage(p: {
           "Factory acceptance testing before dispatch",
           "ISO 9001:2015 certified by TÜV NORD",
         ],
-        image: p.i % 2 ? "/solutions/panel-factory.webp" : "/solutions/pm-kusum/panel-line.webp",
+        image: PANEL_SPLIT_IMAGES[p.i % PANEL_SPLIT_IMAGES.length],
         imageAlt: "AEPL panel manufacturing facility",
         flip: true,
       },
@@ -1584,7 +1597,7 @@ export const WATER_PAGE: SolutionPageData = {
     "Drinking water supply in urban and rural areas is essential for a country as big and as diverse as India. With 16+ years of experience, AEPL provides end-to-end Electrical, Instrumentation and Automation (E&I) and SCADA solutions for water infrastructure.",
     "From raw water intake to distribution at overhead tanks, sewage and effluent treatment, irrigation pumping and centralised monitoring – one team designs, builds, commissions and supports the complete system.",
   ],
-  image: `${W}/wtp.webp`,
+  image: `${W}/water-card.webp`,
   imageAlt: "Water treatment plant",
   stats: [
     { value: "400+", label: "MLD treated water" },
@@ -1613,7 +1626,7 @@ export const WATER_PAGE: SolutionPageData = {
         "Soft starters and VFDs to prevent water hammer and current spikes",
         "Dashboards and analytics for leak detection and better decisions",
       ],
-      image: `${W}/wtp-scada.webp`,
+      image: `${W}/wtp-scale.webp`,
       imageAlt: "Engineers in a water SCADA control room",
       flip: true,
     },
@@ -1632,7 +1645,7 @@ export const WATER_MODULE_PAGES: SolutionPageData[] = [
     short: "Water Supply & WTP",
     icon: "bulb",
     points: ["Raw water intake to OHT", "Filtration & dosing control", "OHTs on central SCADA"],
-    banner: `${W}/wtp.webp`,
+    banner: `${W}/wtp-hero.webp`,
     label: "Water · WTP",
     tagline: "From raw water intake to distribution at overhead tanks",
     intro: [
@@ -1689,7 +1702,7 @@ export const WATER_MODULE_PAGES: SolutionPageData[] = [
     short: "STP",
     icon: "layers",
     points: ["Treatment process optimisation", "Pump optimisation", "Large-network SCADA"],
-    banner: `${W}/stp.webp`,
+    banner: `${W}/stp-hero.webp`,
     label: "Water · STP",
     tagline: "Electrical & automation for the waste water industry",
     intro: [
@@ -1747,7 +1760,7 @@ export const WATER_MODULE_PAGES: SolutionPageData[] = [
     short: "ETP",
     icon: "shield",
     points: ["MBR & RO process control", "SCADA & reporting", "Energy & chemical savings"],
-    banner: `${W}/etp.webp`,
+    banner: `${W}/etp-hero.webp`,
     label: "Water · ETP",
     tagline: "E&I and automation for effluent treatment and MBR technology",
     intro: [
@@ -1814,7 +1827,7 @@ export const WATER_MODULE_PAGES: SolutionPageData[] = [
     short: "Lift Irrigation",
     icon: "rocket",
     points: ["Drive technology (VFD / soft starter)", "Energy management", "Pump run-hour balancing"],
-    banner: `${W}/lift.webp`,
+    banner: `${W}/lift-hero.webp`,
     label: "Water · Lift Irrigation",
     tagline: "Preferred project partner for EPCs and government agencies",
     intro: [
@@ -1871,7 +1884,7 @@ export const WATER_MODULE_PAGES: SolutionPageData[] = [
     short: "Micro Irrigation",
     icon: "sun",
     points: ["Outlet Management System (OMS)", "Chak-level control", "Leakage & sabotage alerts"],
-    banner: `${W}/micro.webp`,
+    banner: `${W}/micro-hero.webp`,
     label: "Water · Micro Irrigation",
     tagline: "Tailor-made Outlet Management Systems (OMS)",
     intro: [
@@ -1907,7 +1920,7 @@ export const WATER_MODULE_PAGES: SolutionPageData[] = [
           "Water availability scheduling for crop management",
           "LoRaWAN / GPRS / 4G telemetry over large farming areas",
         ],
-        image: `${W}/micro.webp`,
+        image: `${W}/micro-control.webp`,
         imageAlt: "Field controller in an irrigated farm",
         flip: true,
       },
@@ -1963,7 +1976,7 @@ export const WATER_MODULE_PAGES: SolutionPageData[] = [
           "Modbus, OPC UA, MQTT and Profibus integration",
           "Web and mobile dashboards with a bird's eye view",
         ],
-        image: `${W}/central-scada.webp`,
+        image: `${W}/stp-scale.webp`,
         imageAlt: "Centralized SCADA control room",
         flip: true,
       },
@@ -2002,7 +2015,7 @@ export const IOT_PAGE: SolutionPageData = {
     "Customised telemetry, central SCADA systems and machine learning software designed to maximise efficiency in solar power, water utilities and smart manufacturing.",
     "Each platform pairs rugged edge hardware with secure, scalable cloud software – from a single site to a national portfolio.",
   ],
-  image: `${I}/water-scada.webp`,
+  image: `${I}/iot-card.webp`,
   imageAlt: "Operator monitoring an IoT SCADA dashboard",
   stats: [
     { value: "90GW+", label: "Monitored" },
@@ -2029,7 +2042,7 @@ export const IOT_PAGE: SolutionPageData = {
         "Store-and-forward edge devices for remote sites",
         "Integration with ERP, MES, CMMS and BI tools",
       ],
-      image: `${I}/ams-flow.webp`,
+      image: `${I}/solar-arch.webp`,
       imageAlt: "Edge to cloud IoT data flow",
       flip: true,
     },
@@ -2055,7 +2068,7 @@ export const IOT_MODULE_PAGES: SolutionPageData[] = [
       "SolarWiz is AEPL's Central Monitoring Portal for monitoring and analysing renewable power plants across geographies from one central location.",
       "It collects, aggregates and presents plant data and runs data model algorithms to calculate individual plant KPIs – with complete installation of monitoring solutions to your specifications.",
     ],
-    image: `${I}/solar-noc.webp`,
+    image: `${K}/iot-arch.webp`,
     imageAlt: "Solar central operations dashboard",
     stats: [
       { value: "90GW+", label: "Monitored" },
@@ -2116,7 +2129,7 @@ export const IOT_MODULE_PAGES: SolutionPageData[] = [
     short: "WaterWiz",
     icon: "bulb",
     points: ["Water scheme telemetry", "Flow & quality monitoring", "STP / ETP compliance"],
-    banner: `${W}/wtp.webp`,
+    banner: `${I}/waterwiz-hero.webp`,
     label: "Industrial IoT · WaterWiz",
     tagline: "Telemetry for drinking water, waste water and effluent",
     intro: [
@@ -2229,7 +2242,7 @@ export const IOT_MODULE_PAGES: SolutionPageData[] = [
           "Built to drive ERP / MES systems with accurate production data",
           "For plastics, pharma, packaging, textile, machine tools and process industries",
         ],
-        image: `${I}/factory.webp`,
+        image: `${I}/factory-wide.webp`,
         imageAlt: "Smart factory with machine telemetry",
         flip: true,
       },
@@ -2245,7 +2258,7 @@ export const IOT_MODULE_PAGES: SolutionPageData[] = [
     short: "Mobile Asset Management",
     icon: "wrench",
     points: ["Asset information & teams", "Maintenance & inventory", "Work orders on mobile"],
-    banner: `${K}/ams-tablet.webp`,
+    banner: `${W}/lift-showcase.webp`,
     label: "Industrial IoT · Asset Management",
     tagline: "Data-driven asset performance management",
     intro: [
@@ -2302,6 +2315,374 @@ export const IOT_MODULE_PAGES: SolutionPageData[] = [
   },
 ];
 
+// ---------------------------------------------------------------------------
+//  Infrastructure Solutions (Tunnel, Data Center, Industrial Automation).
+//  Content adapted from the reference site and Tunnel Brochure / Churhat Case Study;
+//  company-wide numbers follow the latest brochures (16+ yrs, 2,00,000 sq.ft+, 2,500+ sites).
+// ---------------------------------------------------------------------------
+const INF = "/solutions/infrastructure";
+const INFRA_ADVANTAGE: SolutionSection = {
+  type: "cards",
+  eyebrow: "The AEPL turnkey advantage",
+  title: "Single-point E&I partner for EPCs and infrastructure developers",
+  cols: 4,
+  items: [
+    {
+      title: "Single-point responsibility",
+      desc: "Complete ownership from electrical drawing approvals and panel fabrication to cabling, SCADA programming and commissioning.",
+      icon: "layers",
+    },
+    {
+      title: "2,00,000 sq.ft+ facility",
+      desc: "HT/LT, AMF, VFD, PLC and remote I/O panels built in-house in our dust-free, ISO 9001:2015 certified facility.",
+      icon: "panel",
+    },
+    {
+      title: "Faster handover",
+      desc: "100% Factory Acceptance Testing (FAT) and loop simulation before dispatch cut field-commissioning time.",
+      icon: "bolt",
+    },
+    {
+      title: "Inspector-ready PMO",
+      desc: "Full SLDs, CIE lighting curves, safety interlocks and compliance documentation for rapid statutory clearances.",
+      icon: "shield",
+    },
+  ],
+};
+
+export const INFRASTRUCTURE_PAGE: SolutionPageData = {
+  slug: "infrastructure",
+  path: `${INF}/`,
+  name: "Infrastructure Solutions",
+  short: "Infrastructure",
+  banner: `${INF}/infra-main.webp`,
+  label: "Infrastructure Solutions",
+  tagline: "Turnkey E&I, SCADA and power distribution for critical infrastructure",
+  intro: [
+    "AEPL engineers and executes mission-critical Electrical, Instrumentation and Automation (E&I) packages for public and private infrastructure – including road, railway and metro tunnels, Tier III/IV data centers and large industrial plants.",
+    "Acting as a single-point E&I partner for leading EPCs, we eliminate interface friction between panel manufacturing, field cabling, PLC/SCADA software and site commissioning – backed by 16+ years of domain expertise and our 2,00,000 sq.ft+ in-house manufacturing facility.",
+  ],
+  image: `${INF}/tunnel-commissioning.webp`,
+  imageAlt: "Modern highway tunnel with LED lighting and ventilation",
+  stats: [
+    { value: "16+", label: "Years of expertise" },
+    { value: "2.5 Km", label: "Twin-tube tunnel executed" },
+    { value: "15,000+", label: "Panels delivered" },
+    { value: "2,00,000 sq.ft+", label: "Manufacturing facility" },
+  ],
+  brochure: "tunnel",
+  sections: [
+    {
+      type: "modules",
+      group: "infrastructure",
+      eyebrow: "Our infrastructure portfolio",
+      title: "Engineered for high availability and life safety",
+      lead: "Explore our specialised offerings across transportation tunnels, hyperscale data centers and industrial automation.",
+    },
+    {
+      type: "split",
+      eyebrow: "Turnkey E&I execution",
+      title: "Switchboard to control room – zero interface gaps",
+      text: "Traditional infrastructure projects split accountability across separate panel builders, cabling contractors, SCADA integrators and commissioning crews. AEPL unifies the entire E&I stack under one roof.",
+      bullets: [
+        "HT substations up to 33kV, VCBs, dry-type transformers and RMUs",
+        "Type-tested LT PCC, MCC, APFC, AMF, VFD and PDB/LDB panels up to 6300A",
+        "Hot-standby redundant PLC, RTU and SCADA architectures",
+        "Fire detection, emergency ventilation, adaptive lighting and CCTV integration",
+        "100% Factory Acceptance Testing (FAT) with full loop simulation prior to dispatch",
+      ],
+      image: `${INF}/turnkey-ei.webp`,
+      imageAlt: "AEPL turnkey electrical and automation execution",
+      flip: true,
+    },
+    INFRA_ADVANTAGE,
+  ],
+  metaTitle: "Infrastructure Solutions – Tunnel E&I, Data Center & Industrial Automation | AEPL",
+  metaDescription:
+    "AEPL Infrastructure Solutions: turnkey Electrical, Instrumentation and SCADA systems for road & rail tunnels, Tier III/IV data centers and industrial automation.",
+};
+
+export const INFRASTRUCTURE_MODULE_PAGES: SolutionPageData[] = [
+  {
+    slug: "tunnel",
+    path: `${INF}/tunnel/`,
+    name: "Tunnel Solutions",
+    short: "Tunnel Solutions",
+    icon: "shield",
+    points: ["Road, railway & metro tunnels", "Ventilation, lighting & fire safety", "Unified SCADA & HT/LT distribution"],
+    banner: `${INF}/tunnel-entrance.webp`,
+    label: "Infrastructure · Tunnel Solutions",
+    tagline: "Smart tunnels for a smarter, safer transportation future",
+    intro: [
+      "Tunnels are critical national assets that demand uninterrupted power, real-time environmental monitoring and fail-safe emergency response. AEPL delivers complete turnkey Electrical, Instrumentation and SCADA packages for road, highway, railway and metro tunnels in compliance with IRC and NFPA 502 guidelines.",
+      "Proven on landmark projects such as the 2.5 Km twin-tube Churhat Bypass Tunnel (Rewa–Sidhi on NH 75E), our integrated architecture brings lighting, jet-fan ventilation, linear heat detection, traffic signalling, SOS communication and dual-grid HT/LT power distribution onto a single redundant SCADA command console.",
+    ],
+    image: `${INF}/tunnel-scada.webp`,
+    imageAlt: "Tunnel SCADA control room and monitoring desk",
+    stats: [
+      { value: "2.5 Km", label: "Twin-tube road tunnel" },
+      { value: "1,000 KVA", label: "HT substation & transformer" },
+      { value: "1,500+", label: "LED tunnel luminaires" },
+      { value: "15+", label: "Remote I/O panels" },
+    ],
+    brochure: "tunnel",
+    sections: [
+      {
+        type: "cards",
+        eyebrow: "Integrated tunnel subsystems",
+        title: "Four pillars of tunnel safety and control",
+        cols: 4,
+        items: [
+          {
+            title: "Control management",
+            desc: "CIE curve photometer-based adaptive portal lighting, jet-fan ventilation, CO / NO2 / visibility (K-value) control and drainage pumping.",
+            icon: "gauge",
+          },
+          {
+            title: "Electrical distribution",
+            desc: "33kV/11kV HT substations, VCB panels, dry-type transformers, PCC/MCC, AMF auto-changeover and dual-grid + DG + UPS emergency power.",
+            icon: "bolt",
+          },
+          {
+            title: "Safety system integration",
+            desc: "Linear Heat Detection (LHD), fire hydrant booster automation, IP CCTV with Automatic Incident Detection (AID), SOS call boxes and cross-passage evacuation.",
+            icon: "shield",
+          },
+          {
+            title: "User information & traffic",
+            desc: "Variable Message Signs (VMS), lane control signals, traffic radar counters and emergency voice radio / PA break-in systems.",
+            icon: "monitor",
+          },
+        ],
+      },
+      {
+        type: "steps",
+        eyebrow: "Project execution lifecycle",
+        title: "From portal survey to final commissioning",
+        items: [
+          { title: "Site survey", desc: "Detailed assessment of tunnel geometry, portal ambient lux profiles, electromechanical loads and safety zones." },
+          { title: "Solution design", desc: "Redundant HT/LT single-line diagrams, CIE lighting curves, ventilation CFD logic and fiber-optic ring topology." },
+          { title: "Proposal & engineering", desc: "Inspector-ready AutoCAD layouts, cable schedules, PLC/SCADA architecture and statutory compliance submittals." },
+          { title: "In-house manufacturing & FAT", desc: "Fabrication of HT/LT, VFD, PLC and RIO panels in AEPL's 2,00,000 sq.ft+ facility with 100% loop simulation." },
+          { title: "Installation & handover", desc: "Fire-survival cabling, field sensor calibration, integrated emergency drill testing and operator training." },
+        ],
+      },
+      {
+        type: "split",
+        eyebrow: "Closed-loop environmental & life safety",
+        title: "Automated response when seconds matter",
+        text: "Our hot-standby PLC and SCADA platform continuously samples air quality, visibility and thermal sensors across every tunnel zone to protect commuters and assets.",
+        bullets: [
+          "Photometer-driven threshold, transition and interior zone dimming prevents the daytime 'black hole' effect",
+          "Automatic jet-fan speed and reversible thrust control based on real-time CO, NO2, visibility and anemometer inputs",
+          "Fire mode interlocks instantly trigger directional smoke extraction, switch lane signals to red and broadcast PA evacuation alerts",
+          "Dual-redundant fiber-optic Ethernet ring and centralized online UPS ensure zero blind spots during grid failure",
+        ],
+        image: `${INF}/tunnel-ventilation.webp`,
+        imageAlt: "Tunnel jet-fan ventilation and adaptive LED lighting",
+        flip: true,
+      },
+      {
+        type: "table",
+        eyebrow: "Complete E&I scope",
+        title: "Electrical & automation deliverables",
+        lead: "End-to-end hardware and software supplied, installed and commissioned by AEPL.",
+        columns: ["Subsystem", "AEPL Scope of Supply"],
+        rows: [
+          ["HT & LT Power", "11kV / 33kV VCB panels, cast-resin dry transformers, PCC, MCC, APFC, AMF, PDB, LDB and online UPS"],
+          ["Cabling & Earthing", "HT/LT XLPE cables, fire-survival (FS) instrumentation cables, perforated/ladder cable trays and chemical earthing"],
+          ["Tunnel Lighting", "High-efficacy highway tunnel LED luminaires, emergency luminaires and portal luminance photometers"],
+          ["Ventilation & Pumping", "Jet fans with VFD / soft-starter panels, CO / NO2 / visibility sensors, anemometers and sump pump automation"],
+          ["SCADA & Telemetry", "Redundant SCADA servers, operator workstation desks, video wall, hot-standby PLCs and 15+ Remote I/O (RIO) panels"],
+          ["Traffic & Life Safety", "Linear Heat Detection (LHD), CCTV + AID cameras, Variable Message Signs (VMS), lane signals, SOS booths and PA system"],
+        ],
+      },
+    ],
+    metaTitle: "Tunnel Solutions – Turnkey E&I, Ventilation, Lighting & SCADA | AEPL Infrastructure",
+    metaDescription:
+      "AEPL Tunnel Solutions: turnkey Electrical, Instrumentation and SCADA systems for road, railway and metro tunnels – adaptive lighting, jet-fan ventilation, fire safety and HT/LT power.",
+  },
+  {
+    slug: "data-center",
+    path: `${INF}/data-center/`,
+    name: "Data Center Solutions",
+    short: "Data Center",
+    icon: "cpu",
+    points: ["Tier III & Tier IV E&I architecture", "2N+1 redundant power & switchgear", "BMS, EMS & real-time PUE analytics"],
+    banner: `${INF}/datacenter.webp`,
+    label: "Infrastructure · Data Center",
+    tagline: "High-availability power and intelligent BMS/EMS for mission-critical facilities",
+    intro: [
+      "Hyperscale, colocation and enterprise data centers require five-nines availability, fault-tolerant power distribution and granular thermal control. AEPL delivers turnkey Electrical, Instrumentation, BMS and EMS solutions engineered to Tier III and Tier IV standards.",
+      "From 33kV/11kV substations, 2N+1 redundant PCC/MCC switchboards and Active Harmonic Filters to unified Building & Energy Management Systems, we help operators achieve target PUE < 1.40 with zero unplanned downtime.",
+    ],
+    image: `${INF}/datacenter-interior.webp`,
+    imageAlt: "Data center server halls and power monitoring",
+    stats: [
+      { value: "99.999%", label: "Target uptime design" },
+      { value: "Tier III+", label: "Redundancy standards" },
+      { value: "PUE < 1.4", label: "Energy efficiency target" },
+      { value: "2N+1", label: "Fault-tolerant power" },
+    ],
+    brochure: "corporate",
+    sections: [
+      {
+        type: "cards",
+        eyebrow: "Three turnkey pillars",
+        title: "Unified electrical, cooling and safety infrastructure",
+        cols: 3,
+        items: [
+          {
+            title: "Facility & HVAC automation",
+            desc: "Closed-loop control of chillers, CRAHs/CRACs, cooling towers and VFD pumps with hot/cold aisle differential pressure and dew-point optimisation.",
+            icon: "cpu",
+          },
+          {
+            title: "2N+1 power distribution",
+            desc: "HT substations up to 33kV, VCBs, dry transformers, RMUs, compartmentalised PCC/MCCs (up to 6300A), APFC and Active Harmonic Filtering (< 3% THDi).",
+            icon: "bolt",
+          },
+          {
+            title: "Fire safety & security",
+            desc: "NFPA-compliant VESDA aspirating smoke detection, clean-agent suppression interlocks, under-floor leak detection, IP CCTV and biometric access control.",
+            icon: "shield",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        eyebrow: "Digital command suite",
+        title: "Core software deliverables for data center operators",
+        cols: 4,
+        items: [
+          {
+            title: "Building Management (BMS)",
+            desc: "Centralised monitoring of chillers, precision air handlers, dampers, DG sets, UPS banks and rack-level temperature/humidity sensors.",
+            icon: "monitor",
+          },
+          {
+            title: "Energy Management (EMS)",
+            desc: "ISO/IEC 30134-2 Level 3 real-time PUE tracking, Class 0.2S branch circuit metering, harmonic profiling and tenant billing analytics.",
+            icon: "gauge",
+          },
+          {
+            title: "Fault Detection (FDD)",
+            desc: "Automated Facility AnalytiX rules to detect valve hunting, economiser faults, filter choking and abnormal breaker thermal signatures early.",
+            icon: "chart",
+          },
+          {
+            title: "Programmable dashboards",
+            desc: "Role-based NOC video-wall views, SLA compliance reports, capacity planning heatmaps and instant SMS/email incident escalation.",
+            icon: "layers",
+          },
+        ],
+      },
+      {
+        type: "split",
+        eyebrow: "Concurrent maintainability",
+        title: "Engineered for zero-downtime switching and maintenance",
+        text: "Every switchgear lineup and control loop is architected so that any single bus, breaker, PLC CPU or communication link can be isolated and serviced without interrupting critical IT loads.",
+        bullets: [
+          "Dual-bus 2N and 2N+1 electrical topologies with automated fast-transfer PLC logic ( grid ↔ DG ↔ UPS )",
+          "In-house manufactured, ERDA type-tested panels up to 6300A / 65kA short-circuit rating",
+          "Native multi-protocol integration across BACnet/IP, Modbus TCP/RTU, SNMP, OPC UA and IEC 61850",
+          "Automated black-building / IST (Integrated Systems Testing) simulation prior to live load cutover",
+        ],
+        image: `${INF}/datacenter-power.webp`,
+        imageAlt: "AEPL type-tested switchgear panels for data centers",
+        flip: true,
+      },
+    ],
+    metaTitle: "Data Center Solutions – 2N+1 Power, BMS, EMS & Switchgear | AEPL Infrastructure",
+    metaDescription:
+      "AEPL Data Center Solutions: Tier III/IV electrical distribution, 2N+1 PCC/MCC switchgear, BMS, ISO 30134 PUE Energy Management System and fire/security integration.",
+  },
+  {
+    slug: "automation",
+    path: `${INF}/automation/`,
+    name: "Industrial Automation",
+    short: "Industrial Automation",
+    icon: "wrench",
+    points: ["Hot-standby PLC, RTU & SCADA", "LV/MV Soft Starters & VFD panels", "Process, utility & factory digitization"],
+    banner: `${INF}/automation-hero.webp`,
+    label: "Infrastructure · Industrial Automation",
+    tagline: "End-to-end PLC, SCADA, drives and control panels for process & discrete industries",
+    intro: [
+      "With 16+ years of control engineering experience and 2,500+ sites deployed, AEPL is an authorised system integrator and turnkey automation partner for heavy engineering, manufacturing, water utilities, dairy/food processing and city gas distribution.",
+      "We design, manufacture, program and commission complete automation architectures – from field instrumentation, VFDs and hot-standby PLC/RTU cabinets to plant-wide SCADA historians and cloud Central Monitoring Systems.",
+    ],
+    image: `${INF}/automation-plc.webp`,
+    imageAlt: "Industrial automation PLC and SCADA engineering",
+    stats: [
+      { value: "2,500+", label: "Sites deployed" },
+      { value: "15,000+", label: "Panels delivered" },
+      { value: "16+", label: "Years of expertise" },
+      { value: "2,00,000 sq.ft+", label: "Manufacturing facility" },
+    ],
+    brochure: "scada-brochure",
+    sections: [
+      {
+        type: "cards",
+        eyebrow: "Core automation offerings",
+        title: "Hardware and software built to work together",
+        cols: 3,
+        items: [
+          {
+            title: "RTU / PLC systems",
+            desc: "Hot-standby dual-CPU architectures (Schneider Modicon, Siemens, Allen-Bradley, ABB) programmed to IEC 61131-3 with deterministic scan times and SIL-rated safety options.",
+            icon: "cpu",
+          },
+          {
+            title: "SCADA & Historian",
+            desc: "High-availability SCADA platforms with redundant SQL historians, ISA-18.2 intelligent alarm rationalization, batch reporting and HTML5 web/mobile clients.",
+            icon: "monitor",
+          },
+          {
+            title: "Soft Starters & VFDs",
+            desc: "Custom-engineered LV (415V) and MV (up to 11kV) variable frequency drive and soft-starter panels with harmonic filtering for up to 45% pumping/fan energy savings.",
+            icon: "bolt",
+          },
+          {
+            title: "Industrial HMIs",
+            desc: "7\" to 19\" IP65 multi-touch operator terminals with recipe management, local trend buffering and FDA 21 CFR Part 11 compliant audit trails.",
+            icon: "layers",
+          },
+          {
+            title: "Automation & Marshalling Panels",
+            desc: "Dust-free, ergonomically wired PLC, RIO and marshalling cabinets built in-house with 100% point-to-point FAT simulation before dispatch.",
+            icon: "panel",
+          },
+          {
+            title: "Central Monitoring System",
+            desc: "Multi-site telemetry over 4G/5G, fiber or VSAT using IEC 60870-5-104, DNP3, OPC UA and MQTT with store-and-forward edge resilience.",
+            icon: "grid",
+          },
+        ],
+      },
+      {
+        type: "split",
+        eyebrow: "Multi-vertical domain expertise",
+        title: "Proven across continuous process and discrete plants",
+        text: "As a Schneider Electric Authorised System Integrator with ISO 9001:2015 certified manufacturing, we tailor control philosophies to the exact process physics and regulatory standards of your industry.",
+        bullets: [
+          "Renewable Energy – Utility solar, wind, hybrid and BESS plant automation",
+          "Water & Wastewater – WTP, STP, ETP (MBR/RO) and large lift/micro irrigation networks",
+          "Transportation & Urban Infra – Highway/rail tunnels, data centers and smart buildings",
+          "Process & Dairy – Automated CIP, pasteurisation, batching and energy management (EMS)",
+          "Metals, Minerals & Manufacturing – Furnace control, material handling, CNC/OEE telemetry",
+        ],
+        image: `${INF}/tunnel-power.webp`,
+        imageAlt: "AEPL automation panel assembly and testing line",
+        flip: true,
+      },
+      INFRA_ADVANTAGE,
+    ],
+    metaTitle: "Industrial Automation – PLC, RTU, SCADA, VFD & Control Panels | AEPL",
+    metaDescription:
+      "AEPL Industrial Automation: turnkey PLC/RTU systems, SCADA historians, LV/MV VFD & soft-starter panels, HMIs and Central Monitoring Systems across industries.",
+  },
+];
+
 export const ALL_SOLUTION_PAGES = [
   URS_PAGE,
   ...URS_MODULE_PAGES,
@@ -2313,6 +2694,8 @@ export const ALL_SOLUTION_PAGES = [
   ...WATER_MODULE_PAGES,
   IOT_PAGE,
   ...IOT_MODULE_PAGES,
+  INFRASTRUCTURE_PAGE,
+  ...INFRASTRUCTURE_MODULE_PAGES,
 ];
 
 /** Sub-page families: parent page + children, used for card grids and "explore other". */
@@ -2322,6 +2705,7 @@ export const SOLUTION_GROUPS: Record<SolutionGroup, { parent: SolutionPageData; 
   panels: { parent: PANELS_PAGE, pages: PANEL_MODULE_PAGES, label: "LT/MV Panels", short: "LT/MV", noun: "panels" },
   water: { parent: WATER_PAGE, pages: WATER_MODULE_PAGES, label: "Water Solutions", short: "water", noun: "solutions" },
   iot: { parent: IOT_PAGE, pages: IOT_MODULE_PAGES, label: "Industrial IoT", short: "IoT", noun: "solutions" },
+  infrastructure: { parent: INFRASTRUCTURE_PAGE, pages: INFRASTRUCTURE_MODULE_PAGES, label: "Infrastructure Solutions", short: "infrastructure", noun: "solutions" },
 };
 
 /** Navigation tree for the Solutions dropdown (header, footer, mobile menu). */
@@ -2350,5 +2734,10 @@ export const SOLUTIONS_MENU: { label: string; href: string; children?: { label: 
     label: "Industrial IoT",
     href: IOT_PAGE.path,
     children: IOT_MODULE_PAGES.map((p) => ({ label: p.short, href: p.path })),
+  },
+  {
+    label: "Infrastructure Solutions",
+    href: INFRASTRUCTURE_PAGE.path,
+    children: INFRASTRUCTURE_MODULE_PAGES.map((p) => ({ label: p.short, href: p.path })),
   },
 ];

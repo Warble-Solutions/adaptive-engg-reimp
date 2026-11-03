@@ -1,6 +1,8 @@
 // Lead submission → Google Apps Script → Google Sheet
 // Includes an offline queue so leads captured on flaky event Wi-Fi are never lost.
 
+import { trackEvent } from "./analytics";
+
 export type LeadType = "enquiry" | "brochure";
 
 export type LeadPayload = {
@@ -19,7 +21,9 @@ export type LeadPayload = {
   website?: string; // honeypot
 };
 
-const ENDPOINT = process.env.NEXT_PUBLIC_SHEET_ENDPOINT || "";
+const ENDPOINT =
+  process.env.NEXT_PUBLIC_SHEET_ENDPOINT ||
+  "https://script.google.com/macros/s/AKfycbwR-KCBcuaandvVGdd6zU40FIdxKlh254xI3a-GhEIHqRPCSGHZjm0uTDeeCokC8NeA/exec";
 const QUEUE_KEY = "aepl_lead_queue_v1";
 const PROFILE_KEY = "aepl_lead_profile_v1";
 
@@ -53,6 +57,11 @@ export async function submitLead(p: LeadPayload): Promise<{ queued: boolean }> {
   };
   try {
     await post(data);
+    trackEvent("generate_lead", {
+      form_type: p.formType,
+      interest: p.interest || p.brochure || "",
+      page_location: data.page,
+    });
     return { queued: false };
   } catch (err) {
     console.warn("Lead submit failed – queued locally", err);
@@ -111,9 +120,14 @@ export const validators = {
 };
 
 export function triggerDownload(url: string) {
+  const fileName = url.split("/").pop() || "brochure.pdf";
+  trackEvent("file_download", {
+    file_name: fileName,
+    file_url: url,
+  });
   const a = document.createElement("a");
   a.href = url;
-  a.download = url.split("/").pop() || "brochure.pdf";
+  a.download = fileName;
   a.rel = "noopener";
   document.body.appendChild(a);
   a.click();

@@ -22,19 +22,19 @@ const MAIN = [
   {
     page: PM_KUSUM_PAGE,
     image: "/solutions/pm-kusum.webp",
-    summary: "One stop solution from field device to command center – RMS, CMS, AMS, ReportWiz, WMS and LT/MV panels across 2000+ sites.",
+    summary: "One stop solution from field device to command center – RMS, CMS, AMS, ReportWiz, WMS and LT/MV panels across 2,000+ sites.",
   },
   {
     page: PANELS_PAGE,
     image: "/solutions/panels.webp",
-    summary: "Type-tested LT (800V · 415V) and MV (33kV · 11kV) panels built in-house – 15000+ panels delivered with native SCADA integration.",
+    summary: "Type-tested LT (800V · 415V) and MV (33kV · 11kV) panels built in-house – 15,000+ panels delivered with native SCADA integration.",
   },
 ];
 
 export default function SolutionsPage() {
   return (
     <>
-      <PageHero title="Solutions" image="/hero/solar-bess.webp" />
+      <PageHero title="Solutions" image="/hero/solutions-hero.webp" />
 
       <section className="section" aria-labelledby="main-solutions-title">
         <div className="container">
@@ -96,6 +96,13 @@ export default function SolutionsPage() {
         <div className="container">
           <SectionHead eyebrow="Industrial IoT" id="iot-solutions-title" title="Telemetry, central monitoring and machine learning" />
           <ModuleGrid group="iot" />
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="infrastructure-solutions-title">
+        <div className="container">
+          <SectionHead eyebrow="Infrastructure Solutions" id="infrastructure-solutions-title" title="Turnkey E&I, SCADA and power distribution for critical infrastructure" />
+          <ModuleGrid group="infrastructure" />
         </div>
       </section>
 

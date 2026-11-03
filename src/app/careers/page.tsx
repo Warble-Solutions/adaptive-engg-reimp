@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function CareersPage() {
   return (
     <>
-      <PageHero title="Careers" image="/hero/solar-bess.webp" />
+      <PageHero title="Careers" image="/hero/careers-hero.webp" />
 
       <section className="section" aria-labelledby="open-roles-title">
         <div className="container">

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function BlogsPage() {
   return (
     <>
-      <PageHero title="Blogs" image="/hero/solar-wind.webp" />
+      <PageHero title="Blogs" image="/hero/turnkey-hero.webp" />
       <section className="section">
         <div className="container">
           <div className={s.blogGrid}>

@@ -156,7 +156,7 @@ export function CtaBand() {
     <section className={s.cta}>
       <div className={`container ${s.ctaInner}`}>
         <div>
-          <h2>Planning a solar, wind, BESS or hybrid project?</h2>
+          <h2>Planning a Solar, Wind, BESS or Hybrid project?</h2>
           <p>Talk to India&apos;s most trusted renewable technology partner.</p>
         </div>
         <div className={s.ctaBtns}>

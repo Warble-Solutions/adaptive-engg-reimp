@@ -146,7 +146,28 @@
   from = "/asset-management-2/*"
   to = "/solutions/industrial-iot/asset-management/"
   status = 301
-# Not on the new site yet â†’ Solutions overview (temporary)
+# Infrastructure
+[[redirects]]
+  from = "/infrastructure/*"
+  to = "/solutions/infrastructure/"
+  status = 301
+[[redirects]]
+  from = "/tunnel/*"
+  to = "/solutions/infrastructure/tunnel/"
+  status = 301
+[[redirects]]
+  from = "/datacenter/*"
+  to = "/solutions/infrastructure/data-center/"
+  status = 301
+[[redirects]]
+  from = "/industrial-automation-solution/*"
+  to = "/solutions/infrastructure/automation/"
+  status = 301
+[[redirects]]
+  from = "/turnkey/*"
+  to = "/solutions/infrastructure/"
+  status = 301
+# Not on the new site yet -> Solutions overview (temporary)
 [[redirects]]
   from = "/renewable-energy/*"
   to = "/solutions/"
@@ -161,26 +182,6 @@
   status = 302
 [[redirects]]
   from = "/international-projects/*"
-  to = "/solutions/"
-  status = 302
-[[redirects]]
-  from = "/industrial-automation-solution/*"
-  to = "/solutions/"
-  status = 302
-[[redirects]]
-  from = "/infrastructure/*"
-  to = "/solutions/"
-  status = 302
-[[redirects]]
-  from = "/tunnel/*"
-  to = "/solutions/"
-  status = 302
-[[redirects]]
-  from = "/datacenter/*"
-  to = "/solutions/"
-  status = 302
-[[redirects]]
-  from = "/turnkey/*"
   to = "/solutions/"
   status = 302
 # Old blog posts â†’ /resources/blogs/<post>/

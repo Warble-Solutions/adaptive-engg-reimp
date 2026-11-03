@@ -35,7 +35,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
-      <PageHero title={b.title} image={b.image || "/hero/solar-wind.webp"} />
+      <PageHero title={b.title} image="/hero/turnkey-hero.webp" />
       <section className="section">
         <div className="container">
           <article className={s.blogArticle}>

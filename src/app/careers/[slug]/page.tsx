@@ -59,7 +59,7 @@ export default async function JobPage({ params }: Props) {
 
   return (
     <>
-      <PageHero title={job.title} image="/hero/solar-wind.webp" />
+      <PageHero title={job.title} image="/hero/careers-hero.webp" />
 
       <section className="section" aria-labelledby="job-title">
         <div className="container">

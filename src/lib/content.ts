@@ -38,7 +38,7 @@ export const STATS: Stat[] = [
   { value: 15000, suffix: "+", label: "Panels Delivered" },
   { value: 500, suffix: "+", label: "Customers" },
   { value: 2500, suffix: "+", label: "Sites" },
-  { value: 2, suffix: " Lacs sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
+  { value: 200000, suffix: " sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
   { value: 750, suffix: "+", label: "Commissioned Projects" },
   { value: 450, suffix: "+", label: "Manpower" },
   { value: 40, suffix: "GW", label: "Annual Execution Capacity" },
@@ -544,7 +544,7 @@ export const SOLUTIONS: Solution[] = [
     image: "/solutions/panels.webp",
     brochure: "panels",
     highlights: [
-      { value: "15000+", label: "Panels delivered" },
+      { value: "15,000+", label: "Panels delivered" },
       { value: "40GW+", label: "Annual capacity" },
       { value: "25 Yrs", label: "Reliability" },
     ],
@@ -581,7 +581,7 @@ export const SOLUTIONS: Solution[] = [
     image: "/solutions/pm-kusum.webp",
     brochure: "kusum",
     highlights: [
-      { value: "2000+", label: "Sites" },
+      { value: "2,000+", label: "Sites" },
       { value: "5GW+", label: "Monitored" },
       { value: "60%+", label: "Market share" },
     ],
@@ -637,7 +637,7 @@ export const URS: { title: string; tagline: string; desc: string; modules: UrsMo
   ],
 };
 
-/** Homepage "Our Solutions" – the 5 main solution categories, in this order. */
+/** Homepage "Our Solutions" – the 6 main solution categories, in this order. */
 export const MAIN_SOLUTIONS: { id: string; name: string; short: string; summary: string; image: string; href: string; brochure: keyof typeof BROCHURES }[] = [
   {
     id: "urs",
@@ -684,6 +684,15 @@ export const MAIN_SOLUTIONS: { id: string; name: string; short: string; summary:
     href: "/solutions/industrial-iot/",
     brochure: "corporate",
   },
+  {
+    id: "infrastructure",
+    name: "Infrastructure Solutions",
+    short: "Infrastructure",
+    summary: "Turnkey E&I, power distribution and SCADA for road, railway & metro tunnels, Tier III/IV data centers and industrial automation.",
+    image: "/solutions/infrastructure/tunnel-modern.webp",
+    href: "/solutions/infrastructure/",
+    brochure: "tunnel",
+  },
 ];
 
 // LT/MV type test results now live in PANELS_PAGE (src/lib/solutions.ts)
@@ -718,26 +727,148 @@ export const CERTIFICATIONS = [
 
 // Journey: the About page shows the timeline image at /public/about/journey.webp
 
-/**
- * Leadership & team – photos from the company archive.
- * TODO: add designations (`role`) – leave empty to show name only.
- */
+export type TeamMember = {
+  name: string;
+  photo: string;
+  role?: string;
+  featured?: boolean;
+  bio: string[];
+};
+
 /** Leadership first (`featured` = larger cards in the top row), then by designation. */
-export const TEAM: { name: string; photo: string; role?: string; featured?: boolean }[] = [
-  { name: "Chirag Soni", photo: "/team/chirag-soni.webp", role: "Managing Director", featured: true },
-  { name: "Jay Patel", photo: "/team/jay-patel.webp", role: "Director", featured: true },
-  { name: "Keyur Amin", photo: "/team/keyur-amin.webp", role: "CEO" },
-  { name: "Ajit Patel", photo: "/team/ajit-patel.webp", role: "CTO" },
-  { name: "Darshan Goswami", photo: "/team/darshan-goswami.webp", role: "Head - Renewable Energy Business" },
-  { name: "Chintan Patel", photo: "/team/chintan-patel.webp", role: "Head - Sales" },
-  { name: "Harshang Dhandhukiya", photo: "/team/harshang-dhandhukiya.webp", role: "Head - Finance" },
-  { name: "Rutvik Dave", photo: "/team/rutvik-dave.webp", role: "Head - Software Development" },
-  { name: "Yogendra Singh Bhati", photo: "/team/yogendra-singh-bhati.webp", role: "Head - Service" },
-  { name: "Manish Malkan", photo: "/team/manish-malkan.webp", role: "Head AMC" },
-  { name: "Jay Patel", photo: "/team/jay-patel-ops.webp", role: "Head of Project Department" },
-  { name: "Kundan Singh Rajput", photo: "/team/kundan-singh-rajput.webp", role: "Head of Research And Development" },
-  { name: "Nilesh Prajapati", photo: "/team/nilesh-prajapati.webp", role: "Head of Engineering Department" },
-  { name: "Pragnesh Patel", photo: "/team/pragnesh-patel.webp", role: "Software Development Manager - Solar and Process Automation" },
+export const TEAM: TeamMember[] = [
+  {
+    name: "Chirag Soni",
+    photo: "/team/chirag-soni.webp",
+    role: "Managing Director",
+    featured: true,
+    bio: [
+      "Chirag is an Electrical Engineer with more than two decades of rich experience in the field of industrial automation and electrical systems. He is a co-founder of AEPL, which begun in the year 2013 as a system integrator of Schneider-Electric. He has been instrumental in transforming AEPL to get established as highly respected turn-key E&I projects company.",
+      "Driven by his passion for delivering projects before time, demonstration of best quality work and use of latest technologies, he has been successful in guiding AEPL to deliver maximum value. This has created a new industry benchmark with regard to cost leadership and faster (and better) project execution.",
+      "Under his guidance, AEPL manages an installed base of plant SCADA of 90GW+ capacity across 750+ commissioned projects and 2,500+ sites in India. AEPL also manages 50+ Water Supply Schemes and India’s widest highway TWIN TUBE Tunnel of 2.5Km where complete E&I packages are delivered.",
+      "With this unparalleled experience, technical leadership and quality of work, AEPL is considered as a “Preferred Project Partner” by large corporate houses of India.",
+    ],
+  },
+  {
+    name: "Jay Patel",
+    photo: "/team/jay-patel.webp",
+    role: "Director",
+    featured: true,
+    bio: [
+      "Jay is a co-founder of AEPL and a corporate titan in the complete E&I solutions industry having a rich experience in strategic business planning and expansions, engineering design, software development and manufacturing. He has gained a broad range of experience of more than two decades and achieved a reputation as a respected leader in the field.",
+      "His determination towards understanding and solving day-to-day customer challenges and providing innovative solutions to it, have helped AEPL to be known as the most trusted technology partner in Renewable Energy (Solar, Wind, Hybrid and Microgrid), Water, Infra, Turnkey Projects and E&I.",
+      "With a sharp eye on next-gen technologies and its implementation into today’s solutions, Jay is instrumental in conceiving and launching one more business vertical IoTWiz. It provides state-of-the-art software solutions like Mobile Asset Management, Central Plant Monitoring and many more custom solutions.",
+      "Under his guidance, AEPL manages an installed base of plant SCADA of 90GW+ capacity across 750+ commissioned projects and 2,500+ sites in India. AEPL also manages 50+ Water Supply Schemes and India’s widest highway TWIN TUBE Tunnel of 2.5Km where complete E&I packages are delivered.",
+      "With this unparalleled experience, technical leadership and quality of work, AEPL is considered as a “Preferred Project Partner” by large corporate houses of India.",
+    ],
+  },
+  {
+    name: "Keyur Amin",
+    photo: "/team/keyur-amin.webp",
+    role: "CEO",
+    bio: [
+      "Keyur Amin is an Electrical Engineering professional with 17+ years of experience in the field of Industrial Electrical and Automation. He joined AEPL in 2013 and is one of the founding pillars in transforming AEPL from System Integrator to a Turn-Key E&I project company.",
+      "His aptitude to explore unchartered territories has helped AEPL in providing end to end E&I solutions for WWW (Water and Waste Water) and Infra verticals. Under his leadership, AEPL is a registered E&I solution provider of Water Departments of Governments of MP, Gujarat, UP and Odisha.",
+      "His guidance has enabled the company to deliver complete E&I solutions for 90GW+ Renewable Solutions, 700+ MLD of Drinking/Sewage Water Treatment and India’s widest highway twin-tunnel of 2.5KM.",
+    ],
+  },
+  {
+    name: "Ajit Patel",
+    photo: "/team/ajit-patel.webp",
+    role: "CTO",
+    bio: [
+      "Ajit is an Electrical Engineer with a flair for technology adoption with 19 years of rich and hands-on experience in Industrial Automation having worked/ collaborated with organizations like ABB & Schneider.",
+      "Ajit decided to hang up his boots in the corporate world to start his entrepreneurial journey in 2017. Since then, executed 200+ Successful Projects in the fields of Solar, Water and Processes industries.",
+      "With rich insight into Industrial Automation and pain identification of the Manufacturing Industry in India, Ajit conceived IoTWiz – MachineWiz to maximise the productivity of machines which can be effected through the following solutions:\n1. Production Monitoring\n2. Condition Monitoring\n3. Predictive Maintenance\n4. Process Optimization\n5. Asset Management",
+      "With Manufacturing Industry wanting to get the maximum out of each penny spent, Ajit believes that MachineWiz will partner towards making this into reality.",
+    ],
+  },
+  {
+    name: "Darshan Goswami",
+    photo: "/team/darshan-goswami.webp",
+    role: "Head - Renewable Energy Business",
+    bio: [
+      "Darshan is an Electronics & Communications Engineer with more than 13 years of experience in the field of Industrial Automation and process plants. He has been with AEPL since inception and He has contributed with his technical and programming expertise in various projects. As a Key Development Engineer and Team Leader in the prestigious project for ISRO, Jindal Saw, Welspun, GEA, Tetra pack, Adani Green and Amul dairy, Darshan has represented AEPL at the forefront of innovation and the most up-to-date groundbreaking solutions or products currently available for the industries.",
+      "His passion for delivering projects with advanced technical skills has been instrumental in making AEPL’s service team that delivers the projects with the same quality of work with cutting-edge technology before time. 90GW+ of Solar, Wind, BESS and Hybrid SCADA, Development and PAN India Sales of the PPC (Power Plant Controller) are some milestone deliveries of his. He enjoys technology, people connections, touring and photography.",
+    ],
+  },
+  {
+    name: "Chintan Patel",
+    photo: "/team/chintan-patel.webp",
+    role: "Head - Sales",
+    bio: [
+      "Chintan is an Electronics and Communications Engineer with 14+ years of experience in the field of Industrial Electrical and Automation. He joined AEPL in 2013 and is one of the pillars in transforming AEPL from modest start to converting 500+ satisfied customers including some of the big corporates of India.",
+      "His leadership is highlighted by providing best in class solutions and delivering projects before time while maintaining cost leadership while building long term relationships with customers which has led to AEPL’s current renewable energy portfolio of 90GW+.",
+      "His next target is to provide end to end reliable solutions for Electrical and Automation in Infra Projects and convert most of EPC companies in India.",
+    ],
+  },
+  {
+    name: "Harshang Dhandhukiya",
+    photo: "/team/harshang-dhandhukiya.webp",
+    role: "Head - Finance",
+    bio: [
+      "Harshang is a B.Com. & CA (inter) started his career in 2012 with a Chartered Accountant firm as Accounts and Taxation Executive and got elevated as Head – Taxation in 2016. He joined Adaptive Engineering Pvt. Ltd. in 2021 as Finance Head and has been instrumental in streamlining the finance processes for the organization. He loves travelling, playing cricket and is a stock market enthusiast.",
+    ],
+  },
+  {
+    name: "Rutvik Dave",
+    photo: "/team/rutvik-dave.webp",
+    role: "Head - Software Development",
+    bio: [
+      "Rutvik completed his MCA in 2000 and started his entrepreneurial journey soon after by starting Expert Solutions (an IT Company).",
+      "In 2008, he went to the USA as a freelance consultant, consulting to Texas Education and Neopost.",
+      "In 2011 he decided to head back home and started Centramation as Founder. The company is into providing Software Solutions in Oracle, C#, Angular JS, Node JS, SQL Servers, AI & ML etc.",
+      "He is the technological backbone of IoTWiz – MachineWiz and brings with him one of the best brains in AI & ML.",
+    ],
+  },
+  {
+    name: "Yogendra Singh Bhati",
+    photo: "/team/yogendra-singh-bhati.webp",
+    role: "Head - Service",
+    bio: [
+      "Yogendra Singh Bhati, Service Head, heads execution of the project of our company and is technically extremely sharp with deep understanding in his field. He has 13 years of experience in the field of automation scada package. He holds Bachelor degree in Electronics & communication from Rajasthan Technical University, Kota and has completed a Advanced Certificate in Cybersecurity with International Institute of Information Technology Bangalore. His relationships with customers and deep understanding of products and business adds a lot of value to his current role of Service Head.",
+    ],
+  },
+  {
+    name: "Manish Malkan",
+    photo: "/team/manish-malkan.webp",
+    role: "Head AMC",
+    bio: [
+      "Manish Malkan, brings with him more than 31 years of experience in the field of Instrumentation & Control and Automation System, having exposure to Maintenance as well as Project Engineering & Execution — Sensor To Boardroom. He holds qualification Diploma in Electronics and Radio Engineering (DERE). He started his career with M/s GHCL Ltd. He then moved on to work with Masibus Automation & Instrumentation Pvt Ltd, Fairdeal Process Automation Pvt Ltd, Harikrupa Automation Pvt Ltd and HKRP Innovations LLP. He joined Adaptive Engineering Pvt. Ltd., in August 2022 and is adding value to the organization as AMC Head. His personal interests are spirituality and listening to old Bollywood songs.",
+    ],
+  },
+  {
+    name: "Jay Patel",
+    photo: "/team/jay-patel-ops.webp",
+    role: "Head of Project Department",
+    bio: [
+      "As an Electronics and Communication Engineer, Jay commenced his career with Mehta & Associates Fire Protection Systems as Supply Chain Management (SCM) Executive. He joined Adaptive Engineering Pvt. Ltd. in 2016 as Project and rose from the ranks to Head Projects. His interest in Procurement Management, Planning and Execution enriches his current role where he is able to make a positive contribution to the organization. His personal interests are playing kabaddi, swimming and adventure sports.",
+    ],
+  },
+  {
+    name: "Kundan Singh Rajput",
+    photo: "/team/kundan-singh-rajput.webp",
+    role: "Head of Research And Development",
+    bio: [
+      "Kundan is an Electronics & Communication Engineer having experience of more than 12 years in the field of Industrial Automation. Throughout the journey he served and learned in different types of Industrial Automation vertical Like Machine automation, Process automation and Remote monitoring solution. Currently he is looking into exploring new automation products, solutions and service team technical training.",
+    ],
+  },
+  {
+    name: "Nilesh Prajapati",
+    photo: "/team/nilesh-prajapati.webp",
+    role: "Head of Engineering Department",
+    bio: [
+      "Nilesh is an Electronics Engineer with 12 years of rich experience. He joined Optimize Solutions Pvt. Ltd. in 2011 as Production Engineer and moved to Adaptive Engineering Pvt. Ltd. in 2013 as Production Engineer and moved up the ranks to the position of Head Engineering. His personal interests are Painting and listening to Bollywood songs.",
+    ],
+  },
+  {
+    name: "Pragnesh Patel",
+    photo: "/team/pragnesh-patel.webp",
+    role: "Software Development Manager - Solar and Process Automation",
+    bio: [
+      "Pragnesh is a BTech in Electrical & Electronics and joined Adaptive Engineering Pvt. Ltd, in 2013 as Service Engineer. His deep understanding of customer requirement and SCADA helps him develop customized SCADA Solutions which has propelled his elevation as Development Manager (Solar). His urge to learn helps him upskill on the latest technology in the field of automation. His personal interest is engaging into social service and make a positive difference to the society.",
+    ],
+  },
 ];
 
 /** Homepage banners. A slide with `title` shows only that line (no subtitle). */
@@ -774,5 +905,8 @@ export const INTEREST_OPTIONS = [
   "EMS for BESS",
   "PM KUSUM Solutions",
   "LT/MV Panels",
+  "Water Solutions",
+  "Industrial IoT",
+  "Infrastructure Solutions (Tunnel / Data Center / Automation)",
   "Partnership / Other",
 ];

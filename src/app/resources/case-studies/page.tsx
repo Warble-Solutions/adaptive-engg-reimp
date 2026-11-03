@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function CaseStudiesPage() {
   return (
     <>
-      <PageHero title="Case Studies" image="/hero/solar-wind.webp" />
+      <PageHero title="Case Studies" image="/hero/wind-hybrid.webp" />
       <section className="section" aria-labelledby="case-studies-title">
         <div className="container">
           <SectionHead eyebrow="Proven results" id="case-studies-title" title="Case studies" lead="How AEPL delivers for India's leading developers, utilities and industries." />

@@ -1,0 +1,271 @@
+.team {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.teamTop {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 400px));
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.teamTop .member h3 {
+  font-size: 18px;
+}
+.teamTop .member p {
+  font-size: 14px;
+}
+.member {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--line);
+  font: inherit;
+  color: inherit;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s;
+}
+.member:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--brand-200);
+}
+.memberPhoto {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+.member img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: top;
+  background: var(--bg-soft);
+  transition: transform 0.45s var(--ease);
+}
+.member:hover img {
+  transform: scale(1.04);
+}
+.memberBody {
+  padding: 14px 12px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+.member h3 {
+  font-size: 15.5px;
+  transition: color 0.2s;
+}
+.member:hover h3 {
+  color: var(--brand);
+}
+.member p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.memberMore {
+  margin-top: auto;
+  padding-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--brand);
+  opacity: 0.82;
+  transition: opacity 0.2s, gap 0.2s;
+}
+.memberMore svg {
+  width: 14px;
+  height: 14px;
+}
+.member:hover .memberMore {
+  opacity: 1;
+  gap: 8px;
+}
+
+/* Team Profile Modal */
+.teamBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(8, 22, 32, 0.65);
+  backdrop-filter: blur(6px);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  animation: teamFade 0.22s var(--ease);
+}
+@keyframes teamFade {
+  from {
+    opacity: 0;
+  }
+}
+.teamModal {
+  position: relative;
+  width: min(860px, 100%);
+  max-height: calc(100svh - 40px);
+  overflow: auto;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  animation: teamRise 0.32s var(--ease);
+}
+@keyframes teamRise {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+}
+.teamClose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--bg-soft);
+  color: var(--ink-2);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s, color 0.2s;
+}
+.teamClose:hover {
+  background: var(--brand);
+  color: #fff;
+}
+.teamClose svg {
+  width: 20px;
+  height: 20px;
+}
+.teamModalSide {
+  background: linear-gradient(160deg, var(--brand-50), #fff 75%);
+  border-right: 1px solid var(--line);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+.teamModalImg {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.teamModalImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.teamModalNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.teamNavBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink-2);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.teamNavBtn:hover {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+.teamNavBtn svg {
+  width: 15px;
+  height: 15px;
+}
+.teamModalContent {
+  padding: 34px 32px 32px;
+}
+.teamModalRole {
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brand);
+  background: var(--brand-50);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.teamModalContent h3 {
+  font-size: clamp(22px, 2.4vw, 28px);
+  color: var(--ink);
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.teamModalBio {
+  display: grid;
+  gap: 12px;
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+@media (max-width: 900px) {
+  .team {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 720px) {
+  .teamModal {
+    grid-template-columns: 1fr;
+  }
+  .teamModalSide {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 22px 20px 16px;
+    align-items: center;
+  }
+  .teamModalImg {
+    max-width: 180px;
+  }
+  .teamModalNav {
+    width: 100%;
+  }
+  .teamModalContent {
+    padding: 22px 20px 26px;
+  }
+}
+@media (max-width: 600px) {
+  .team {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+

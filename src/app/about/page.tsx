@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Icon, { type IconName } from "@/components/Icon";
+import TeamGrid from "@/components/TeamGrid";
 import Testimonials from "@/components/Testimonials";
 import { Achievements, Clients, CtaBand, PageHero, SectionHead } from "@/components/Sections";
-import { ABOUT, CERTIFICATIONS, TEAM } from "@/lib/content";
+import { ABOUT, CERTIFICATIONS } from "@/lib/content";
 import s from "../inner.module.css";
 
 export const metadata: Metadata = {
@@ -13,11 +14,11 @@ export const metadata: Metadata = {
 };
 
 const MFG = [
-  { img: "/solutions/panel-factory.webp", cap: "Dust-free panel manufacturing" },
+  { img: "/about/mfg-1.webp", cap: "Dust-free panel manufacturing" },
   { img: "/about/factory-floor.webp", cap: "In-house fabrication" },
   { img: "/solutions/fat.webp", cap: "Factory acceptance testing" },
   { img: "/about/control-room.webp", cap: "SCADA & control engineering" },
-  { img: "/solutions/cms.webp", cap: "Central monitoring" },
+  { img: "/about/mfg-2.webp", cap: "Central monitoring" },
   { img: "/about/expo.webp", cap: "AEPL at industry events" },
 ];
 
@@ -57,7 +58,7 @@ function CertCard({ c, i, small = false }: { c: (typeof CERTIFICATIONS)[number];
 export default function AboutPage() {
   return (
     <>
-      <PageHero title="About Us" image="/about/control-room.webp" />
+      <PageHero title="About Us" image="/hero/about-ref.webp" />
 
       {/* Who we are */}
       <section className="section" aria-labelledby="who-title">
@@ -75,9 +76,9 @@ export default function AboutPage() {
             </div>
           </div>
           <div className={`${s.collage} reveal`} style={{ "--d": "0.1s" } as React.CSSProperties}>
-            <img src="/hero/solar-wind.webp" alt="Utility-scale solar and wind plant" loading="lazy" />
-            <img src="/solutions/scada.webp" alt="SCADA control room monitoring renewable assets" loading="lazy" />
-            <img src="/hero/lt-mv-panels.webp" alt="AEPL LT/MV switchgear panels" loading="lazy" />
+            <img src="/about/who-1.webp" alt="Utility-scale solar and wind plant" loading="lazy" />
+            <img src="/about/who-2.webp" alt="SCADA control room monitoring renewable assets" loading="lazy" />
+            <img src="/about/who-3.webp" alt="AEPL LT/MV switchgear panels" loading="lazy" />
           </div>
         </div>
       </section>
@@ -148,19 +149,7 @@ export default function AboutPage() {
       <section className="section section-soft" id="team" aria-labelledby="team-title">
         <div className="container">
           <SectionHead eyebrow="Our team" id="team-title" title="The people behind AEPL" lead="450+ engineers, technicians and specialists – one trusted team from engineering to handover." />
-          {[TEAM.filter((m) => m.featured), TEAM.filter((m) => !m.featured)].map((group, g) => (
-            <div key={g} className={g === 0 ? s.teamTop : s.team}>
-              {group.map((m, i) => (
-                <div key={m.photo} className={`card ${s.member} reveal`} style={{ "--d": `${(i % 4) * 0.05}s` } as React.CSSProperties}>
-                  <img src={m.photo} alt={m.name} loading="lazy" />
-                  <div>
-                    <h3>{m.name}</h3>
-                    {m.role && <p>{m.role}</p>}
-                  </div>
-                </div>
-              ))}
-            </div>
-          ))}
+          <TeamGrid />
         </div>
       </section>
 

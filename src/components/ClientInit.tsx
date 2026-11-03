@@ -2,13 +2,15 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { trackPageView } from "@/lib/analytics";
 import { flushQueue } from "@/lib/leads";
 
-/** Adds `.in` to every `.reveal` element as it scrolls into view; also retries queued leads. */
+/** Adds `.in` to every `.reveal` element as it scrolls into view; also retries queued leads and tracks GA4 page views. */
 export default function ClientInit() {
   const pathname = usePathname();
 
   useEffect(() => {
+    trackPageView(pathname);
     const els = Array.from(document.querySelectorAll<HTMLElement>(".reveal:not(.in)"));
     if (!("IntersectionObserver" in window)) {
       els.forEach((e) => e.classList.add("in"));

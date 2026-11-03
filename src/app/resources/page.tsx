@@ -21,7 +21,7 @@ export default function ResourcesPage() {
 
   return (
     <>
-      <PageHero title="Resources" image="/hero/scada.webp" />
+      <PageHero title="Resources" image="/hero/resources-hero.webp" />
 
       <section className="section" aria-labelledby="brochures-title">
         <div className="container">

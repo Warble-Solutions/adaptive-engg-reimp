@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHero title="Contact Us" image="/hero/solar-wind.webp" />
+      <PageHero title="Contact Us" image="/hero/contact-hero.webp" />
 
       <ContactSection title="Send us an enquiry" idPrefix="contact-enquiry" />
 
