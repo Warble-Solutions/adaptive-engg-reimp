@@ -30,11 +30,11 @@ export function SectionHead({
 }
 
 /** Achievements – brochure numbers with count-up. */
-export function Achievements({ limit = 8, dark = true }: { limit?: number; dark?: boolean }) {
+export function Achievements({ limit = 12, dark = true }: { limit?: number; dark?: boolean }) {
   return (
     <section className={`section ${dark ? s.achDark : "section-soft"}`} aria-labelledby="achievements-title">
       <div className="container">
-        <div className={`section-head reveal ${dark ? s.headLight : ""}`}>
+        <div className={`section-head ${s.achHead} reveal ${dark ? s.headLight : ""}`}>
           <span className="eyebrow">Achievements</span>
           <h2 className="h2" id="achievements-title">
             Engineering the backbone of India&apos;s clean energy
@@ -95,7 +95,14 @@ export function Clients({ id = "clients" }: { id?: string }) {
   return (
     <section className="section section-soft" id={id} aria-labelledby={`${id}-title`}>
       <div className="container">
-        <SectionHead eyebrow="Clients" id={`${id}-title`} title="Industry leaders trust us" lead="500+ customers across India's leading IPPs, EPCs, utilities and industries." />
+        <div className="section-head reveal">
+          <h2 className="eyebrow" id={`${id}-title`}>
+            Industry leaders trust us
+          </h2>
+          <p className="lead" style={{ marginTop: 0 }}>
+            500+ customers across India&apos;s leading IPPs, EPCs, utilities and industries.
+          </p>
+        </div>
       </div>
       <div className={s.marquees}>
         {rows.map((row, r) => (

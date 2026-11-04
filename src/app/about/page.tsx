@@ -103,7 +103,7 @@ export default function AboutPage() {
           </div>
           <figure className={`${s.scaleImg} reveal`}>
             <img
-              src="/about/scale.webp"
+              src="/about/scale.png"
               width={1566}
               height={784}
               loading="lazy"

@@ -139,6 +139,9 @@ ul {
 .section-soft {
   background: var(--bg-soft);
 }
+.section-soft + .section-soft {
+  padding-top: clamp(36px, 5vw, 56px);
+}
 .section-tint {
   background: linear-gradient(180deg, var(--bg-tint), #fff);
 }

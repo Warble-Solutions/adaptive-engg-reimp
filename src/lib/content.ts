@@ -38,7 +38,7 @@ export const STATS: Stat[] = [
   { value: 15000, suffix: "+", label: "Panels Delivered" },
   { value: 500, suffix: "+", label: "Customers" },
   { value: 2500, suffix: "+", label: "Sites" },
-  { value: 200000, suffix: " sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
+  { value: 2, suffix: " Lacs sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
   { value: 750, suffix: "+", label: "Commissioned Projects" },
   { value: 450, suffix: "+", label: "Manpower" },
   { value: 40, suffix: "GW", label: "Annual Execution Capacity" },
@@ -75,6 +75,8 @@ export const ADVANTAGES = [
   { title: "Customized solutions based on client's needs and challenges", icon: "bulb" },
   { title: "Strong track record of delivering quality projects", icon: "shield" },
   { title: "OEM partnerships for best-in-class hardware", icon: "layers" },
+  { title: "Turnkey Project Experts", icon: "rocket" },
+  { title: "Time-saving and cost-effective commissioning process", icon: "checkCircle" },
 ] as const;
 
 // ---------------------------------------------------------------------------
@@ -871,12 +873,14 @@ export const TEAM: TeamMember[] = [
   },
 ];
 
-/** Homepage banners. A slide with `title` shows only that line (no subtitle). */
-export const HERO_SLIDES: { image: string; title?: string; subtitle?: string }[] = [
-  { image: "/hero/solar-bess.webp", title: "India's Market Leader Renewable Energy Technology" },
+/** Homepage banners. */
+export const HERO_SLIDES: { image: string; title?: string; titleSub?: string; subtitle?: string }[] = [
+  { image: "/hero/solar-bess.webp", title: "India's Market Leader", titleSub: "Renewable Energy Technology" },
   { image: "/hero/solar-wind.webp", subtitle: "Unified Renewable Solution (URS)" },
   { image: "/hero/pm-kusum.webp", subtitle: "PM KUSUM" },
-  { image: "/hero/lt-mv-panels.webp", subtitle: "LT/MV Panels" },
+  { image: "/hero/lt-mv-panels.webp", subtitle: "Electrical Panels" },
+  { image: "/solutions/water/water-main.webp", subtitle: "Water Solutions" },
+  { image: "/solutions/infrastructure/infra-main.webp", subtitle: "Infrastructure Solutions" },
 ];
 
 export const NAV = [

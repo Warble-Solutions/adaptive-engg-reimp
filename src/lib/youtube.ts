@@ -4,6 +4,9 @@ export type Video = { id: string; title: string; published?: string };
 
 /** Fallback list if the feed can't be reached at build time. */
 const FALLBACK: Video[] = [
+  { id: "RqS3zQKKTRQ", title: "Day 3 at REI 2026!" },
+  { id: "yH9WnZnG5ds", title: "Day 2 at REI 2026!" },
+  { id: "pw_O7U96jX4", title: "Day 1 at REI 2026!" },
   { id: "DbhvDJYsfEA", title: "Weather Monitoring Systems by AEPL under PM-KUSUM" },
   { id: "w2avEUffxYM", title: "Udaan 2026 – Adaptive Engineering Pvt. Ltd. Annual Meet" },
   { id: "_n0cYUCRMYc", title: "PM KUSUM – ACDB Panel" },
@@ -38,9 +41,11 @@ export async function getLatestVideos(limit = 6): Promise<Video[]> {
       }))
       // exclude the About video (shown separately) and Shorts-style empty titles
       .filter((v) => v.id && v.title && v.id !== COMPANY.aboutVideoId);
-    return videos.length ? videos.slice(0, limit) : FALLBACK;
+    const seen = new Set(videos.map((v) => v.id));
+    const merged = [...videos, ...FALLBACK.filter((v) => !seen.has(v.id))];
+    return merged.slice(0, limit);
   } catch (err) {
     console.warn("[youtube] using fallback list:", err);
-    return FALLBACK;
+    return FALLBACK.slice(0, limit);
   }
 }

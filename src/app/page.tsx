@@ -21,23 +21,21 @@ export default async function HomePage() {
       <section className="section" aria-labelledby="about-title">
         <div className="container">
           <div className={s.aboutTop}>
-            <div className="reveal">
+            <div className={`${s.aboutCopy} reveal`}>
               <h2 className="eyebrow" id="about-title">
                 About Us
               </h2>
-              <p className="lead">{ABOUT.intro}</p>
+              <p>{ABOUT.intro}</p>
+              <p>{ABOUT.more[0]}</p>
+              <p>{ABOUT.more[1]}</p>
             </div>
             <div className={`${s.videoCol} reveal`} style={{ "--d": "0.12s" } as React.CSSProperties}>
               <YouTubeLite id={COMPANY.aboutVideoId} title="About Adaptive Engineering Pvt. Ltd." />
-              <div className={s.videoBadge}>
-                <strong>16+</strong>
-                <span>Years of expertise</span>
-              </div>
             </div>
           </div>
 
           <div className={`${s.aboutBottom} reveal`}>
-            {ABOUT.more.map((p) => (
+            {ABOUT.more.slice(2).map((p) => (
               <p key={p}>{p}</p>
             ))}
             <div className={s.aboutCtas}>
@@ -98,14 +96,14 @@ export default async function HomePage() {
       </section>
 
       {/* 4. ACHIEVEMENTS */}
-      <Achievements limit={8} />
+      <Achievements limit={12} />
 
       {/* SCALE values graphic */}
       <section className="section" aria-label="Our values – SCALE" style={{ paddingBottom: 0 }}>
         <div className="container">
           <figure className={`${s.scale} reveal`}>
             <img
-              src="/about/scale.webp"
+              src="/about/scale.png"
               width={1566}
               height={784}
               loading="lazy"
@@ -119,7 +117,7 @@ export default async function HomePage() {
       <Advantages />
 
       {/* 6. YOUTUBE */}
-      <section className="section section-soft" aria-labelledby="videos-title">
+      <section className="section section-soft" aria-labelledby="videos-title" style={{ paddingBottom: 0 }}>
         <div className="container">
           <div className={s.videoHead}>
             <SectionHead left eyebrow="YouTube" id="videos-title" title="Engineering in motion" />
