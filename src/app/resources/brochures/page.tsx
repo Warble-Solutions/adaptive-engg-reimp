@@ -15,7 +15,7 @@ export default function BrochuresPage() {
       <PageHero title="Brochures" image="/hero/resources-hero.webp" />
       <section className="section" aria-labelledby="brochures-title">
         <div className="container">
-          <SectionHead eyebrow="Downloads" id="brochures-title" title="Brochures & flyers" lead="Share a few details once and download any brochure instantly." />
+          <SectionHead id="brochures-title" title="Brochures & flyers" lead="Share a few details once and download any brochure instantly." />
           <BrochureGroups />
         </div>
       </section>

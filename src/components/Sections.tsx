@@ -12,7 +12,7 @@ export function SectionHead({
   left,
   id,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: React.ReactNode;
   lead?: React.ReactNode;
   left?: boolean;
@@ -20,7 +20,7 @@ export function SectionHead({
 }) {
   return (
     <div className={`section-head reveal ${left ? "left" : ""}`}>
-      <span className="eyebrow">{eyebrow}</span>
+      {eyebrow && <span className="eyebrow">{eyebrow}</span>}
       <h2 className="h2" id={id}>
         {title}
       </h2>

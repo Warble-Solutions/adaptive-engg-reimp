@@ -25,7 +25,7 @@ export default function ResourcesPage() {
 
       <section className="section" aria-labelledby="brochures-title">
         <div className="container">
-          <SectionHead eyebrow={`${BROCHURE_DOCS.length} downloads`} id="brochures-title" title="Brochures & flyers" />
+          <SectionHead id="brochures-title" title="Brochures & flyers" />
           <div className={s.docs}>
             {featuredBrochures.map((d, i) => (
               <DocCard key={d.id} d={d} i={i} />
