@@ -211,6 +211,17 @@
   object-fit: contain;
   object-position: center;
 }
+.clientGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+.logoGridItem {
+  width: 100%;
+  height: 104px;
+  padding: 16px 22px;
+
+}
 
 /* ---------- Contact ---------- */
 .contact {

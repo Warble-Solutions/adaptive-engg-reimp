@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { COMPANY, NAV, RESOURCES_MENU } from "@/lib/content";
+import { ABOUT_MENU, COMPANY, NAV, RESOURCES_MENU } from "@/lib/content";
 import { SOLUTIONS_MENU } from "@/lib/solutions";
 import Icon from "./Icon";
 import s from "./Header.module.css";
@@ -16,6 +16,7 @@ type MenuItem = { label: string; href: string; children?: { label: string; href:
  */
 const MENUS: Record<string, { items: MenuItem[]; linked: boolean }> = {
   "/solutions/": { items: SOLUTIONS_MENU, linked: true },
+  "/about/": { items: ABOUT_MENU, linked: true },
   "/resources/": { items: RESOURCES_MENU, linked: false },
 };
 
@@ -90,7 +91,7 @@ export default function Header() {
                       <li key={item.href} className={item.children ? s.hasSub : undefined}>
                         <Link
                           href={item.href}
-                          className={`${s.ddLink} ${(item.children ? isActive(item.href) : isExact(item.href) || isActive(item.href)) ? s.ddActive : ""}`}
+                          className={`${s.ddLink} ${(item.children ? isActive(item.href) : item.href === n.href ? isExact(item.href) : isExact(item.href) || isActive(item.href)) ? s.ddActive : ""}`}
                           id={navId(`${n.label} ${item.label}`)}
                         >
                           {item.label}

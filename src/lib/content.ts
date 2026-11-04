@@ -723,8 +723,10 @@ export const CERTIFICATIONS = [
   { title: "Schneider Electric Authorised System Integrator", kind: "Partnership", img: "/certs/schneider-si.webp" },
   { title: "Short Circuit Test – 65kA", kind: "ERDA Type Test", img: "/certs/erda-65ka.webp" },
   { title: "Short Circuit Test – 50kA", kind: "ERDA Type Test", img: "/certs/erda-50ka.webp" },
-  { title: "IP55 Ingress Protection", kind: "ERDA Type Test", img: "/certs/erda-ip55.webp" },
   { title: "Temperature Rise Test", kind: "ERDA Type Test", img: "/certs/erda-temp-rise.webp" },
+  { title: "IP55 Ingress Protection (Page 1)", kind: "ERDA Type Test", img: "/certs/erda-ip55.webp" },
+  { title: "IP55 Ingress Protection (Page 2)", kind: "ERDA Type Test", img: "/certs/erda-ip55-2.webp" },
+  { title: "IP55 Ingress Protection (Page 3)", kind: "ERDA Type Test", img: "/certs/erda-ip55-3.webp" },
 ];
 
 // Journey: the About page shows the timeline image at /public/about/journey.webp
@@ -890,6 +892,14 @@ export const NAV = [
   { label: "Resources", href: "/resources/" },
   { label: "Careers", href: "/careers/" },
   { label: "Contact Us", href: "/contact/" },
+];
+
+/** About Us dropdown in the header. */
+export const ABOUT_MENU = [
+  { label: "About Us", href: "/about/" },
+  { label: "Our Team", href: "/about/team/" },
+  { label: "Certificates", href: "/about/certifications/" },
+  { label: "Clients", href: "/about/clients/" },
 ];
 
 /** Resources dropdown in the header. The /resources/ overview page is linked from the footer only. */

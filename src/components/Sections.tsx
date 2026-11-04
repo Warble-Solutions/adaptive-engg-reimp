@@ -88,7 +88,7 @@ export function Advantages() {
   );
 }
 
-export function Clients({ id = "clients" }: { id?: string }) {
+export function Clients({ id = "clients", grid = false }: { id?: string; grid?: boolean }) {
   const logos = CLIENT_LOGOS;
   const half = Math.ceil(logos.length / 2);
   const rows = [logos.slice(0, half), logos.slice(half)];
@@ -103,20 +103,31 @@ export function Clients({ id = "clients" }: { id?: string }) {
             500+ customers across India&apos;s leading IPPs, EPCs, utilities and industries.
           </p>
         </div>
-      </div>
-      <div className={s.marquees}>
-        {rows.map((row, r) => (
-          <div key={r} className={`${s.marquee} ${r === 1 ? s.reverse : ""}`}>
-            <div className={s.track}>
-              {[...row, ...row].map((src, i) => (
-                <div className={s.logo} key={`${src}-${i}`} aria-hidden={i >= row.length}>
-                  <img src={src} alt={i < row.length ? "Client logo" : ""} loading="lazy" />
-                </div>
-              ))}
-            </div>
+        {grid && (
+          <div className={s.clientGrid}>
+            {logos.map((src, i) => (
+              <div className={`${s.logo} ${s.logoGridItem} reveal`} key={src} style={{ "--d": `${(i % 6) * 0.04}s` } as React.CSSProperties}>
+                <img src={src} alt="Client logo" loading="lazy" />
+              </div>
+            ))}
           </div>
-        ))}
+        )}
       </div>
+      {!grid && (
+        <div className={s.marquees}>
+          {rows.map((row, r) => (
+            <div key={r} className={`${s.marquee} ${r === 1 ? s.reverse : ""}`}>
+              <div className={s.track}>
+                {[...row, ...row].map((src, i) => (
+                  <div className={s.logo} key={`${src}-${i}`} aria-hidden={i >= row.length}>
+                    <img src={src} alt={i < row.length ? "Client logo" : ""} loading="lazy" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 }

@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import Icon, { type IconName } from "@/components/Icon";
-import TeamGrid from "@/components/TeamGrid";
 import Testimonials from "@/components/Testimonials";
-import { Achievements, Clients, CtaBand, PageHero, SectionHead } from "@/components/Sections";
-import { ABOUT, CERTIFICATIONS } from "@/lib/content";
+import { Achievements, CtaBand, PageHero, SectionHead } from "@/components/Sections";
+import { ABOUT } from "@/lib/content";
 import s from "../inner.module.css";
 
 export const metadata: Metadata = {
@@ -14,46 +12,13 @@ export const metadata: Metadata = {
 };
 
 const MFG = [
-  { img: "/about/mfg-1.webp", cap: "Dust-free panel manufacturing" },
+  { img: "/solutions/panels/mfg-15.webp", cap: "Dust-free panel manufacturing" },
   { img: "/about/factory-floor.webp", cap: "In-house fabrication" },
   { img: "/solutions/fat.webp", cap: "Factory acceptance testing" },
   { img: "/about/control-room.webp", cap: "SCADA & control engineering" },
   { img: "/about/mfg-2.webp", cap: "Central monitoring" },
   { img: "/about/expo.webp", cap: "AEPL at industry events" },
 ];
-
-const CERT_BADGES: { icon: IconName; value: string; label: string }[] = [
-  { icon: "shield", value: "ISO 9001:2015", label: "TÜV NORD certified" },
-  { icon: "bolt", value: "ERDA", label: "Type-tested panels" },
-  { icon: "checkCircle", value: "Authorised SI", label: "Schneider Electric" },
-];
-
-const featured = CERTIFICATIONS.filter((c) => c.kind !== "ERDA Type Test");
-const tests = CERTIFICATIONS.filter((c) => c.kind === "ERDA Type Test");
-
-function CertCard({ c, i, small = false }: { c: (typeof CERTIFICATIONS)[number]; i: number; small?: boolean }) {
-  return (
-    <a
-      href={c.img}
-      target="_blank"
-      rel="noopener"
-      className={`${s.certCard} ${small ? s.certSmall : ""} reveal`}
-      style={{ "--d": `${i * 0.07}s` } as React.CSSProperties}
-      aria-label={`${c.title} – view certificate`}
-    >
-      <div className={s.certFrame}>
-        <img src={c.img} alt="" loading="lazy" />
-      </div>
-      <div className={s.certMeta}>
-        {!small && <span className={s.certKind}>{c.kind}</span>}
-        <h3>{c.title}</h3>
-      </div>
-      <span className={s.certView} aria-hidden="true">
-        <Icon name="arrow" />
-      </span>
-    </a>
-  );
-}
 
 export default function AboutPage() {
   return (
@@ -81,21 +46,22 @@ export default function AboutPage() {
             <img src="/about/who-3.webp" alt="AEPL LT/MV switchgear panels" loading="lazy" />
           </div>
         </div>
+        <div className="container">
+          <figure className={`${s.visionImg} reveal`}>
+            <img
+              src="/about/vision.webp"
+              width={1687}
+              height={767}
+              loading="lazy"
+              alt="Vision: Embrace technology to maximize value. Mission: Continuously evolve to maximize value of each installation towards providing the best customer experience."
+            />
+          </figure>
+        </div>
       </section>
 
-      {/* Vision, mission, values */}
+      {/* Values */}
       <section className="section section-soft" aria-labelledby="values-title">
         <div className="container">
-          <div className={s.vmGrid}>
-            <div className={`card ${s.vmCard} reveal`}>
-              <small>Vision</small>
-              <strong>{ABOUT.vision}</strong>
-            </div>
-            <div className={`card ${s.vmCard} reveal`} style={{ "--d": "0.08s" } as React.CSSProperties}>
-              <small>Mission</small>
-              <strong>{ABOUT.mission}</strong>
-            </div>
-          </div>
           <div className="section-head reveal">
             <h2 className="eyebrow" id="values-title">
               Our values
@@ -145,70 +111,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="section section-soft" id="team" aria-labelledby="team-title">
-        <div className="container">
-          <SectionHead eyebrow="Our team" id="team-title" title="The people behind AEPL" lead="450+ engineers, technicians and specialists – one trusted team from engineering to handover." />
-          <TeamGrid />
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section className={`section ${s.certSection}`} id="certifications" aria-labelledby="certs-title">
-        <div className="container">
-          <div className={s.certTop}>
-            <SectionHead
-              left
-              eyebrow="Certifications & awards"
-              id="certs-title"
-              title={
-                <>
-                  Quality you can <span className="accent">verify</span>
-                </>
-              }
-              lead="Independently certified processes, industry recognition and type-tested panels – so every installation performs for 25 years and beyond."
-            />
-            <ul className={`${s.certBadges} reveal`}>
-              {CERT_BADGES.map((b) => (
-                <li key={b.label}>
-                  <span>
-                    <Icon name={b.icon} />
-                  </span>
-                  <div>
-                    <strong>{b.value}</strong>
-                    <small>{b.label}</small>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className={s.certFeatured}>
-            {featured.map((c, i) => (
-              <CertCard key={c.img} c={c} i={i} />
-            ))}
-          </div>
-
-          <div className={`${s.certTests} reveal`}>
-            <div className={s.certTestsHead}>
-              <span className="chip">
-                <Icon name="bolt" width={14} height={14} /> ERDA
-              </span>
-              <h3>Type test reports</h3>
-              <p>LT &amp; MV panels independently tested at ERDA for short circuit, temperature rise and IP55 ingress protection.</p>
-            </div>
-            <div className={s.certTestGrid}>
-              {tests.map((c, i) => (
-                <CertCard key={c.img} c={c} i={i} small />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Clients />
-
-      <section className="section" aria-labelledby="about-testimonials-title">
+      <section className="section section-soft" aria-labelledby="about-testimonials-title">
         <div className="container">
           <SectionHead eyebrow="Testimonials" id="about-testimonials-title" title="What our partners say" />
           <Testimonials />
