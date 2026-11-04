@@ -147,13 +147,20 @@ ul {
 }
 
 .section-head {
-  max-width: 760px;
+  max-width: 100%;
   margin: 0 auto clamp(36px, 5vw, 56px);
   text-align: center;
 }
 .section-head.left {
   margin-left: 0;
   text-align: left;
+}
+.section-head .lead {
+  max-width: 780px;
+  margin-inline: auto;
+}
+.section-head.left .lead {
+  margin-left: 0;
 }
 
 .eyebrow {
@@ -176,7 +183,16 @@ ul {
 }
 
 .h2 {
-  font-size: clamp(28px, 3.6vw, 44px);
+  font-size: clamp(24px, 2.4vw, 32px);
+}
+.section-head:not(.left) .h2 {
+  font-size: clamp(20px, 2.4vw, 34px);
+  white-space: nowrap;
+}
+@media (max-width: 980px) {
+  .section-head:not(.left) .h2 {
+    white-space: normal;
+  }
 }
 .h3 {
   font-size: clamp(20px, 2vw, 26px);

@@ -56,9 +56,9 @@ export default function Header() {
 
   return (
     <header className={`${s.header} ${scrolled || open ? s.scrolled : ""}`} id="site-header">
-      <div className={`container ${s.inner}`}>
+      <div className={s.inner}>
         <Link href="/" className={s.logo} aria-label={`${COMPANY.name} – Home`} id="header-logo">
-          <img src="/brand/logo.png" alt={COMPANY.name} width={222} height={70} />
+          <img src="/brand/logo.png" alt={COMPANY.name} width={248} height={78} />
         </Link>
 
         <nav className={s.nav} aria-label="Main">

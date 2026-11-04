@@ -43,10 +43,11 @@ export type SolutionPageData = {
 };
 
 const COMMON_STATS = [
+  { value: "16+", label: "Years of Expertise" },
+  { value: "60%+", label: "Market Share" },
   { value: "90GW+", label: "Monitored" },
-  { value: "60%+", label: "Market share" },
-  { value: "2,500+", label: "Sites" },
-  { value: "16+", label: "Years of expertise" },
+  { value: "500+", label: "Customers" },
+  { value: "2500+", label: "Sites" },
 ];
 
 // ---------------------------------------------------------------------------
@@ -67,10 +68,11 @@ export const URS_PAGE: SolutionPageData = {
   image: "/solutions/urs-overview.webp",
   imageAlt: "Hybrid solar, wind and battery storage plant",
   stats: [
+    { value: "16+", label: "Years of Expertise" },
+    { value: "60%+", label: "Market Share" },
     { value: "90GW+", label: "Monitored" },
-    { value: "60%+", label: "Market share" },
-    { value: "10,00,000+", label: "Tags in a single project" },
     { value: "8GWh+", label: "EMS-BESS" },
+    { value: "10 Lacs+", label: "Tags in a single project" },
   ],
   brochure: "corporate",
   sections: [
@@ -135,10 +137,11 @@ export const URS_MODULE_PAGES: SolutionPageData[] = [
     image: "/solutions/scada-1.webp",
     imageAlt: "SCADA control room with plant dashboards",
     stats: [
+      { value: "16+", label: "Years of Expertise" },
+      { value: "60%+", label: "Market Share" },
       { value: "90GW+", label: "Monitored" },
-      { value: "10,00,000+", label: "Tags in a single project" },
-      { value: "60%+", label: "Market share" },
-      { value: "16+", label: "Years of expertise" },
+      { value: "8GWh+", label: "EMS-BESS" },
+      { value: "10 Lacs+", label: "Tags in a single project" },
     ],
     brochure: "scada",
     sections: [
@@ -225,10 +228,11 @@ export const URS_MODULE_PAGES: SolutionPageData[] = [
     image: "/solutions/ppc-1.webp",
     imageAlt: "Hybrid plant with battery storage and wind turbines",
     stats: [
+      { value: "16+", label: "Years of Expertise" },
+      { value: "60%+", label: "Market Share" },
       { value: "90GW+", label: "Monitored" },
-      { value: "60%+", label: "Market share" },
       { value: "450+", label: "Manpower" },
-      { value: "40GW", label: "Yearly capacity" },
+      { value: "40GW", label: "Yearly Capacity" },
     ],
     brochure: "ppc",
     sections: [
@@ -481,10 +485,11 @@ export const URS_MODULE_PAGES: SolutionPageData[] = [
     image: "/solutions/ems-bess-1.webp",
     imageAlt: "Battery energy storage containers with solar and wind",
     stats: [
+      { value: "16+", label: "Years of Expertise" },
       { value: "8GWh+", label: "EMS-BESS" },
       { value: "90GW+", label: "Monitored" },
-      { value: "60%+", label: "Market share" },
-      { value: "16+", label: "Years of expertise" },
+      { value: "60%+", label: "Market Share" },
+      { value: "2 Lacs sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
     ],
     brochure: "ems",
     sections: [
@@ -556,10 +561,11 @@ export const PM_KUSUM_PAGE: SolutionPageData = {
   image: "/solutions/pm-kusum-field.webp",
   imageAlt: "Engineer and farmer reviewing solar plant data in the field",
   stats: [
-    { value: "2,000+", label: "Sites" },
+    { value: "16+", label: "Years of Expertise" },
     { value: "5GW+", label: "Monitored" },
-    { value: "60%+", label: "Market share" },
-    { value: "2,00,000 sq.ft+", label: "Manufacturing facility" },
+    { value: "2000+", label: "Sites" },
+    { value: "60%+", label: "Market Share" },
+    { value: "2 Lacs sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
   ],
   brochure: "kusum",
   sections: [
@@ -630,10 +636,11 @@ export const PANELS_PAGE: SolutionPageData = {
   image: "/solutions/panels-overview.webp",
   imageAlt: "AEPL LT/MV panel wiring",
   stats: [
-    { value: "15,000+", label: "Panels delivered" },
-    { value: "40GW+", label: "Annual capacity" },
-    { value: "2,00,000 sq.ft+", label: "Dust-free facility" },
-    { value: "25 Yrs", label: "Reliability" },
+    { value: "16+", label: "Years of Expertise" },
+    { value: "450+", label: "Manpower" },
+    { value: "15000+", label: "Panels Delivered" },
+    { value: "40GW+", label: "Annual Capacity" },
+    { value: "2 Lacs sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
   ],
   brochure: "panels",
   sections: [
@@ -712,10 +719,11 @@ export const PANELS_PAGE: SolutionPageData = {
 //  PM KUSUM sub-pages (order follows the PM KUSUM flyer)
 // ---------------------------------------------------------------------------
 const KUSUM_STATS = [
-  { value: "2,000+", label: "Sites" },
+  { value: "16+", label: "Years of Expertise" },
   { value: "5GW+", label: "Monitored" },
-  { value: "60%+", label: "Market share" },
-  { value: "16+", label: "Years of expertise" },
+  { value: "2000+", label: "Sites" },
+  { value: "60%+", label: "Market Share" },
+  { value: "2 Lacs sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
 ];
 const K = "/solutions/pm-kusum";
 
@@ -1221,10 +1229,11 @@ export const KUSUM_MODULE_PAGES: SolutionPageData[] = [
 // ---------------------------------------------------------------------------
 const P = "/solutions/panels";
 const PANEL_STATS = [
-  { value: "15,000+", label: "Panels delivered" },
-  { value: "40GW+", label: "Annual capacity" },
-  { value: "2,00,000 sq.ft+", label: "Dust-free facility" },
-  { value: "16+", label: "Years of expertise" },
+  { value: "16+", label: "Years of Expertise" },
+  { value: "450+", label: "Manpower" },
+  { value: "15000+", label: "Panels Delivered" },
+  { value: "40GW+", label: "Annual Capacity" },
+  { value: "2 Lacs sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
 ];
 const PANEL_BANNERS = [
   `${P}/switchgear-panel.webp`,
@@ -1567,10 +1576,10 @@ export const PANEL_MODULE_PAGES: SolutionPageData[] = [
 const W = "/solutions/water";
 const WATER_APPROVALS = "Approved by GWSSB (Gujarat), MPJNM, MPUDC & MPUADD (Madhya Pradesh), UPJNM (Uttar Pradesh), RWS&S (Odisha) and JICA-assisted projects (Assam).";
 const WATER_COMMON_STATS = [
-  { value: "16+", label: "Years of expertise" },
+  { value: "16+", label: "Years of Expertise" },
   { value: "50+", label: "Water supply schemes" },
   { value: "10+", label: "States covered" },
-  { value: "2,00,000 sq.ft+", label: "Manufacturing facility" },
+  { value: "2 Lacs sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
 ];
 const WATER_ADVANTAGE: SolutionSection = {
   type: "cards",
@@ -1600,9 +1609,10 @@ export const WATER_PAGE: SolutionPageData = {
   image: `${W}/water-card.webp`,
   imageAlt: "Water treatment plant",
   stats: [
+    { value: "16+", label: "Years of Expertise" },
     { value: "400+", label: "MLD treated water" },
     { value: "50+", label: "Water supply schemes" },
-    { value: "1,500+", label: "Overhead tanks (OHT)" },
+    { value: "1500+", label: "Overhead tanks (OHT)" },
     { value: "300+", label: "MLD treated sewage" },
   ],
   brochure: "corporate",
@@ -1641,8 +1651,8 @@ export const WATER_MODULE_PAGES: SolutionPageData[] = [
   {
     slug: "wtp",
     path: `${W}/wtp/`,
-    name: "Water Supply & WTP",
-    short: "Water Supply & WTP",
+    name: "Water Supply Scheme & WTP",
+    short: "Water Supply Scheme & WTP",
     icon: "bulb",
     points: ["Raw water intake to OHT", "Filtration & dosing control", "OHTs on central SCADA"],
     banner: `${W}/wtp-hero.webp`,
@@ -1655,9 +1665,10 @@ export const WATER_MODULE_PAGES: SolutionPageData[] = [
     image: `${W}/wtp-scada.webp`,
     imageAlt: "Water treatment SCADA control room",
     stats: [
+      { value: "16+", label: "Years of Expertise" },
       { value: "400+", label: "MLD treated drinking water" },
       { value: "50+", label: "Water supply schemes" },
-      { value: "1,500+", label: "Overhead tanks (OHT)" },
+      { value: "1500+", label: "Overhead tanks (OHT)" },
       { value: "10+", label: "States covered" },
     ],
     brochure: "corporate",
@@ -1691,7 +1702,7 @@ export const WATER_MODULE_PAGES: SolutionPageData[] = [
       },
       WATER_ADVANTAGE,
     ],
-    metaTitle: "Water Supply & WTP – E&I and SCADA | AEPL Water Solutions",
+    metaTitle: "Water Supply Scheme & WTP – E&I and SCADA | AEPL Water Solutions",
     metaDescription:
       "AEPL E&I and SCADA for water supply schemes and water treatment plants – 400+ MLD treated drinking water, 50+ schemes and 1,500+ overhead tanks connected.",
   },
@@ -1712,10 +1723,11 @@ export const WATER_MODULE_PAGES: SolutionPageData[] = [
     image: `${W}/stp-scada.webp`,
     imageAlt: "STP SCADA operator workstation",
     stats: [
+      { value: "16+", label: "Years of Expertise" },
       { value: "300+", label: "MLD treated sewage" },
       { value: "10+", label: "Pumping stations remotely connected" },
       { value: "10+", label: "States covered" },
-      { value: "16+", label: "Years of expertise" },
+      { value: "2 Lacs sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
     ],
     brochure: "corporate",
     sections: [
@@ -1770,10 +1782,10 @@ export const WATER_MODULE_PAGES: SolutionPageData[] = [
     image: `${W}/etp-scada.webp`,
     imageAlt: "ETP SCADA dashboard",
     stats: [
+      { value: "16+", label: "Years of Expertise" },
       { value: "20+", label: "MLD effluent treated" },
       { value: "10+", label: "States covered" },
-      { value: "16+", label: "Years of expertise" },
-      { value: "2,00,000 sq.ft+", label: "Manufacturing facility" },
+      { value: "2 Lacs sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
     ],
     brochure: "corporate",
     sections: [
@@ -1837,10 +1849,10 @@ export const WATER_MODULE_PAGES: SolutionPageData[] = [
     image: `${W}/lift-control.webp`,
     imageAlt: "Pumping station control desk",
     stats: [
+      { value: "16+", label: "Years of Expertise" },
       { value: "20+", label: "Irrigation pumping stations" },
       { value: "10+", label: "States covered" },
-      { value: "16+", label: "Years of expertise" },
-      { value: "2,00,000 sq.ft+", label: "Manufacturing facility" },
+      { value: "2 Lacs sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
     ],
     brochure: "corporate",
     sections: [
@@ -2017,12 +2029,7 @@ export const IOT_PAGE: SolutionPageData = {
   ],
   image: `${I}/iot-card.webp`,
   imageAlt: "Operator monitoring an IoT SCADA dashboard",
-  stats: [
-    { value: "90GW+", label: "Monitored" },
-    { value: "2,500+", label: "Sites" },
-    { value: "60%+", label: "Market share" },
-    { value: "16+", label: "Years of expertise" },
-  ],
+  stats: COMMON_STATS,
   brochure: "corporate",
   sections: [
     {
@@ -2070,12 +2077,7 @@ export const IOT_MODULE_PAGES: SolutionPageData[] = [
     ],
     image: `${K}/iot-arch.webp`,
     imageAlt: "Solar central operations dashboard",
-    stats: [
-      { value: "90GW+", label: "Monitored" },
-      { value: "60%+", label: "Market share" },
-      { value: "2,500+", label: "Sites" },
-      { value: "16+", label: "Years of expertise" },
-    ],
+    stats: COMMON_STATS,
     brochure: "corporate",
     sections: [
       {
@@ -2139,8 +2141,9 @@ export const IOT_MODULE_PAGES: SolutionPageData[] = [
     image: `${I}/water-monitor.webp`,
     imageAlt: "WaterWiz water distribution dashboard",
     stats: [
+      { value: "16+", label: "Years of Expertise" },
       { value: "50+", label: "Water supply schemes" },
-      { value: "1,500+", label: "Overhead tanks (OHT)" },
+      { value: "1500+", label: "Overhead tanks (OHT)" },
       { value: "400+", label: "MLD treated water" },
       { value: "10+", label: "States covered" },
     ],
@@ -2205,6 +2208,7 @@ export const IOT_MODULE_PAGES: SolutionPageData[] = [
     ],
     image: `${I}/oee.webp`,
     imageAlt: "MachineWiz factory OEE dashboard",
+    stats: COMMON_STATS,
     brochure: "corporate",
     sections: [
       {
@@ -2267,6 +2271,7 @@ export const IOT_MODULE_PAGES: SolutionPageData[] = [
     ],
     image: `${I}/ams-field.webp`,
     imageAlt: "Engineer using the asset management app in a factory",
+    stats: COMMON_STATS,
     brochure: "corporate",
     sections: [
       {
@@ -2365,10 +2370,10 @@ export const INFRASTRUCTURE_PAGE: SolutionPageData = {
   image: `${INF}/tunnel-commissioning.webp`,
   imageAlt: "Modern highway tunnel with LED lighting and ventilation",
   stats: [
-    { value: "16+", label: "Years of expertise" },
+    { value: "16+", label: "Years of Expertise" },
     { value: "2.5 Km", label: "Twin-tube tunnel executed" },
-    { value: "15,000+", label: "Panels delivered" },
-    { value: "2,00,000 sq.ft+", label: "Manufacturing facility" },
+    { value: "15000+", label: "Panels Delivered" },
+    { value: "2 Lacs sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
   ],
   brochure: "tunnel",
   sections: [
@@ -2614,10 +2619,11 @@ export const INFRASTRUCTURE_MODULE_PAGES: SolutionPageData[] = [
     image: `${INF}/automation-plc.webp`,
     imageAlt: "Industrial automation PLC and SCADA engineering",
     stats: [
-      { value: "2,500+", label: "Sites deployed" },
-      { value: "15,000+", label: "Panels delivered" },
-      { value: "16+", label: "Years of expertise" },
-      { value: "2,00,000 sq.ft+", label: "Manufacturing facility" },
+      { value: "16+", label: "Years of Expertise" },
+      { value: "450+", label: "Manpower" },
+      { value: "15000+", label: "Panels Delivered" },
+      { value: "2500+", label: "Sites" },
+      { value: "2 Lacs sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
     ],
     brochure: "scada-brochure",
     sections: [

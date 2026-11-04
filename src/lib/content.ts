@@ -42,11 +42,11 @@ export const STATS: Stat[] = [
   { value: 750, suffix: "+", label: "Commissioned Projects" },
   { value: 450, suffix: "+", label: "Manpower" },
   { value: 40, suffix: "GW", label: "Annual Execution Capacity" },
-  { value: 1000000, suffix: "+", label: "Tags in a Single Project" },
+  { value: 10, suffix: " Lacs+", label: "Tags in a Single Project" },
 ];
 
 const stat = (label: string) => STATS.find((x) => x.label === label)!;
-export const HEADLINE_STATS: Stat[] = [stat("Monitored"), stat("Market Share"), stat("Sites"), stat("Years of Expertise")];
+export const HEADLINE_STATS: Stat[] = [stat("Years of Expertise"), stat("Market Share"), stat("Monitored"), stat("EMS-BESS")];
 
 export const ABOUT = {
   intro:

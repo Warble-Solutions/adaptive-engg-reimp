@@ -3,8 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { Stat } from "@/lib/content";
 
-const fmt = (n: number) => n.toLocaleString("en-IN");
-
 /** Animated number that counts up once when scrolled into view. */
 export default function Counter({ stat, className }: { stat: Stat; className?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -41,7 +39,7 @@ export default function Counter({ stat, className }: { stat: Stat; className?: s
   return (
     <span ref={ref} className={className}>
       {stat.prefix}
-      {fmt(val)}
+      {val}
       <span className="stat-suffix">{stat.suffix}</span>
     </span>
   );
