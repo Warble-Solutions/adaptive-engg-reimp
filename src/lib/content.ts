@@ -660,12 +660,12 @@ export const MAIN_SOLUTIONS: { id: string; name: string; short: string; summary:
     brochure: "kusum",
   },
   {
-    id: "lt-mv-panels",
-    name: "LT/MV Panels",
-    short: "LT/MV Panels",
-    summary: SOLUTIONS.find((x) => x.id === "lt-mv-panels")!.summary,
+    id: "electrical-panels",
+    name: "Electrical Panels",
+    short: "Electrical Panels",
+    summary: "Type-tested LT/MV renewable panels, HT VCB switchgear, PCC, MCC, IMCC, APFC, VFD, PLC and automation panels built in-house – 15,000+ panels delivered.",
     image: "/solutions/panels.webp",
-    href: "/solutions/lt-mv-panels/",
+    href: "/solutions/electrical-panels/",
     brochure: "panels",
   },
   {

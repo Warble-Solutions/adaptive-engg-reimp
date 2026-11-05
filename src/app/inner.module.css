@@ -1039,6 +1039,14 @@
   color: var(--ink-2);
   font-size: 16.5px;
   line-height: 1.8;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.blogArticle a {
+  color: var(--brand);
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .blogArticle .blogMeta {
   color: var(--muted);

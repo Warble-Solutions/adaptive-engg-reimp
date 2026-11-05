@@ -486,9 +486,9 @@ export const URS_MODULE_PAGES: SolutionPageData[] = [
     imageAlt: "Battery energy storage containers with solar and wind",
     stats: [
       { value: "16+", label: "Years of Expertise" },
-      { value: "8GWh+", label: "EMS-BESS" },
-      { value: "90GW+", label: "Monitored" },
       { value: "60%+", label: "Market Share" },
+      { value: "90GW+", label: "Monitored" },
+      { value: "8GWh+", label: "EMS-BESS" },
       { value: "2 Lacs sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
     ],
     brochure: "ems",
@@ -499,10 +499,10 @@ export const URS_MODULE_PAGES: SolutionPageData[] = [
         title: "Six reasons developers choose AEPL",
         items: [
           { title: "Unified Command Center", desc: "One platform for complete storage visibility.", icon: "monitor" },
-          { title: "SCADA & PPC Integration", desc: "Connected control across BMS, PCS, SCADA and PPC.", icon: "layers" },
           { title: "Performance Intelligence", desc: "Monitor RTE, SOH, availability and dispatch performance.", icon: "chart" },
           { title: "Advanced Alarm Management", desc: "Identify critical events faster with prioritised alarms.", icon: "bolt" },
           { title: "Standardized Engineering", desc: "Pre-validated building blocks for consistent EMS delivery.", icon: "check" },
+          { title: "SCADA & PPC Integration", desc: "Connected control across BMS, PCS, SCADA and PPC.", icon: "layers" },
           { title: "QR Code Access", desc: "Secured, authorised, auditable.", icon: "shield" },
         ],
       },
@@ -512,11 +512,11 @@ export const URS_MODULE_PAGES: SolutionPageData[] = [
         title: "What the EMS controls",
         cols: 3,
         items: [
-          { title: "Frequency & Ramp-Rate Control", icon: "gauge" },
           { title: "Dispatch & SOC Management", icon: "battery" },
+          { title: "Frequency & Ramp-Rate Control", icon: "gauge" },
           { title: "Peak-Shaving & Energy Arbitrage", icon: "chart" },
-          { title: "Alarms & Event Management", icon: "bolt" },
           { title: "Grid & Ambient Monitoring", icon: "sun" },
+          { title: "Alarms & Event Management", icon: "bolt" },
           { title: "Trends & Performance Reporting", icon: "file" },
         ],
       },
@@ -562,9 +562,9 @@ export const PM_KUSUM_PAGE: SolutionPageData = {
   imageAlt: "Engineer and farmer reviewing solar plant data in the field",
   stats: [
     { value: "16+", label: "Years of Expertise" },
+    { value: "60%+", label: "Market Share" },
     { value: "5GW+", label: "Monitored" },
     { value: "2000+", label: "Sites" },
-    { value: "60%+", label: "Market Share" },
     { value: "2 Lacs sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
   ],
   brochure: "kusum",
@@ -580,13 +580,16 @@ export const PM_KUSUM_PAGE: SolutionPageData = {
       type: "cards",
       eyebrow: "The advantage we bring",
       title: "Built for developers, EPCs and investors",
+      cols: 4,
       items: [
-        { title: "Local Monitoring & Diagnosis", desc: "Local SCADA with all field device monitoring and analysis." },
-        { title: "Cluster Wise Dashboard", desc: "KPI monitoring across clusters of sites." },
-        { title: "CMS Portal", desc: "Complete portfolio management in one place." },
-        { title: "SEDM Portal Integration", desc: "Direct communication with the SEDM / DISCOM portal." },
-        { title: "EMS and PPC Ready", desc: "Telemetry system for LDC integration." },
-        { title: "Customized DGR Reports", desc: "Daily generation reports for IPPs, EPCs and investors." },
+        { title: "Cluster Wise Dashboard", desc: "Cluster wise dashboard for KPI monitoring." },
+        { title: "CMS Portal", desc: "CMS portal for complete portfolio management." },
+        { title: "SEDM Portal Integration", desc: "Direct communication with the SEDM / Discom portal." },
+        { title: "EMS and PPC Ready", desc: "Ready for EMS and Power Plant Controller integration." },
+        { title: "Telemetry System", desc: "Telemetry system for LDC integration." },
+        { title: "Customized DGR Report", desc: "Customized DGR report for IPP, EPC, Investor." },
+        { title: "All Field Device Monitoring", desc: "All field device monitoring & analysis." },
+        { title: "Local Monitoring & Diagnosis", desc: "Local SCADA monitoring & diagnosis without internet." },
       ],
     },
     {
@@ -621,13 +624,15 @@ export const PM_KUSUM_PAGE: SolutionPageData = {
     "AEPL PM KUSUM one stop solution: RMS, CMS, AMS, ReportWiz, WMS and LT/MV panels across 2000+ sites, with local SCADA that works without internet.",
 };
 
-export const PANELS_PAGE: SolutionPageData = {
+export const LT_MV_PANELS_PAGE: SolutionPageData = {
   slug: "lt-mv-panels",
   path: "/solutions/lt-mv-panels/",
   name: "LT/MV Panels",
   short: "LT/MV Panels",
+  icon: "panel",
+  points: ["LT (800V · 415V) & MV (33kV · 11kV)", "Type-tested at ERDA (up to 65kA, IP55)", "Native SCADA integration & QR access"],
   banner: "/hero/lt-mv-panels.webp",
-  label: "LT/MV Panels",
+  label: "Electrical Panels · LT/MV Panels",
   tagline: "One trusted team – switchboard to dashboard, zero integration gaps",
   intro: [
     "AEPL designs, manufactures and commissions LT (800V · 415V) and MV (33kV · 11kV) panels for renewable energy projects, backed by 16+ years of renewable-specific engineering expertise.",
@@ -656,13 +661,6 @@ export const PANELS_PAGE: SolutionPageData = {
         { title: "One Team", desc: "Full ownership across panels and SCADA.", icon: "check" },
         { title: "QR Code Access", desc: "Secured, authorised, auditable.", icon: "grid" },
       ],
-    },
-    {
-      type: "modules",
-      group: "panels",
-      eyebrow: "Our panel range",
-      title: "Electrical panels for every application",
-      lead: "HT, LT, motor control, power factor, drive and automation panels – designed, built and tested in-house.",
     },
     {
       type: "table",
@@ -715,14 +713,108 @@ export const PANELS_PAGE: SolutionPageData = {
     "AEPL LT/MV panels for renewable energy: type-tested at ERDA, 15,000+ panels delivered, built in a 2,00,000 sq.ft+ dust-free facility with native SCADA integration.",
 };
 
+export const PANELS_PAGE: SolutionPageData = {
+  slug: "electrical-panels",
+  path: "/solutions/electrical-panels/",
+  name: "Electrical Panels",
+  short: "Electrical Panels",
+  banner: "/solutions/panels/switchgear-panel.webp",
+  label: "Electrical Panels",
+  tagline: "Designed, manufactured and type-tested in-house for every application",
+  intro: [
+    "From conceptualising and design to manufacturing, installation and support, AEPL controls the complete electrical panel production cycle in-house – delivering superior quality, performance and 25-year durability across renewable energy, water, industrial and infrastructure projects.",
+    "Manufactured in our 2,00,000 sq.ft+ state of the art, dust-free facility in Ahmedabad with in-house fabrication, an automated paint shop, automated wire preparation and ERDA type-tested assemblies – over 15,000+ panels delivered with native SCADA integration.",
+  ],
+  image: "/solutions/panels-overview.webp",
+  imageAlt: "AEPL electrical panels manufacturing and wiring",
+  stats: [
+    { value: "16+", label: "Years of Expertise" },
+    { value: "450+", label: "Manpower" },
+    { value: "15000+", label: "Panels Delivered" },
+    { value: "40GW+", label: "Annual Capacity" },
+    { value: "2 Lacs sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
+  ],
+  brochure: "panels",
+  sections: [
+    {
+      type: "modules",
+      group: "panels",
+      eyebrow: "Our panel range",
+      title: "Electrical panels for every application",
+      lead: "LT/MV renewable panels, HT, PCC, MCC, IMCC, APFC, PDB/LDB, Soft Starter & VFD, PLC, AC/DB and Automation panels – designed, built and tested in-house.",
+    },
+    {
+      type: "cards",
+      eyebrow: "6 reasons we outperform",
+      title: "Built for renewable energy and industrial reliability",
+      items: [
+        { title: "Type-Tested Panels", desc: "Built for renewable energy.", icon: "shield" },
+        { title: "In-House Fabrication", desc: "Full control of quality & delivery.", icon: "panel" },
+        { title: "Modular Panel Design", desc: "Field-ready and easy to service.", icon: "layers" },
+        { title: "Native SCADA Integration", desc: "One platform, full visibility.", icon: "monitor" },
+        { title: "One Team", desc: "Full ownership across panels and SCADA.", icon: "check" },
+        { title: "QR Code Access", desc: "Secured, authorised, auditable.", icon: "grid" },
+      ],
+    },
+    {
+      type: "table",
+      eyebrow: "Type test results",
+      title: "Tested at ERDA",
+      lead: "Built and type-tested for renewable energy applications.",
+      columns: ["Voltage Rating", "Short Circuit Test", "Temperature Rise Test", "Ingress Protection Test", "Die-Electric Strength Test"],
+      rows: [
+        ["440V", "65kA, 440V, 4000A", "440V, 4000A", "IP55 - Outdoor", "N/A"],
+        ["800V", "50kA, 800V, 4000A", "800V, 4000A", "IP55 - Outdoor", "800V, 4000A"],
+        ["11kV", "31.5kA - 3 Sec., 11kV, 1250A", "11kV, 1250A", "IP55 - Outdoor", "11kV, 1250A"],
+        ["33kV", "31.5kA - 3 Sec., 33kV, 1250A", "33kV, 1250A", "IP55 - Outdoor", "33kV, 1250A"],
+      ],
+    },
+    {
+      type: "split",
+      eyebrow: "Manufacturing",
+      title: "Built in-house, built to last",
+      text: "Our state of the art, dust-free facility gives us full control of quality and delivery – every panel is tested before it leaves the factory.",
+      bullets: [
+        "State of the art, dust-free manufacturing facility",
+        "In-house fabrication and automated paint shop",
+        "Automated wire preparation",
+        "Factory acceptance testing with SCADA point-to-point loop checks",
+        "OEM partnership – engineering to handover",
+      ],
+      image: "/solutions/panel-factory.webp",
+      imageAlt: "AEPL panel manufacturing facility",
+      flip: true,
+    },
+    {
+      type: "cards",
+      eyebrow: "Why choose AEPL panels",
+      title: "Engineering advantages",
+      cols: 4,
+      items: [
+        { title: "Enhanced safety", desc: "Type-tested short circuit compliance and touch-safe configurations." },
+        { title: "Increased reliability", desc: "Heavy-duty components and robust enclosures for harsh sites." },
+        { title: "Better energy efficiency", desc: "Optimised busbar design minimises losses." },
+        { title: "Lesser maintenance", desc: "High-integrity connections and dust-proof layouts." },
+        { title: "IoT ready", desc: "Communication interfaces for SCADA and remote monitoring." },
+        { title: "Surge protection", desc: "SPDs protect sensitive automation components from grid spikes." },
+        { title: "Dust proof", desc: "IP55 outdoor enclosures for long component life." },
+        { title: "Quality certified", desc: "ISO 9001:2015 certified by TÜV NORD." },
+      ],
+    },
+  ],
+  metaTitle: "Electrical Panels – LT/MV, HT, PCC, MCC, IMCC, APFC, VFD & PLC Panels | AEPL",
+  metaDescription:
+    "AEPL Electrical Panels: LT/MV renewable panels, HT VCB switchgear, PCC, MCC, IMCC, APFC, PDB/LDB, Soft Starter & VFD, PLC, AC/DB and Automation panels built in-house.",
+};
+
 // ---------------------------------------------------------------------------
 //  PM KUSUM sub-pages (order follows the PM KUSUM flyer)
 // ---------------------------------------------------------------------------
 const KUSUM_STATS = [
   { value: "16+", label: "Years of Expertise" },
+  { value: "60%+", label: "Market Share" },
   { value: "5GW+", label: "Monitored" },
   { value: "2000+", label: "Sites" },
-  { value: "60%+", label: "Market Share" },
   { value: "2 Lacs sq.ft+", label: "State of the Art, Dust Free Manufacturing Facility" },
 ];
 const K = "/solutions/pm-kusum";
@@ -1265,13 +1357,13 @@ function panelPage(p: {
 }): SolutionPageData {
   return {
     slug: p.slug,
-    path: `/solutions/lt-mv-panels/${p.slug}/`,
+    path: `/solutions/electrical-panels/${p.slug}/`,
     name: p.name,
     short: p.short,
     icon: p.icon,
     points: p.points,
     banner: PANEL_BANNERS[p.i % PANEL_BANNERS.length],
-    label: `LT/MV Panels · ${p.short}`,
+    label: `Electrical Panels · ${p.short}`,
     tagline: p.tagline,
     intro: p.intro,
     image: `${P}/${p.slug}.webp`,
@@ -1311,12 +1403,13 @@ function panelPage(p: {
         flip: true,
       },
     ],
-    metaTitle: `${p.name} | AEPL LT/MV Panels`,
+    metaTitle: `${p.name} | AEPL Electrical Panels`,
     metaDescription: `${p.intro[0].slice(0, 150).replace(/\s\S*$/, "")}…`,
   };
 }
 
 export const PANEL_MODULE_PAGES: SolutionPageData[] = [
+  LT_MV_PANELS_PAGE,
   panelPage({
     i: 0,
     slug: "ht-panel",
@@ -2708,7 +2801,7 @@ export const ALL_SOLUTION_PAGES = [
 export const SOLUTION_GROUPS: Record<SolutionGroup, { parent: SolutionPageData; pages: SolutionPageData[]; label: string; short: string; noun: string }> = {
   urs: { parent: URS_PAGE, pages: URS_MODULE_PAGES, label: "Unified Renewable Solution", short: "URS", noun: "solutions" },
   kusum: { parent: PM_KUSUM_PAGE, pages: KUSUM_MODULE_PAGES, label: "PM KUSUM", short: "PM KUSUM", noun: "solutions" },
-  panels: { parent: PANELS_PAGE, pages: PANEL_MODULE_PAGES, label: "LT/MV Panels", short: "LT/MV", noun: "panels" },
+  panels: { parent: PANELS_PAGE, pages: PANEL_MODULE_PAGES, label: "Electrical Panels", short: "electrical", noun: "panels" },
   water: { parent: WATER_PAGE, pages: WATER_MODULE_PAGES, label: "Water Solutions", short: "water", noun: "solutions" },
   iot: { parent: IOT_PAGE, pages: IOT_MODULE_PAGES, label: "Industrial IoT", short: "IoT", noun: "solutions" },
   infrastructure: { parent: INFRASTRUCTURE_PAGE, pages: INFRASTRUCTURE_MODULE_PAGES, label: "Infrastructure Solutions", short: "infrastructure", noun: "solutions" },
@@ -2727,9 +2820,12 @@ export const SOLUTIONS_MENU: { label: string; href: string; children?: { label: 
     children: KUSUM_MODULE_PAGES.map((p) => ({ label: p.short, href: p.path })),
   },
   {
-    label: "LT/MV Panels",
+    label: "Electrical Panels",
     href: PANELS_PAGE.path,
-    children: PANEL_MODULE_PAGES.map((p) => ({ label: `${p.short} Panel`, href: p.path })),
+    children: PANEL_MODULE_PAGES.map((p) => ({
+      label: p.short.endsWith("Panels") || p.short.endsWith("Panel") ? p.short : `${p.short} Panel`,
+      href: p.path,
+    })),
   },
   {
     label: "Water Solutions",

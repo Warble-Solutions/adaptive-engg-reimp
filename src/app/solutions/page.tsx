@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Icon from "@/components/Icon";
 import { CtaBand, PageHero, SectionHead } from "@/components/Sections";
-import { ModuleGrid } from "@/components/SolutionPage";
-import { PANELS_PAGE, PM_KUSUM_PAGE, URS_PAGE } from "@/lib/solutions";
+import { INFRASTRUCTURE_PAGE, IOT_PAGE, PANELS_PAGE, PM_KUSUM_PAGE, URS_PAGE, WATER_PAGE } from "@/lib/solutions";
 import s from "@/components/SolutionPage.module.css";
 
 export const metadata: Metadata = {
-  title: "Solutions – URS (SCADA, PPC, CMS, Advance Analytics, AMS/CMMS, EMS-BESS), PM KUSUM & LT/MV Panels",
+  title: "Solutions – URS, PM KUSUM, Electrical Panels, Water, Industrial IoT & Infrastructure",
   description:
-    "AEPL's renewable energy solutions: the Unified Renewable Solution (SCADA, PPC, CMS, Advance Analytics, AMS/CMMS, EMS-BESS), PM KUSUM solutions and type-tested LT/MV panels.",
+    "AEPL's end-to-end solutions: Unified Renewable Solution (SCADA, PPC, CMS, Advance Analytics, AMS/CMMS, EMS-BESS), PM KUSUM, Electrical Panels, Water Solutions, Industrial IoT and Infrastructure Solutions.",
   alternates: { canonical: "/solutions/" },
 };
 
@@ -22,12 +21,27 @@ const MAIN = [
   {
     page: PM_KUSUM_PAGE,
     image: "/solutions/pm-kusum.webp",
-    summary: "One stop solution from field device to command center – RMS, CMS, AMS, ReportWiz, WMS and LT/MV panels across 2,000+ sites.",
+    summary: "One stop solution from field device to command center – RMS, CMS, AMS, ReportWiz, WMS and LT/MV panels across 2000+ sites.",
   },
   {
     page: PANELS_PAGE,
     image: "/solutions/panels.webp",
-    summary: "Type-tested LT (800V · 415V) and MV (33kV · 11kV) panels built in-house – 15,000+ panels delivered with native SCADA integration.",
+    summary: "Type-tested LT/MV renewable panels, HT VCB switchgear, PCC, MCC, IMCC, APFC, VFD, PLC and automation panels built in-house – 15000+ panels delivered.",
+  },
+  {
+    page: WATER_PAGE,
+    image: "/solutions/water/wtp.webp",
+    summary: "End-to-end E&I and SCADA for water supply schemes & WTP, STP, ETP, lift and micro irrigation, with centralised SCADA – 400+ MLD treated water across 50+ schemes.",
+  },
+  {
+    page: IOT_PAGE,
+    image: "/solutions/iot/solar-noc.webp",
+    summary: "SolarWiz, WaterWiz, MachineWiz and Mobile Asset Management – edge-to-cloud telemetry, central monitoring and machine learning for every industry.",
+  },
+  {
+    page: INFRASTRUCTURE_PAGE,
+    image: "/solutions/infrastructure/tunnel-modern.webp",
+    summary: "Turnkey E&I, power distribution and SCADA for road, railway & metro tunnels, Tier III/IV data centers and industrial automation.",
   },
 ];
 
@@ -45,11 +59,11 @@ export default function SolutionsPage() {
                 key={page.slug}
                 href={page.path}
                 className={`card ${s.hubCard} reveal`}
-                style={{ "--d": `${i * 0.08}s` } as React.CSSProperties}
+                style={{ "--d": `${(i % 3) * 0.08}s` } as React.CSSProperties}
                 id={`solution-${page.slug}`}
               >
                 <div className={s.hubImg}>
-                  <img src={image} alt={page.name} loading={i === 0 ? "eager" : "lazy"} />
+                  <img src={image} alt={page.name} loading={i < 3 ? "eager" : "lazy"} />
                 </div>
                 <div className={s.hubBody}>
                   <h3>{page.name}</h3>
@@ -61,48 +75,6 @@ export default function SolutionsPage() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="section section-soft" aria-labelledby="urs-modules-title">
-        <div className="container">
-          <SectionHead eyebrow="Unified Renewable Solution" id="urs-modules-title" title="Our 6 integrated URS solutions" />
-          <ModuleGrid group="urs" />
-        </div>
-      </section>
-
-      <section className="section" aria-labelledby="kusum-modules-title">
-        <div className="container">
-          <SectionHead eyebrow="PM KUSUM" id="kusum-modules-title" title="One stop solution – from field device to command center" />
-          <ModuleGrid group="kusum" />
-        </div>
-      </section>
-
-      <section className="section section-soft" aria-labelledby="panel-range-title">
-        <div className="container">
-          <SectionHead eyebrow="LT/MV Panels" id="panel-range-title" title="Electrical panels for every application" />
-          <ModuleGrid group="panels" />
-        </div>
-      </section>
-
-      <section className="section" aria-labelledby="water-solutions-title">
-        <div className="container">
-          <SectionHead eyebrow="Water Solutions" id="water-solutions-title" title="End-to-end E&I and SCADA for water infrastructure" />
-          <ModuleGrid group="water" />
-        </div>
-      </section>
-
-      <section className="section section-soft" aria-labelledby="iot-solutions-title">
-        <div className="container">
-          <SectionHead eyebrow="Industrial IoT" id="iot-solutions-title" title="Telemetry, central monitoring and machine learning" />
-          <ModuleGrid group="iot" />
-        </div>
-      </section>
-
-      <section className="section" aria-labelledby="infrastructure-solutions-title">
-        <div className="container">
-          <SectionHead eyebrow="Infrastructure Solutions" id="infrastructure-solutions-title" title="Turnkey E&I, SCADA and power distribution for critical infrastructure" />
-          <ModuleGrid group="infrastructure" />
         </div>
       </section>
 

@@ -15,8 +15,8 @@ export function ModuleGrid({ group = "urs", exclude }: { group?: SolutionGroup; 
       ? URS.modules.map((m, i) => ({ page: URS_MODULE_PAGES[i], title: m.name, icon: m.icon as IconName, points: m.items }))
       : SOLUTION_GROUPS[group].pages.map((p) => ({ page: p, title: p.name, icon: p.icon ?? "check", points: p.points ?? [] }));
   const list = mods.filter((m) => m.page && m.page.slug !== exclude);
-  // The panel range has 10 items – show 5 per row
-  const five = group === "panels";
+  // Show 5-per-row when there are 10 items (e.g. "explore other electrical panels")
+  const five = group === "panels" && list.length % 5 === 0;
   return (
     <div className={`${s.modGrid} ${five ? s.modGrid5 : ""}`}>
       {list.map((m, i) => (
