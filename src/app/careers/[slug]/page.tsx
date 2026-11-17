@@ -54,6 +54,7 @@ export default async function JobPage({ params }: Props) {
     ["Experience", job.experience],
     ["Education", job.education],
     ["Employment", job.type],
+    ...(job.gender ? ([["Gender", job.gender]] as [string, string][]) : []),
     ...(job.reportingTo ? ([["Reporting to", job.reportingTo]] as [string, string][]) : []),
   ];
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { INTEREST_OPTIONS } from "@/lib/content";
+import { COMPANY, INTEREST_OPTIONS } from "@/lib/content";
 import { saveProfile, submitLead, validators } from "@/lib/leads";
 import Icon from "./Icon";
 
@@ -35,6 +35,7 @@ export default function EnquiryForm({ idPrefix = "enquiry" }: { idPrefix?: strin
   const [v, setV] = useState<Values>(empty);
   const [errors, setErrors] = useState<Partial<Record<keyof Values, string>>>({});
   const [busy, setBusy] = useState(false);
+  const [failed, setFailed] = useState(false);
   const [done, setDone] = useState<null | { queued: boolean }>(null);
 
   const set = <K extends keyof Values>(k: K, val: Values[K]) => {
@@ -63,6 +64,7 @@ export default function EnquiryForm({ idPrefix = "enquiry" }: { idPrefix?: strin
     ev.preventDefault();
     if (!validate()) return;
     setBusy(true);
+    setFailed(false);
     const res = await submitLead({
       formType: "enquiry",
       fullName: v.fullName.trim(),
@@ -85,6 +87,10 @@ export default function EnquiryForm({ idPrefix = "enquiry" }: { idPrefix?: strin
       city: v.city.trim(),
     });
     setBusy(false);
+    if (!res.ok) {
+      setFailed(true);
+      return;
+    }
     setDone(res);
   };
 
@@ -200,6 +206,16 @@ export default function EnquiryForm({ idPrefix = "enquiry" }: { idPrefix?: strin
           </label>
           {err("consent")}
         </div>
+
+        {failed && (
+          <div className="full err" role="alert" style={{ fontSize: 14 }}>
+            Sorry, we couldn&apos;t send your enquiry right now. Please try again in a moment, or email us directly at{" "}
+            <a href={`mailto:${COMPANY.email}`} style={{ textDecoration: "underline" }}>
+              {COMPANY.email}
+            </a>
+            .
+          </div>
+        )}
 
         <div className="full" style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
           <button type="submit" className="btn" disabled={busy} id={`${idPrefix}-submit`}>

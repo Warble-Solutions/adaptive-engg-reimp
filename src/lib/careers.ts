@@ -14,6 +14,7 @@ export type Job = {
   required: string[];
   preferred?: string[];
   reportingTo?: string;
+  gender?: string;
 };
 
 export const JOBS: Job[] = [
@@ -251,6 +252,42 @@ export const JOBS: Job[] = [
       "Understanding of security frameworks, policies and compliance standards.",
       "Familiarity with threat detection, risk assessment and incident response procedures.",
       "Relevant cybersecurity certifications will be an added advantage.",
+    ],
+  },
+  {
+    slug: "sales-coordinator",
+    title: "Sales Coordinator",
+    department: "Sales",
+    location: "Ahmedabad",
+    education: "MBA or any relevant graduate degree",
+    experience: "2 – 3 years",
+    type: "Full-time",
+    gender: "Female",
+    summary:
+      "Be the link between our sales team and the rest of the company – following up on quotations, orders and project updates with Engineering, Design, Production, Purchase and Accounts, and keeping sales records, MIS reports and documentation accurate and up to date.",
+    responsibilities: [
+      "Coordinate with internal departments such as Sales, Engineering, Design, Production, Purchase and Accounts.",
+      "Provide internal support to the sales team for day-to-day activities.",
+      "Follow up with internal departments regarding quotations, order status and project updates.",
+      "Maintain sales records, reports and documentation.",
+      "Prepare and maintain sales-related documents and data.",
+      "Coordinate internally for order processing and execution.",
+      "Track pending tasks and ensure timely updates from concerned departments.",
+      "Assist the sales team with MIS reports and daily status updates.",
+      "Maintain proper communication and coordination between departments.",
+    ],
+    required: [
+      "Good communication and coordination skills.",
+      "Good knowledge of MS Excel, MS Word and email communication.",
+      "Good follow-up and organisational skills.",
+      "Ability to manage multiple tasks.",
+      "Attention to detail and documentation skills.",
+      "Teamwork and problem-solving abilities.",
+    ],
+    preferred: [
+      "Candidates with a sales background will be preferred.",
+      "Good communication and interpersonal skills.",
+      "Strong coordination and follow-up skills.",
     ],
   },
 ];

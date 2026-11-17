@@ -7,12 +7,17 @@ import { JOBS } from "@/lib/careers";
 import { validators } from "@/lib/leads";
 import Icon from "./Icon";
 
-// Google Apps Script web app (see /apps-script/careers.gs). It emails the application,
+// Google Apps Script web app (see /apps-script/careers.gs & /apps-script/Code.gs). It emails the application,
 // with resume + cover letter attached, to the HR recipients configured in that script.
-// The URL is public by design (it is visible in the page code either way). NEXT_PUBLIC_CAREERS_ENDPOINT overrides it.
-const ENDPOINT =
+const CAREERS_ENDPOINT =
   process.env.NEXT_PUBLIC_CAREERS_ENDPOINT ||
   "https://script.google.com/macros/s/AKfycbwResOie7Udp8xPXEYPG_Y6Mq-_mxSaIQKnXCdxhxxn6matRmAO0cnqDr6PnS3gtIfaNA/exec";
+
+const SHEET_ENDPOINT =
+  process.env.NEXT_PUBLIC_SHEET_ENDPOINT ||
+  "https://script.google.com/macros/s/AKfycbwR-KCBcuaandvVGdd6zU40FIdxKlh254xI3a-GhEIHqRPCSGHZjm0uTDeeCokC8NeA/exec";
+
+const ENDPOINTS = Array.from(new Set([CAREERS_ENDPOINT, SHEET_ENDPOINT].filter(Boolean)));
 
 const MAX_BYTES = 3 * 1024 * 1024; // per file
 const ALLOWED = [".pdf", ".doc", ".docx"];
@@ -83,9 +88,9 @@ export default function ApplyForm({ defaultPosition = "", idPrefix = "apply" }: 
     setBusy(true);
     setFailed(false);
     try {
-      if (!ENDPOINT) throw new Error("NEXT_PUBLIC_CAREERS_ENDPOINT is not configured");
+      if (ENDPOINTS.length === 0) throw new Error("NEXT_PUBLIC_CAREERS_ENDPOINT is not configured");
       const [resumeData, coverData] = await Promise.all([toBase64(resume), cover ? toBase64(cover) : Promise.resolve("")]);
-      const body = new URLSearchParams({
+      const params: Record<string, string> = {
         position: v.position,
         fullName: v.fullName.trim(),
         email: v.email.trim(),
@@ -99,11 +104,22 @@ export default function ApplyForm({ defaultPosition = "", idPrefix = "apply" }: 
         ...(cover ? { coverLetterName: cover.name, coverLetterType: cover.type, coverLetterData: coverData } : {}),
         page: window.location.pathname,
         submittedAt: new Date().toISOString(),
-      });
+      };
       // URL-encoded body = "simple" CORS request → no preflight; Apps Script returns JSON.
-      const res = await fetch(ENDPOINT, { method: "POST", body });
-      const json = await res.json().catch(() => ({}));
-      if (!res.ok || json.result !== "success") throw new Error(json.error || `HTTP ${res.status}`);
+      let lastErr: unknown;
+      let sent = false;
+      for (const url of ENDPOINTS) {
+        try {
+          const res = await fetch(url, { method: "POST", body: new URLSearchParams(params), redirect: "follow" });
+          const json = await res.json().catch(() => ({}));
+          if (!res.ok || json.result !== "success") throw new Error(json.error || `HTTP ${res.status}`);
+          sent = true;
+          break;
+        } catch (err) {
+          lastErr = err;
+        }
+      }
+      if (!sent) throw lastErr;
       trackEvent("job_application_submit", { position: v.position, city: v.city.trim() });
       setDone(true);
     } catch (err) {
